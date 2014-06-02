@@ -16,20 +16,28 @@ namespace WinformsGenerator
 		public Container(String id, DockStyle style, String name):base(id, style, name){
 			elementos=new List<Element>();
 		}
-		public override void getTreeNode (TreeNode node,ContextMenuStrip menu)
+		public override void GetTreeNode (TreeNode node,ContextMenuStrip menu)
 		{
 			TreeNode node2=node.Nodes.Add(this.Name);
 			node2.Tag=this;
 			foreach (Element elem in this.elementos) {
-				elem.getTreeNode (node2,menu);
+				elem.GetTreeNode (node2,menu);
 			}
 			node2.ContextMenuStrip = menu;
 			node2.ExpandAll ();
 		}
-		public void addElem(Element elem){
-			this.elementos.Add(elem);
+
+		public override DataGridView GenerateDataGrid ()
+		{
+			return base.GenerateDataGrid ();
 		}
-		public override abstract void drawElement ();
+		
+		public void RemoveElem (Element elem)
+		{
+			this.elementos.Remove(elem);
+		}
+		public abstract void AddElem(Element elem);
+		public override abstract System.Windows.Forms.Control DrawElement ();
 	}
 }
 

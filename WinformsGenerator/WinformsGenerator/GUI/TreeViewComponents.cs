@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Reflection;
+using System.ComponentModel;
 
 namespace WinformsGenerator
 {
@@ -16,18 +17,18 @@ namespace WinformsGenerator
 		private void InitializeComponent(){
 
 			
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
-			this.addMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.containersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vBoxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hboxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BorderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.controlsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBoxMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new ContextMenuStrip();
+			this.addMenuItem = new ToolStripMenuItem();
+            this.removeMenuItem = new ToolStripMenuItem();
+            this.containersMenuItem = new ToolStripMenuItem();
+            this.vBoxMenuItem = new ToolStripMenuItem();
+            this.hboxMenuItem = new ToolStripMenuItem();
+            this.gridMenuItem = new ToolStripMenuItem();
+            this.BorderMenuItem = new ToolStripMenuItem();
+            this.controlsMenuItem = new ToolStripMenuItem();
+            this.labelMenuItem = new ToolStripMenuItem();
+            this.buttonMenuItem = new ToolStripMenuItem();
+            this.textBoxMenuItem = new ToolStripMenuItem();
 
 
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -42,8 +43,8 @@ namespace WinformsGenerator
             this.removeMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(111, 70);
-
-
+			this.contextMenuStrip1.Opening+=delegate(object sender , System.ComponentModel.CancelEventArgs e){
+			};
 
 			// 
             // addMenuItem
@@ -54,6 +55,7 @@ namespace WinformsGenerator
             this.addMenuItem.Name = "addMenuItem";
             this.addMenuItem.Size = new System.Drawing.Size(110, 22);
             this.addMenuItem.Text = "Add";
+
 			// 
             // removeMenuItem
             // 
@@ -61,6 +63,11 @@ namespace WinformsGenerator
             this.removeMenuItem.Name = "removeMenuItem";
             this.removeMenuItem.Size = new System.Drawing.Size(110, 22);
             this.removeMenuItem.Text = "Remove";
+			this.removeMenuItem.Click+=delegate(object sender,EventArgs e){
+				Console.WriteLine(e.ToString());
+				Controller.RemoveElement((Element)this.treeView1.SelectedNode.Tag,(Container)this.treeView1.SelectedNode.Parent.Tag);
+				this.RefreshTreeView();
+			};
 
 			// 
             // containersMenuItem
@@ -114,7 +121,7 @@ namespace WinformsGenerator
             this.gridMenuItem.Size = new System.Drawing.Size(110, 22);
             this.gridMenuItem.Text = "Grid";
 			this.gridMenuItem.Click+=delegate(object sender, EventArgs e){
-				Controller.addElemnt(new WinformsGenerator.Grid(),(Container) this.treeView1.SelectedNode.Tag);
+				Controller.addElemnt(new WinformsGenerator.Grid(),((Container)this.treeView1.SelectedNode.Tag));
 				this.AddItem(sender);
 			};
 
@@ -177,6 +184,7 @@ namespace WinformsGenerator
 				if(e.Node.Tag!=null){
 					Console.WriteLine(e.Node.Tag.GetType());
 				}
+				Controller.SelectItem((Element)e.Node.Tag);
 			};
 
             this.Controls.Add(this.treeView1);
@@ -209,7 +217,7 @@ namespace WinformsGenerator
 			node = this.treeView1.Nodes.Add (App.formulario.Name);
 			node.Tag=App.formulario;
 			foreach (Element elem in App.formulario.elementos) {
-				elem.getTreeNode(node,this.contextMenuStrip1);
+				elem.GetTreeNode(node,this.contextMenuStrip1);
 
 			}
 			node.ContextMenuStrip = this.contextMenuStrip1;

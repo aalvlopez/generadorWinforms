@@ -14,28 +14,27 @@ namespace WinformsGenerator
 
 		private void InitializeComponent(){
 			
-            WorkSpace.panelWork = new Panel();
+            this.panelWork = new Panel();
 
-			WorkSpace.panelWork.SuspendLayout();
+			this.panelWork.SuspendLayout();
 			this.SuspendLayout();
 			
             // 
             // panelWork
             // 
-            WorkSpace.panelWork.BackColor = SystemColors.ActiveCaption;
-            WorkSpace.panelWork.Name = "panel2";
-            WorkSpace.panelWork.Size = new Size(500, 372);
+            this.panelWork.BackColor = SystemColors.ActiveCaption;
+            this.panelWork.Name = "panel2";
+            this.panelWork.Size = new Size(500, 372);
 
 
-			this.Controls.Add(WorkSpace.panelWork);
+			this.Controls.Add(this.panelWork);
 
-			WorkSpace.panelWork.ResumeLayout(false);
+			this.panelWork.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
 
-
 		
-        public static Panel panelWork;
+        public Panel panelWork;
 	}
 }
 

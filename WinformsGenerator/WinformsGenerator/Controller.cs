@@ -1,4 +1,7 @@
 using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Collections.Generic;
 
 namespace WinformsGenerator
@@ -8,16 +11,18 @@ namespace WinformsGenerator
 		public static List<Element> ElementosForm =new List<Element>();
 
 
-		public static void addElemnt (Element elemento, Formulario parent)
-		{
-			parent.addElem(elemento);
-		}
 		public static void addElemnt (Element elemento, Container parent)
 		{
-			parent.addElem(elemento);
+			parent.AddElem(elemento);
+			MainWindow.ReDraw((Panel)App.formulario.DrawElement());
 		}
-		public static void removeElement (){
-			//A ver como lo hago
+		public static void SelectItem (Element elemento)
+		{
+			MainWindow.GenerateDataGrid(elemento.GenerateDataGrid());
+		}
+		public static void RemoveElement (Element elemento, Container parent){
+			parent.RemoveElem(elemento);
+			MainWindow.ReDraw((Panel)App.formulario.DrawElement());
 		}
 		
 

@@ -13,15 +13,17 @@ namespace WinformsGenerator
 		public Button (String id, DockStyle style, String name, String text):base(id, style, name,text){
 		}
 
-		public override void drawElement (){
+		public override System.Windows.Forms.Control DrawElement (){
 			System.Windows.Forms.Button btn = new System.Windows.Forms.Button();
 			btn.Dock=this.Dock;
 			btn.Name=this.Name;
 			btn.Text=this.Text;
 
-			WorkSpace.panelWork.SuspendLayout();
-			WorkSpace.panelWork.Controls.Add(btn);
-			WorkSpace.panelWork.ResumeLayout(false);
+			return btn;
+		}
+		public override DataGridView GenerateDataGrid ()
+		{
+			return base.GenerateDataGrid();
 		}
 	}
 }

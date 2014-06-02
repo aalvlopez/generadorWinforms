@@ -25,14 +25,12 @@ namespace WinformsGenerator
 			this.archivoToolStripMenuItem = new ToolStripMenuItem ();
 			this.menuStrip1 = new MenuStrip ();
 
-			MainWindow.panelCenter = new WorkSpace();
-			this.panelTreeView = new TreeViewComponents();
-			this.panelPropertries=new Properties();
+
 			
 			this.menuStrip1.SuspendLayout ();
             MainWindow.panelCenter.SuspendLayout();
-			this.panelTreeView.SuspendLayout();
-			this.panelPropertries.SuspendLayout();
+			MainWindow.panelTreeView.SuspendLayout();
+			MainWindow.panelPropertries.SuspendLayout();
             this.SuspendLayout();
            
 			// 
@@ -55,9 +53,9 @@ namespace WinformsGenerator
 			// 
             // panelTreeview
             // 
-			this.panelTreeView.Dock = DockStyle.Left;
-            this.panelTreeView.Name = "panelTreeview";
-			this.panelTreeView.Size = new Size(300, 317);
+			MainWindow.panelTreeView.Dock = DockStyle.Left;
+            MainWindow.panelTreeView.Name = "panelTreeview";
+			MainWindow.panelTreeView.Size = new Size(300, 317);
 			
             // 
             // splitterLeft
@@ -74,6 +72,7 @@ namespace WinformsGenerator
             MainWindow.panelCenter.BorderStyle = BorderStyle.FixedSingle;
             MainWindow.panelCenter.Dock = DockStyle.Fill;
             MainWindow.panelCenter.Name = "panel1";
+			MainWindow.panelCenter.panelWork.Controls.Add(new Panel(){BackColor=Color.Black,Dock=DockStyle.Fill});
             
             // 
             // splitterRight
@@ -88,9 +87,9 @@ namespace WinformsGenerator
 			// 
             // panelProperties
             // 
-			this.panelPropertries.Dock = DockStyle.Right;
-            this.panelPropertries.Name = "panelTreeview";
-            this.panelPropertries.Size = new Size(300, 317);
+			MainWindow.panelPropertries.Dock = DockStyle.Right;
+            MainWindow.panelPropertries.Name = "panelTreeview";
+            MainWindow.panelPropertries.Size = new Size(300, 317);
 
             // 
             // Form1
@@ -102,17 +101,28 @@ namespace WinformsGenerator
             this.Controls.Add(this.splitterRight);
             this.Controls.Add(MainWindow.panelCenter);
             this.Controls.Add(this.splitterLeft);
-            this.Controls.Add(this.panelPropertries);
-			this.Controls.Add(this.panelTreeView);
+            this.Controls.Add(MainWindow.panelPropertries);
+			this.Controls.Add(MainWindow.panelTreeView);
 			this.Controls.Add (this.menuStrip1);
 
 			this.menuStrip1.ResumeLayout(false);
             MainWindow.panelCenter.ResumeLayout(false);
-			this.panelTreeView.ResumeLayout(false);
-			this.panelPropertries.ResumeLayout(false);
+			MainWindow.panelTreeView.ResumeLayout(false);
+			MainWindow.panelPropertries.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
+		public static void ReDraw(Panel panel){
+			MainWindow.panelCenter.panelWork=panel;
+			MainWindow.panelCenter.Controls.Clear();
+			MainWindow.panelCenter.Controls.Add(MainWindow.panelCenter.panelWork);
+		}
+		public static void GenerateDataGrid (DataGridView datagridView)
+		{
+			MainWindow.panelPropertries.Controls.Clear();
+			MainWindow.panelPropertries.dataGridView1=datagridView;
+			MainWindow.panelPropertries.Controls.Add(MainWindow.panelPropertries.dataGridView1);
+		}
 		//splitters
         private Splitter splitterLeft;
         private Splitter splitterRight;
@@ -122,9 +132,9 @@ namespace WinformsGenerator
 		private MenuStrip menuStrip1;
 
 		//Secciones
-        public static WorkSpace panelCenter;
-		private TreeViewComponents panelTreeView;
-		private Properties panelPropertries;
+        public static WorkSpace panelCenter= new WorkSpace();
+		public static TreeViewComponents panelTreeView = new TreeViewComponents();
+		public static Properties panelPropertries = new Properties();
 
     }
 }

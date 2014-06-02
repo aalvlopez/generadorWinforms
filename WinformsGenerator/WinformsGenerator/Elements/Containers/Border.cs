@@ -13,15 +13,23 @@ namespace WinformsGenerator
 		public Border(String id, DockStyle style, String name):base(id, style, name)
 		{
 		}
-
-		public override void drawElement (){
+		public override void AddElem (Element elem)
+		{
+			this.elementos.Add(elem);
+		}
+		public override System.Windows.Forms.Control DrawElement (){
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
 			panel.Dock = this.Dock;
 			panel.Name=this.Name;
-			
-			WorkSpace.panelWork.SuspendLayout();
-			WorkSpace.panelWork.Controls.Add(panel);
-			WorkSpace.panelWork.ResumeLayout(false);
+			panel.BackColor=Color.Azure;
+			foreach(Element e in this.elementos){
+				panel.Controls.Add(e.DrawElement());
+			}
+			return panel;
+		}
+		public override DataGridView GenerateDataGrid ()
+		{
+			return base.GenerateDataGrid ();
 		}
 	}
 }

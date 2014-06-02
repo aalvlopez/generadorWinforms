@@ -20,16 +20,43 @@ namespace WinformsGenerator
 			this.TextAlign=textAlign;
 		}
 
-		public override void drawElement (){
+		public override System.Windows.Forms.Control DrawElement (){
 			System.Windows.Forms.Label label = new System.Windows.Forms.Label();
 			label.Dock=this.Dock;
 			label.Name=this.Name;
 			label.Text=this.Text;
 			label.TextAlign=this.TextAlign;
 
-			WorkSpace.panelWork.SuspendLayout();
-			WorkSpace.panelWork.Controls.Add(label);
-			WorkSpace.panelWork.ResumeLayout(false);
+			return label;
+		}
+		public override DataGridView GenerateDataGrid ()
+		{
+			DataGridView dataGridView = base.GenerateDataGrid ();
+			string[] row = { "TextAlign"};
+			dataGridView.Rows.Add (row);
+
+
+			var combo=new DataGridViewComboBoxCell();
+			combo.DataSource=Enum.GetValues(typeof(ContentAlignment));
+			combo.Value = this.TextAlign;
+			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=combo;
+
+			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
+
+				int y = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
+				switch((String)((DataGridView)sender).Rows[y].Cells[0].Value){
+				case "TextAlign":
+					this.TextAlign=(ContentAlignment) Enum.Parse(typeof(ContentAlignment),((DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					break;
+				
+				default:
+					break;
+				}
+				MainWindow.panelTreeView.RefreshTreeView();
+				MainWindow.ReDraw((Panel)App.formulario.DrawElement());
+			};
+
+			return dataGridView;
 		}
 	}
 }
