@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace WinformsGenerator
 {
-	public class WorkSpace
+	public class WorkSpace:Panel
 	{
 		public WorkSpace ()
 		{
@@ -13,26 +13,29 @@ namespace WinformsGenerator
 		}
 
 		private void InitializeComponent(){
-			this.workPanel = new Panel();
-			this.workPanel.SuspendLayout();
-			this.workPanel.BackColor = Color.White;
-			this.workPanel.Dock = DockStyle.Fill;
+			
+            WorkSpace.panelWork = new Panel();
 
-			this.constructionPanel = new Panel();
-			this.constructionPanel.SuspendLayout();
-			this.constructionPanel.Dock = DockStyle.None;
-			this.constructionPanel.MinimumSize = new Size(500,500);
-			this.constructionPanel.BackColor = Color.Black;
-			this.constructionPanel.Location = this.workPanel.Location;
+			WorkSpace.panelWork.SuspendLayout();
+			this.SuspendLayout();
+			
+            // 
+            // panelWork
+            // 
+            WorkSpace.panelWork.BackColor = SystemColors.ActiveCaption;
+            WorkSpace.panelWork.Name = "panel2";
+            WorkSpace.panelWork.Size = new Size(500, 372);
 
-			this.workPanel.Controls.Add(this.constructionPanel);
-			this.workPanel.ResumeLayout(false);
-			this.constructionPanel.ResumeLayout(false);
-		
 
+			this.Controls.Add(WorkSpace.panelWork);
+
+			WorkSpace.panelWork.ResumeLayout(false);
+			this.ResumeLayout(false);
 		}
-		public Panel workPanel;
-		public Panel constructionPanel;
+
+
+		
+        public static Panel panelWork;
 	}
 }
 

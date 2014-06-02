@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}</ProjectGuid>
+    <ProjectGuid>{8E46B26B-22AB-4AC2-8F0D-FBAE5B008624}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>WinformsGenerator</RootNamespace>
-    <AssemblyName>WinformsGenerator</AssemblyName>
+    <RootNamespace>pruebas</RootNamespace>
+    <AssemblyName>pruebas</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,39 +32,16 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="GUI\MainWindow.cs" />
-    <Compile Include="GUI\WorkSpace.cs" />
-    <Compile Include="GUI\TreeViewComponents.cs">
-      <DeployService-Deploy>true</DeployService-Deploy>
-    </Compile>
-    <Compile Include="GUI\Properties.cs" />
-    <Compile Include="Elements\Element.cs" />
-    <Compile Include="Elements\Containers\VBox.cs" />
-    <Compile Include="Elements\Containers\HBox.cs" />
-    <Compile Include="Elements\Containers\Grid.cs" />
-    <Compile Include="Elements\Containers\Border.cs" />
-    <Compile Include="Elements\Containers\Container.cs" />
-    <Compile Include="Elements\Controls\Control.cs" />
-    <Compile Include="Elements\Controls\Button.cs" />
-    <Compile Include="Elements\Controls\Label.cs" />
-    <Compile Include="Elements\Controls\TextBox.cs" />
-    <Compile Include="Controller.cs" />
-    <Compile Include="Elements\Formulario.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUI\" />
-    <Folder Include="Elements\" />
-    <Folder Include="Elements\Containers\" />
-    <Folder Include="Elements\Controls\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Data" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
   </ItemGroup>
 </Project>

@@ -1,135 +1,130 @@
-using System;
+
+//Main Window
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-
-//Main Window
-
 namespace WinformsGenerator
 {
-	public class MainWindow : Form
-	{
+    public class MainWindow:Form
+    {
+		public MainWindow()
+        {
+            InitializeComponent();
+        }
+       
+        private void InitializeComponent()
+        {
+			this.splitterLeft = new Splitter();
+            this.splitterRight = new Splitter();
 
-		public MainWindow ()
-		{
-			this.InitializeComponent ();
-		}
+			this.archivoToolStripMenuItem = new ToolStripMenuItem ();
+			this.menuStrip1 = new MenuStrip ();
 
-		private void InitializeComponent ()
-		{
-
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer ();
-			this.splitContainer2 = new System.Windows.Forms.SplitContainer ();
-			this.treeView1 = new TreeViewComponents ();
-			this.menuStrip1 = new System.Windows.Forms.MenuStrip ();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem ();
-			this.splitContainer1.Panel1.SuspendLayout ();
-			this.splitContainer1.Panel2.SuspendLayout ();
-			this.splitContainer2.Panel1.SuspendLayout();
-			this.splitContainer1.SuspendLayout ();
-			this.splitContainer2.SuspendLayout ();
+			MainWindow.panelCenter = new WorkSpace();
+			this.panelTreeView = new TreeViewComponents();
+			this.panelPropertries=new Properties();
+			
 			this.menuStrip1.SuspendLayout ();
-			this.SuspendLayout ();
-			// 
-			// splitContainer1
-			// 
-			this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point (0, 24);
-			this.splitContainer1.Name = "splitContainer1";
-			// 
-			// splitContainer1.Panel1
-			// 
-			this.splitContainer1.Panel1.Controls.Add (this.treeView1);
-			// 
-			// splitContainer1.Panel2
-			// 
-			this.splitContainer1.Panel2.Controls.Add (this.splitContainer2);
-			this.splitContainer1.Size = new System.Drawing.Size (888, 601);
-			this.splitContainer1.SplitterDistance = 244;
-			// 
-			// splitContainer2
-			// 
-			
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridView1);
-			this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer2.Name = "splitContainer2";
-			this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Vertical;
-			
-            this.splitContainer2.Size = new System.Drawing.Size(590, 601);
-            this.splitContainer2.SplitterDistance = 391;
-
-
+            MainWindow.panelCenter.SuspendLayout();
+			this.panelTreeView.SuspendLayout();
+			this.panelPropertries.SuspendLayout();
+            this.SuspendLayout();
+           
 			// 
 			// menuStrip1
 			// 
-			this.menuStrip1.Items.AddRange (new System.Windows.Forms.ToolStripItem[] {
+			this.menuStrip1.Items.AddRange (new ToolStripItem[] {
             this.archivoToolStripMenuItem}
 			);
-			this.menuStrip1.Location = new System.Drawing.Point (0, 0);
+			this.menuStrip1.Location = new Point (0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size (888, 24);
+			this.menuStrip1.Size = new Size (888, 24);
 			this.menuStrip1.Text = "menuStrip1";
 			// 
 			// archivoToolStripMenuItem
 			// 
 			this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-			this.archivoToolStripMenuItem.Size = new System.Drawing.Size (60, 20);
+			this.archivoToolStripMenuItem.Size = new Size (60, 20);
 			this.archivoToolStripMenuItem.Text = "Archivo";
+
 			// 
-            // dataGridView1
+            // panelTreeview
             // 
-            this.dataGridView1.ColumnCount = 2;
-            this.dataGridView1.Columns[0].Name = "Nombre";
-            this.dataGridView1.Columns[1].Name = "Valor";
-			this.dataGridView1.Columns[0].MinimumWidth = 50;
-			this.dataGridView1.Columns[1].MinimumWidth = 50;
-			dataGridView1.AutoSizeColumnsMode =DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            string[] row0 = { "Dock", "Fill" };
-            this.dataGridView1.Rows.Add(row0);
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Width = this.splitContainer2.Panel2.Width;
-			this.dataGridView1.Anchor = (AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right|AnchorStyles.Bottom);
-			this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			this.panelTreeView.Dock = DockStyle.Left;
+            this.panelTreeView.Name = "panelTreeview";
+			this.panelTreeView.Size = new Size(300, 317);
+			
+            // 
+            // splitterLeft
+            // 
+            this.splitterLeft.BorderStyle = BorderStyle.FixedSingle;
+            this.splitterLeft.Name = "splitter1";
+			this.splitterLeft.Size=new Size(5,317);
+            this.splitterLeft.TabStop = false;
+
+
+            // 
+            // panelCenter
+            // 
+            MainWindow.panelCenter.BorderStyle = BorderStyle.FixedSingle;
+            MainWindow.panelCenter.Dock = DockStyle.Fill;
+            MainWindow.panelCenter.Name = "panel1";
+            
+            // 
+            // splitterRight
+            // 
+            this.splitterRight.BorderStyle = BorderStyle.FixedSingle;
+            this.splitterRight.Dock = DockStyle.Right;
+            this.splitterRight.Name = "splitter2";
+            this.splitterRight.TabStop = false;
+			this.splitterRight.Size=new Size(5,317);
+            
 
 			// 
-			// Form1
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF (6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size (888, 625);
-			this.Controls.Add (this.splitContainer1);
+            // panelProperties
+            // 
+			this.panelPropertries.Dock = DockStyle.Right;
+            this.panelPropertries.Name = "panelTreeview";
+            this.panelPropertries.Size = new Size(300, 317);
+
+            // 
+            // Form1
+            // 
+			
+            this.Name = "Form1";
+            this.ClientSize = new Size(1158, 700);
+
+            this.Controls.Add(this.splitterRight);
+            this.Controls.Add(MainWindow.panelCenter);
+            this.Controls.Add(this.splitterLeft);
+            this.Controls.Add(this.panelPropertries);
+			this.Controls.Add(this.panelTreeView);
 			this.Controls.Add (this.menuStrip1);
-			this.MainMenuStrip = this.menuStrip1;
-			this.Name = "Form1";
-			this.Text = "Form1";
-			this.splitContainer1.Panel1.ResumeLayout (false);
-			this.splitContainer1.Panel2.ResumeLayout (false);
-			this.splitContainer2.Panel1.ResumeLayout(false);
-			this.splitContainer1.ResumeLayout (false);
-			this.splitContainer2.ResumeLayout (false);
-			this.menuStrip1.ResumeLayout (false);
-			this.menuStrip1.PerformLayout ();
-			this.ResumeLayout (false);
-			this.PerformLayout ();
 
-		}
+			this.menuStrip1.ResumeLayout(false);
+            MainWindow.panelCenter.ResumeLayout(false);
+			this.panelTreeView.ResumeLayout(false);
+			this.panelPropertries.ResumeLayout(false);
+            this.ResumeLayout(false);
 
+        }
+		//splitters
+        private Splitter splitterLeft;
+        private Splitter splitterRight;
 
+		//Menu
+		private ToolStripMenuItem archivoToolStripMenuItem;
+		private MenuStrip menuStrip1;
 
+		//Secciones
+        public static WorkSpace panelCenter;
+		private TreeViewComponents panelTreeView;
+		private Properties panelPropertries;
 
-		private System.Windows.Forms.SplitContainer splitContainer1;
-		private System.Windows.Forms.SplitContainer splitContainer2;
-		private TreeViewComponents treeView1;
-		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-		private System.Windows.Forms.DataGridView dataGridView1;
-	}
+    }
 }
-
