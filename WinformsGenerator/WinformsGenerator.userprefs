@@ -5,21 +5,25 @@
       <File FileName="WinformsGenerator/Controller.cs" Line="25" Column="59" />
       <File FileName="WinformsGenerator/Elements/Containers/Container.cs" Line="26" Column="4" />
       <File FileName="WinformsGenerator/Elements/Containers/Grid.cs" Line="41" Column="29" />
-      <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="37" Column="4" />
+      <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="230" Column="56" />
       <File FileName="WinformsGenerator/Elements/Controls/Button.cs" Line="22" Column="15" />
-      <File FileName="WinformsGenerator/Elements/Controls/Control.cs" Line="25" Column="9" />
+      <File FileName="WinformsGenerator/Elements/Controls/Control.cs" Line="23" Column="46" />
       <File FileName="WinformsGenerator/Elements/Containers/VBox.cs" Line="21" Column="21" />
+      <File FileName="WinformsGenerator/App.cs" Line="17" Column="47" />
+      <File FileName="WinformsGenerator/GUI/MainWindow.cs" Line="115" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="WinformsGenerator" expanded="True">
-            <Node name="References" expanded="True" selected="True" />
+            <Node name="References" expanded="True" />
             <Node name="Elements" expanded="True">
               <Node name="Containers" expanded="True" />
               <Node name="Controls" expanded="True" />
             </Node>
-            <Node name="GUI" expanded="True" />
+            <Node name="GUI" expanded="True">
+              <Node name="TreeViewComponents.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

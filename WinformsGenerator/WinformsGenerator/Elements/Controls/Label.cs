@@ -20,15 +20,27 @@ namespace WinformsGenerator
 			this.TextAlign=textAlign;
 		}
 
+		public Label (Label l):base(l.Id, l.Dock, l.Name,l.Text)
+		{
+			this.TextAlign=l.TextAlign;
+		}
+
+		public override Element CopyElem (){
+			return new WinformsGenerator.Label(this);
+		}
+
 		public override System.Windows.Forms.Control DrawElement (){
 			System.Windows.Forms.Label label = new System.Windows.Forms.Label();
 			label.Dock=this.Dock;
 			label.Name=this.Name;
 			label.Text=this.Text;
 			label.TextAlign=this.TextAlign;
-
+			label.Click+=delegate(object sender, EventArgs elementos){
+				this.ClickItem();
+			};
 			return label;
 		}
+
 		public override DataGridView GenerateDataGrid ()
 		{
 			DataGridView dataGridView = base.GenerateDataGrid ();

@@ -11,8 +11,8 @@ namespace WinformsGenerator
 			get;
 			set;
 		}
-		public TextBox ():base()
-		{
+
+		public TextBox ():base(){
 			this.TextAlign=HorizontalAlignment.Center;
 		}
 
@@ -20,21 +20,28 @@ namespace WinformsGenerator
 			this.TextAlign=textAlign;
 		}
 
+		public TextBox (TextBox t):base(t.Id, t.Dock, t.Name,t.Text){
+			this.TextAlign=t.TextAlign;
+		}
 
+		public override Element CopyElem (){
+			return new WinformsGenerator.TextBox(this);
+		}
 
-		public override System.Windows.Forms.Control DrawElement ()
-		{
+		public override System.Windows.Forms.Control DrawElement (){
 			System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
 			textBox.Dock=this.Dock;
 			textBox.Name=this.Name;
 			textBox.Text = this.Text;
 			textBox.TextAlign = this.TextAlign;
-
+			textBox.Click+=delegate(object sender, EventArgs elementos){
+				this.ClickItem();
+			};
 			return textBox;
 		}
 
-		public override DataGridView GenerateDataGrid ()
-		{
+
+		public override DataGridView GenerateDataGrid (){
 			DataGridView dataGridView = base.GenerateDataGrid ();
 			string[] row = { "TextAlign"};
 			dataGridView.Rows.Add (row);

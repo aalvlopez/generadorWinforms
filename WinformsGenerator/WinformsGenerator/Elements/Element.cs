@@ -31,6 +31,39 @@ namespace WinformsGenerator
 			this.Name=name;
 			this.Id=id;
 		}
+
+
+		public void ClickItem(){
+			foreach(TreeNode t in MainWindow.panelTreeView.treeView1.Nodes){
+				if((Element)t.Tag == this){
+					MainWindow.panelTreeView.treeView1.SelectedNode=t;
+					MainWindow.panelTreeView.treeView1.Select();
+					Controller.SelectItem((Element)t.Tag);
+				}else{
+					if(t.Nodes.Count>0){
+						if(this.findTag(t)){
+							break;
+						}
+					}
+				}
+			}
+		}
+		public Boolean findTag (TreeNode node)
+		{
+			foreach(TreeNode t in node.Nodes){
+				if((Element)t.Tag==(this)){
+					MainWindow.panelTreeView.treeView1.SelectedNode=t;
+					MainWindow.panelTreeView.treeView1.Select();
+					Controller.SelectItem((Element)t.Tag);
+					return true;
+				}else{
+					if( this.findTag(t)){
+						return true;
+					}
+				}
+			}
+			return false;
+		}
 		public virtual DataGridView GenerateDataGrid ()
 		{
 			DataGridView dataGridView = new DataGridView ();
@@ -96,6 +129,7 @@ namespace WinformsGenerator
 
 		public abstract System.Windows.Forms.Control DrawElement();
 		public abstract void GetTreeNode(TreeNode node,ContextMenuStrip menu);
+		public abstract Element CopyElem();
 	}
 }
 

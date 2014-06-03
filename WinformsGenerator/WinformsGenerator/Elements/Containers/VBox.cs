@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace WinformsGenerator
 {
@@ -14,8 +15,16 @@ namespace WinformsGenerator
 		public VBox ():base()
 		{
 		}
-		public VBox(String id, DockStyle style, String name, int numRows):base(id, style, name){
+		public VBox(String id, DockStyle style, String name, int numRows,List<Element> elems):base(id, style, name,elems){
 			this.NumRows=numRows;
+		}
+
+		public VBox(VBox vb):base(vb.Id, vb.Dock, vb.Name,vb.elementos){
+			this.NumRows=vb.NumRows;
+		}
+
+		public override Element CopyElem (){
+			return (Element)(new WinformsGenerator.VBox(this));
 		}
 
 		public void AddRow ()
@@ -41,7 +50,10 @@ namespace WinformsGenerator
 			table.RowCount=this.NumRows;
 			table.BackColor=Color.Beige;
 			table.AutoSize=true;
-
+			table.Click+=delegate(object sender, EventArgs elementos){
+				Console.WriteLine(sender.GetType().ToString());
+				this.ClickItem();
+			};
 			for(int i = 0; i<table.RowCount;i++){
 				table.RowStyles.Add(new RowStyle(SizeType.Percent,(100/table.RowCount)));
 			}

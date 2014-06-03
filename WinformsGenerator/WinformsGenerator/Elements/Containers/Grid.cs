@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace WinformsGenerator
 {
@@ -11,19 +12,31 @@ namespace WinformsGenerator
 			get;
 			set;
 		}
+
 		public int NumRows {
 			get;
 			set;
 		}
-		public Grid ():base()
-		{
+
+		public Grid ():base(){
 			this.NumColumns=0;
 			this.NumRows=0;
 		}
-		public Grid (String id, DockStyle style, String name, int numCols, int numRows):base(id, style, name){
+
+		public Grid (String id, DockStyle style, String name, int numCols, int numRows,List<Element> elems):base(id, style, name,elems){
 			this.NumColumns=numCols;
 			this.NumRows=numRows;
 		}
+
+		public Grid(Grid g):base(g.Id, g.Dock, g.Name,g.elementos){
+			this.NumColumns=g.NumColumns;
+			this.NumRows=g.NumRows;
+		}
+
+		public override Element CopyElem (){
+			return new WinformsGenerator.Grid(this);
+		}
+
 		public void AddColumn ()
 		{
 			this.NumColumns++;
@@ -48,7 +61,9 @@ namespace WinformsGenerator
 			table.ColumnCount=this.NumColumns;
 			table.RowCount=this.NumRows;
 			table.BackColor=Color.BlueViolet;
-
+			table.Click+=delegate(object sender, EventArgs elementos){
+				this.ClickItem();
+			};
 			for(int a = 0; a<table.RowCount;a++){
 				table.RowStyles.Add(new RowStyle(SizeType.Percent,(100/table.RowCount)));
 			}

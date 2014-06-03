@@ -13,7 +13,7 @@ namespace WinformsGenerator
 		public Formulario ():base()
 		{
 		}
-		public Formulario (String id, DockStyle style, String name):base(id, style, name){
+		public Formulario (String id, DockStyle style, String name,List<Element> elem):base(id, style, name,elem){
 		}
 		public override void AddElem (Element elem)
 		{
@@ -25,12 +25,17 @@ namespace WinformsGenerator
 			panel.Dock = DockStyle.None;
 			panel.BackColor=Color.Chocolate;
 			panel.Name=this.Name;
-            panel.Size = new Size(500, 372);
+            panel.Size = new Size(600, 420);
+			panel.Click+=delegate(object sender, EventArgs elementos){
+				this.ClickItem();
+			};
 			foreach(Element e in this.elementos){
 				panel.Controls.Add(e.DrawElement());
 			}
 			return panel;
 		}
+		public override Element CopyElem (){return null;}
+		
 	}
 }
 

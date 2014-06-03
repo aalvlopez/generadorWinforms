@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace WinformsGenerator
 {
@@ -15,8 +16,16 @@ namespace WinformsGenerator
 		public HBox ():base()
 		{
 		}
-		public HBox(String id, DockStyle style, String name, int numCols):base(id, style, name){
+		public HBox(String id, DockStyle style, String name, int numCols,List<Element> elems):base(id, style, name,elems){
 			
+		}
+
+		public HBox(HBox hb):base(hb.Id, hb.Dock, hb.Name,hb.elementos){
+			this.NumColumns=hb.NumColumns;
+		}
+
+		public override Element CopyElem (){
+			return new WinformsGenerator.HBox(this);
 		}
 
 		public void AddColumn ()
@@ -42,7 +51,9 @@ namespace WinformsGenerator
 			table.ColumnCount=this.NumColumns;
 			table.RowCount=1;
 			table.BackColor=Color.Crimson;
-
+			table.Click+=delegate(object sender, EventArgs elementos){
+				this.ClickItem();
+			};
 			for(int j = 0; j<table.ColumnCount;j++){
 				table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,(100/table.ColumnCount)));
 			}

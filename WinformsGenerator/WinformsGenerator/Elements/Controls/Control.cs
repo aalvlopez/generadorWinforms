@@ -21,8 +21,6 @@ namespace WinformsGenerator
 		public override void GetTreeNode (TreeNode node,ContextMenuStrip menu)
 		{
 			TreeNode node2=node.Nodes.Add (this.Name);
-
-			menu.
 			node2.ContextMenuStrip = menu;
 			node2.Tag=this;
 		}

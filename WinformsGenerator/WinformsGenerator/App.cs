@@ -14,6 +14,7 @@ namespace WinformsGenerator
 			App.formulario.Name="Formulario";
 			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+			MainWindow.panelTreeView.RefreshTreeView();
             Application.Run(App.m);
 
 		}
