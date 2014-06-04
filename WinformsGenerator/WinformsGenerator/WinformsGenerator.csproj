@@ -66,13 +66,6 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
-    <Reference Include="MonoDevelop.XmlEditor, Version=2.6.0.0, Culture=neutral">
-      <Private>False</Private>
-      <Package>monodevelop-core-addins</Package>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Commons.Xml.Relaxng" />
   </ItemGroup>
 </Project>

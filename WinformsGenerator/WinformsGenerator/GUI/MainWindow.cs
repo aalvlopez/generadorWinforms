@@ -8,7 +8,6 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xaml;
 
 
 namespace WinformsGenerator
