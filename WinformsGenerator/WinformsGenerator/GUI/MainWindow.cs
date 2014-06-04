@@ -8,6 +8,9 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xaml;
+
+
 namespace WinformsGenerator
 {
     public class MainWindow:Form
@@ -24,8 +27,6 @@ namespace WinformsGenerator
 
 			this.archivoToolStripMenuItem = new ToolStripMenuItem ();
 			this.menuStrip1 = new MenuStrip ();
-
-
 			
 			this.menuStrip1.SuspendLayout ();
             MainWindow.panelCenter.SuspendLayout();
@@ -72,7 +73,6 @@ namespace WinformsGenerator
             MainWindow.panelCenter.BorderStyle = BorderStyle.FixedSingle;
             MainWindow.panelCenter.Dock = DockStyle.Fill;
             MainWindow.panelCenter.Name = "panel1";
-			MainWindow.panelCenter.panelWork.Controls.Add(new Panel(){BackColor=Color.Black,Dock=DockStyle.Fill});
             
             // 
             // splitterRight
@@ -96,7 +96,8 @@ namespace WinformsGenerator
             // 
 			
             this.Name = "Form1";
-            this.ClientSize = new Size(1158, 700);
+            this.Size = new Size(1158, 700);
+			this.Text = "WinformsGenerator";
 
             this.Controls.Add(this.splitterRight);
             this.Controls.Add(MainWindow.panelCenter);

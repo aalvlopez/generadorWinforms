@@ -14,17 +14,12 @@ namespace WinformsGenerator
 
 		private void InitializeComponent(){
 			
-            this.panelWork = new Panel();
+            this.panelWork = (Panel)App.formulario.DrawElement();
 
 			this.panelWork.SuspendLayout();
 			this.SuspendLayout();
 			
-            // 
-            // panelWork
-            // 
-            this.panelWork.BackColor = SystemColors.ActiveCaption;
-            this.panelWork.Name = "panel2";
-            this.panelWork.Size = new Size(500, 372);
+            
 
 
 			this.Controls.Add(this.panelWork);

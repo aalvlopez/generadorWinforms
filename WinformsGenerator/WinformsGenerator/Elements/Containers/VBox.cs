@@ -14,12 +14,13 @@ namespace WinformsGenerator
 		}
 		public VBox ():base()
 		{
-		}
-		public VBox(String id, DockStyle style, String name, int numRows,List<Element> elems):base(id, style, name,elems){
-			this.NumRows=numRows;
+			this.NumRows=0;
+			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
+			this.Size=table.Size;
 		}
 
-		public VBox(VBox vb):base(vb.Id, vb.Dock, vb.Name,vb.elementos){
+
+		public VBox(VBox vb):base(vb.Id, vb.Dock, vb.Name,vb.elementos,vb.Size,vb.Location){
 			this.NumRows=vb.NumRows;
 		}
 
@@ -50,6 +51,8 @@ namespace WinformsGenerator
 			table.RowCount=this.NumRows;
 			table.BackColor=Color.Beige;
 			table.AutoSize=true;
+			table.Size=this.Size;
+			table.Location=this.Location;
 			table.Click+=delegate(object sender, EventArgs elementos){
 				Console.WriteLine(sender.GetType().ToString());
 				this.ClickItem();

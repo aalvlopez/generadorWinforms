@@ -7,12 +7,14 @@ namespace WinformsGenerator
 {
 	public class Button:Control
 	{
-		public Button ():base(){}
-
-		public Button (String id, DockStyle style, String name, String text):base(id, style, name,text){
+		public Button ():base(){
+			System.Windows.Forms.Button btn = new System.Windows.Forms.Button();
+			this.Size=btn.Size;
 		}
 
-		public Button (Button b):base(b.Id,b.Dock,b.Name,b.Text){}
+
+
+		public Button (Button b):base(b.Id,b.Dock,b.Name,b.Text,b.Size,b.Location){}
 
 		public override Element CopyElem (){
 			return new WinformsGenerator.Button(this);
@@ -23,6 +25,8 @@ namespace WinformsGenerator
 			btn.Dock=this.Dock;
 			btn.Name=this.Name;
 			btn.Text=this.Text;
+			btn.Size=this.Size;
+			btn.Location=this.Location;
 			btn.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};

@@ -1,16 +1,22 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/GUI/TreeViewComponents.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/Elements/Formulario.cs">
     <Files>
-      <File FileName="WinformsGenerator/Controller.cs" Line="25" Column="59" />
-      <File FileName="WinformsGenerator/Elements/Containers/Container.cs" Line="26" Column="4" />
-      <File FileName="WinformsGenerator/Elements/Containers/Grid.cs" Line="41" Column="4" />
-      <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="219" Column="15" />
-      <File FileName="WinformsGenerator/Elements/Controls/Button.cs" Line="21" Column="63" />
-      <File FileName="WinformsGenerator/Elements/Controls/Control.cs" Line="23" Column="46" />
-      <File FileName="WinformsGenerator/Elements/Containers/VBox.cs" Line="21" Column="1" />
-      <File FileName="WinformsGenerator/App.cs" Line="17" Column="47" />
-      <File FileName="WinformsGenerator/GUI/MainWindow.cs" Line="115" Column="28" />
+      <File FileName="WinformsGenerator/Elements/Controls/TextBox.cs" Line="36" Column="27" />
+      <File FileName="WinformsGenerator/Elements/Controls/Label.cs" Line="37" Column="14" />
+      <File FileName="WinformsGenerator/Elements/Controls/Button.cs" Line="28" Column="23" />
+      <File FileName="WinformsGenerator/Elements/Containers/VBox.cs" Line="24" Column="28" />
+      <File FileName="WinformsGenerator/Elements/Containers/HBox.cs" Line="55" Column="25" />
+      <File FileName="WinformsGenerator/Elements/Containers/Grid.cs" Line="62" Column="24" />
+      <File FileName="WinformsGenerator/Elements/Containers/Border.cs" Line="11" Column="27" />
+      <File FileName="WinformsGenerator/Elements/Element.cs" Line="11" Column="49" />
+      <File FileName="WinformsGenerator/Elements/Containers/Container.cs" Line="15" Column="143" />
+      <File FileName="WinformsGenerator/Elements/Controls/Control.cs" Line="18" Column="131" />
+      <File FileName="WinformsGenerator/Elements/Formulario.cs" Line="42" Column="16" />
+      <File FileName="WinformsGenerator/GUI/MainWindow.cs" Line="75" Column="52" />
+      <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="147" Column="70" />
+      <File FileName="WinformsGenerator/App.cs" Line="41" Column="4" />
+      <File FileName="WinformsGenerator/GUI/WorkSpace.cs" Line="17" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,10 +26,9 @@
             <Node name="Elements" expanded="True">
               <Node name="Containers" expanded="True" />
               <Node name="Controls" expanded="True" />
+              <Node name="Formulario.cs" selected="True" />
             </Node>
-            <Node name="GUI" expanded="True">
-              <Node name="TreeViewComponents.cs" selected="True" />
-            </Node>
+            <Node name="GUI" expanded="True" />
           </Node>
         </State>
       </Pad>

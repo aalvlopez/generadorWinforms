@@ -15,12 +15,13 @@ namespace WinformsGenerator
 
 		public HBox ():base()
 		{
-		}
-		public HBox(String id, DockStyle style, String name, int numCols,List<Element> elems):base(id, style, name,elems){
-			
+			this.NumColumns=0;
+			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
+			this.Size=table.Size;
 		}
 
-		public HBox(HBox hb):base(hb.Id, hb.Dock, hb.Name,hb.elementos){
+
+		public HBox(HBox hb):base(hb.Id, hb.Dock, hb.Name,hb.elementos,hb.Size,hb.Location){
 			this.NumColumns=hb.NumColumns;
 		}
 
@@ -51,6 +52,8 @@ namespace WinformsGenerator
 			table.ColumnCount=this.NumColumns;
 			table.RowCount=1;
 			table.BackColor=Color.Crimson;
+			table.Size=this.Size;
+			table.Location=this.Location;
 			table.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};

@@ -15,12 +15,11 @@ namespace WinformsGenerator
 		public Label ():base()
 		{
 			this.TextAlign=ContentAlignment.MiddleRight;
-		}
-		public Label (String id, DockStyle style, String name, String text,ContentAlignment textAlign):base(id, style, name,text){
-			this.TextAlign=textAlign;
+			System.Windows.Forms.Label l = new System.Windows.Forms.Label();
+			this.Size=l.Size;
 		}
 
-		public Label (Label l):base(l.Id, l.Dock, l.Name,l.Text)
+		public Label (Label l):base(l.Id, l.Dock, l.Name,l.Text,l.Size,l.Location)
 		{
 			this.TextAlign=l.TextAlign;
 		}
@@ -35,6 +34,8 @@ namespace WinformsGenerator
 			label.Name=this.Name;
 			label.Text=this.Text;
 			label.TextAlign=this.TextAlign;
+			label.Size=this.Size;
+			label.Location=this.Location;
 			label.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};

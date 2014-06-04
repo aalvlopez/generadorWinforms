@@ -14,13 +14,12 @@ namespace WinformsGenerator
 
 		public TextBox ():base(){
 			this.TextAlign=HorizontalAlignment.Center;
+			System.Windows.Forms.TextBox tb = new System.Windows.Forms.TextBox();
+			this.Size=tb.Size;
 		}
 
-		public TextBox (String id, DockStyle style, String name, String text,HorizontalAlignment textAlign):base(id, style, name,text){
-			this.TextAlign=textAlign;
-		}
 
-		public TextBox (TextBox t):base(t.Id, t.Dock, t.Name,t.Text){
+		public TextBox (TextBox t):base(t.Id, t.Dock, t.Name,t.Text,t.Size,t.Location){
 			this.TextAlign=t.TextAlign;
 		}
 
@@ -34,6 +33,8 @@ namespace WinformsGenerator
 			textBox.Name=this.Name;
 			textBox.Text = this.Text;
 			textBox.TextAlign = this.TextAlign;
+			textBox.Size=this.Size;
+			textBox.Location=this.Location;
 			textBox.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};

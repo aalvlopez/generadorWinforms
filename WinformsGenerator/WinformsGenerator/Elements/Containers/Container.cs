@@ -12,7 +12,7 @@ namespace WinformsGenerator
 		public Container ():base(){
 			elementos=new List<Element>();
 		}
-		public Container (String id, DockStyle style, String name, List<Element> elems):base(id, style, name){
+		public Container (String id, DockStyle style, String name, List<Element> elems,Size size,Point location):base(id, style, name, size,location){
 			this.elementos = new List<Element> ();
 			foreach (Element e in elems) {
 				this.elementos.Add (e.CopyElem ());

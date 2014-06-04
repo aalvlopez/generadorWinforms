@@ -15,7 +15,7 @@ namespace WinformsGenerator
 		{
 			this.Text="PRUEBA";
 		}
-		public Control (String id, DockStyle style, String name,String text):base(id, style, name){
+		public Control (String id, DockStyle style, String name,String text,Size size,Point location):base(id, style, name,size,location){
 			this.Text=text;
 		}
 		public override void GetTreeNode (TreeNode node,ContextMenuStrip menu)

@@ -21,14 +21,12 @@ namespace WinformsGenerator
 		public Grid ():base(){
 			this.NumColumns=0;
 			this.NumRows=0;
+			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
+			this.Size=table.Size;
 		}
 
-		public Grid (String id, DockStyle style, String name, int numCols, int numRows,List<Element> elems):base(id, style, name,elems){
-			this.NumColumns=numCols;
-			this.NumRows=numRows;
-		}
 
-		public Grid(Grid g):base(g.Id, g.Dock, g.Name,g.elementos){
+		public Grid(Grid g):base(g.Id, g.Dock, g.Name,g.elementos,g.Size,g.Location){
 			this.NumColumns=g.NumColumns;
 			this.NumRows=g.NumRows;
 		}
@@ -61,6 +59,8 @@ namespace WinformsGenerator
 			table.ColumnCount=this.NumColumns;
 			table.RowCount=this.NumRows;
 			table.BackColor=Color.BlueViolet;
+			table.Size=this.Size;
+			table.Location=this.Location;
 			table.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};

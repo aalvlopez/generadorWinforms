@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Reflection;
 using System.ComponentModel;
+using System.Xaml;
 
 namespace WinformsGenerator
 {
@@ -16,7 +17,6 @@ namespace WinformsGenerator
 
 		private void InitializeComponent ()
 		{
-
 			this.contextMenuStrip1 = new ContextMenuStrip ();
 			this.addMenuItem = new ToolStripMenuItem ();
 			this.removeMenuItem = new ToolStripMenuItem ();
@@ -144,7 +144,7 @@ namespace WinformsGenerator
 		    foreach (Type type in asm.GetTypes())
 		    {
 		        if (type.Namespace == "WinformsGenerator"){
-					if(type.IsSubclassOf(typeof(WinformsGenerator.Container))){
+					if(type.IsSubclassOf(typeof(WinformsGenerator.Container))&&type.Name!="Formulario"){
 						ToolStripMenuItem item = new ToolStripMenuItem();
 						item.Name = type.Name;
             			item.Size = new System.Drawing.Size(110, 22);

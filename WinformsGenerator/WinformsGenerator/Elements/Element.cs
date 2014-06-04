@@ -2,8 +2,21 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+
 namespace WinformsGenerator
 {
+
+	
+	[XmlInclude(typeof(WinformsGenerator.Formulario))]
+	[XmlInclude(typeof(WinformsGenerator.Control))]
+	[XmlInclude(typeof(WinformsGenerator.Container))]
+	[XmlInclude(typeof(WinformsGenerator.Button))]
+	[XmlInclude(typeof(WinformsGenerator.TextBox))]
+	[XmlInclude(typeof(WinformsGenerator.Label))]
+	[XmlInclude(typeof(WinformsGenerator.HBox))]
+	[XmlInclude(typeof(WinformsGenerator.VBox))]
+	[XmlInclude(typeof(WinformsGenerator.Grid))]
 	public abstract class Element
 	{ 
 		public string Id {
@@ -19,17 +32,28 @@ namespace WinformsGenerator
 			set;
 		}
 
+		public Point Location{
+			get;
+			set;
+		}
+		public Size Size{
+			get;
+			set;
+		}
 		public Element ()
 		{
-			this.Dock=DockStyle.Fill;
+			this.Dock=DockStyle.None;
 			this.Name=this.GetType().ToString();
 			this.Id="0";
+			this.Location=new Point(0,0);
 		}
-		public Element (String id, DockStyle style, String name)
+		public Element (String id, DockStyle style, String name,Size size,Point location)
 		{
 			this.Dock=style;
 			this.Name=name;
 			this.Id=id;
+			this.Location=location;
+			this.Size= size;
 		}
 
 
@@ -99,15 +123,54 @@ namespace WinformsGenerator
 			combo.Value = this.Dock;
 			dataGridView.Rows [1].Cells [1]=combo;
 
-			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
+			string[] row2 = { "Size.Height", this.Size.Height.ToString() };
+			dataGridView.Rows.Add (row2);
+			string[] row3 = { "Size.Width", this.Size.Width.ToString() };
+			dataGridView.Rows.Add (row3);
+			string[] row4 = { "Location.X", this.Location.X.ToString() };
+			dataGridView.Rows.Add (row4);
+			string[] row5 = { "Location.Y", this.Location.Y.ToString() };
+			dataGridView.Rows.Add (row5);
 
-				int y = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-				switch((String)((DataGridView)sender).Rows[y].Cells[0].Value){
+			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
+				bool isNum;
+				int towEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
+				switch((String)((DataGridView)sender).Rows[towEdited].Cells[0].Value){
 				case "Dock":
-					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((DataGridView)sender).Rows[towEdited].Cells[1].Value.ToString());
 					break;
 				case "Name":
-					this.Name=((DataGridView)sender).Rows[y].Cells[1].Value.ToString();
+					this.Name=((DataGridView)sender).Rows[towEdited].Cells[1].Value.ToString();
+					break;
+				case "Size.Height":
+					int height;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[towEdited].Cells[1].Value, out height);
+					if(isNum){
+						this.Size=new Size(this.Size.Width,height);
+					}
+					break;
+				case "Size.Width":
+					int width;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[towEdited].Cells[1].Value, out width);
+					if(isNum){
+						this.Size=new Size(width,this.Size.Height);
+					}
+					break;
+				case "Location.X":
+					int x;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[towEdited].Cells[1].Value, out x);
+					if(isNum){
+						this.Location=new Point(x,this.Location.Y);
+						Console.WriteLine(this.Location.ToString());
+					}
+					break;
+				case "Location.Y":
+					int y;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[towEdited].Cells[1].Value, out y);
+					if(isNum){
+						this.Location=new Point(this.Location.X,y);
+						Console.WriteLine(this.Location.ToString());
+					}
 					break;
 				default:
 					break;

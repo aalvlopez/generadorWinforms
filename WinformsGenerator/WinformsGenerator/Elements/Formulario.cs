@@ -10,10 +10,9 @@ namespace WinformsGenerator
 
 	public class Formulario:Container
 	{
-		public Formulario ():base()
-		{
-		}
-		public Formulario (String id, DockStyle style, String name,List<Element> elem):base(id, style, name,elem){
+		public Formulario ():base(){
+			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
+			this.Size=panel.Size;
 		}
 		public override void AddElem (Element elem)
 		{
@@ -25,7 +24,7 @@ namespace WinformsGenerator
 			panel.Dock = DockStyle.None;
 			panel.BackColor=Color.Chocolate;
 			panel.Name=this.Name;
-            panel.Size = new Size(600, 420);
+			panel.Size = this.Size;
 			panel.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};
@@ -33,6 +32,14 @@ namespace WinformsGenerator
 				panel.Controls.Add(e.DrawElement());
 			}
 			return panel;
+		}
+		public Form DrawForm ()
+		{
+			Form form = new Form();
+			form.Name=this.Name;
+			form.Size = this.Size;
+			form.Controls.Add(this.DrawElement());
+			return form;
 		}
 		public override Element CopyElem (){return null;}
 		
