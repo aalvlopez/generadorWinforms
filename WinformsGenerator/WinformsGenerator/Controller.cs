@@ -8,31 +8,49 @@ namespace WinformsGenerator
 {
 	public static class Controller
 	{
-		public static List<Element> ElementosForm =new List<Element>();
 
+		private static WinformsGenerator.Form formulario = new WinformsGenerator.Form();
+		private static MainWindow window= new MainWindow();
+
+		public static void SelectItem (Element elemento)
+		{
+			Controller.window.GenerateDataGrid(elemento.GenerateDataGrid());
+		}
 
 		public static void addElemnt (Element elemento, Container parent)
 		{
 			parent.AddElem(elemento);
-			MainWindow.ReDraw((Panel)App.formulario.DrawElement());
+			Controller.ReDraw();
+			Controller.RefreshTreeView();
 		}
-		public static void SelectItem (Element elemento)
-		{
-			MainWindow.GenerateDataGrid(elemento.GenerateDataGrid());
-		}
+
 		public static void RemoveElement (Element elemento, Container parent){
 			parent.RemoveElem(elemento);
-			MainWindow.ReDraw((Panel)App.formulario.DrawElement());
+			Controller.window.ReDraw((Panel)Controller.formulario.DrawElement());
 		}
-		
+
+		public static WinformsGenerator.Form GetForm ()
+		{
+			return Controller.formulario;
+		}
+
+		public static void RefreshTreeView ()
+		{
+			Controller.window.panelTreeView.RefreshTreeView ();
+		}
+
+		public static MainWindow GetWindow ()
+		{
+			return Controller.window;
+		}
+		public static System.Windows.Forms.Panel Draw(){
+			return (Panel) Controller.formulario.DrawElement();
+		}
+
+		public static void ReDraw ()
+		{
+			Controller.window.ReDraw(Controller.Draw());
+		}
 
 	}
 }
-
-
-//			WinformsGenerator.Button b=new WinformsGenerator.Button();
-//			Type btype = b.GetType();
-//			foreach (PropertyInfo info in btype.GetProperties())
-//			{
-//				Console.WriteLine(info.ToString());
-//			}

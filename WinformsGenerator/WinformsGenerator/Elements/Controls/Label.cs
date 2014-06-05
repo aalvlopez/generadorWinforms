@@ -19,7 +19,7 @@ namespace WinformsGenerator
 			this.Size=l.Size;
 		}
 
-		public Label (Label l):base(l.Id, l.Dock, l.Name,l.Text,l.Size,l.Location)
+		public Label (Label l):base(l.Dock, l.Name,l.Text,l.Size,l.Location,l.Anchor)
 		{
 			this.TextAlign=l.TextAlign;
 		}
@@ -28,14 +28,19 @@ namespace WinformsGenerator
 			return new WinformsGenerator.Label(this);
 		}
 
-		public override System.Windows.Forms.Control DrawElement (){
-			System.Windows.Forms.Label label = new System.Windows.Forms.Label();
+		public override System.Windows.Forms.Control DrawElement ()
+		{
+			System.Windows.Forms.Label label = new System.Windows.Forms.Label ();
+			label.Name = this.Name;
+			label.Text = this.Text;
+			label.TextAlign = this.TextAlign;
+			label.Size = this.Size;
+			label.Location = new Point(this.Location.X,this.Location.Y);
+			label.BackColor=this.BackColor;
+			if (this.Anchor!=AnchorStyles.None) {
+				label.Anchor = this.Anchor;
+			}
 			label.Dock=this.Dock;
-			label.Name=this.Name;
-			label.Text=this.Text;
-			label.TextAlign=this.TextAlign;
-			label.Size=this.Size;
-			label.Location=this.Location;
 			label.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};
@@ -65,8 +70,8 @@ namespace WinformsGenerator
 				default:
 					break;
 				}
-				MainWindow.panelTreeView.RefreshTreeView();
-				MainWindow.ReDraw((Panel)App.formulario.DrawElement());
+				Controller.RefreshTreeView();
+				Controller.ReDraw();
 			};
 
 			return dataGridView;

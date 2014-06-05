@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace WinformsGenerator
 {
-    public class MainWindow:Form
+    public class MainWindow:System.Windows.Forms.Form
     {
 		public MainWindow()
         {
@@ -28,9 +28,9 @@ namespace WinformsGenerator
 			this.menuStrip1 = new MenuStrip ();
 			
 			this.menuStrip1.SuspendLayout ();
-            MainWindow.panelCenter.SuspendLayout();
-			MainWindow.panelTreeView.SuspendLayout();
-			MainWindow.panelPropertries.SuspendLayout();
+            this.panelCenter.SuspendLayout();
+			this.panelTreeView.SuspendLayout();
+			this.panelPropertries.SuspendLayout();
             this.SuspendLayout();
            
 			// 
@@ -53,9 +53,9 @@ namespace WinformsGenerator
 			// 
             // panelTreeview
             // 
-			MainWindow.panelTreeView.Dock = DockStyle.Left;
-            MainWindow.panelTreeView.Name = "panelTreeview";
-			MainWindow.panelTreeView.Size = new Size(300, 317);
+			this.panelTreeView.Dock = DockStyle.Left;
+            this.panelTreeView.Name = "panelTreeview";
+			this.panelTreeView.Size = new Size(300, 317);
 			
             // 
             // splitterLeft
@@ -69,9 +69,9 @@ namespace WinformsGenerator
             // 
             // panelCenter
             // 
-            MainWindow.panelCenter.BorderStyle = BorderStyle.FixedSingle;
-            MainWindow.panelCenter.Dock = DockStyle.Fill;
-            MainWindow.panelCenter.Name = "panel1";
+            this.panelCenter.BorderStyle = BorderStyle.FixedSingle;
+            this.panelCenter.Dock = DockStyle.Fill;
+            this.panelCenter.Name = "panel1";
             
             // 
             // splitterRight
@@ -86,9 +86,9 @@ namespace WinformsGenerator
 			// 
             // panelProperties
             // 
-			MainWindow.panelPropertries.Dock = DockStyle.Right;
-            MainWindow.panelPropertries.Name = "panelTreeview";
-            MainWindow.panelPropertries.Size = new Size(300, 317);
+			this.panelPropertries.Dock = DockStyle.Right;
+            this.panelPropertries.Name = "panelTreeview";
+            this.panelPropertries.Size = new Size(300, 317);
 
             // 
             // Form1
@@ -99,29 +99,29 @@ namespace WinformsGenerator
 			this.Text = "WinformsGenerator";
 
             this.Controls.Add(this.splitterRight);
-            this.Controls.Add(MainWindow.panelCenter);
+            this.Controls.Add(this.panelCenter);
             this.Controls.Add(this.splitterLeft);
-            this.Controls.Add(MainWindow.panelPropertries);
-			this.Controls.Add(MainWindow.panelTreeView);
+            this.Controls.Add(this.panelPropertries);
+			this.Controls.Add(this.panelTreeView);
 			this.Controls.Add (this.menuStrip1);
 
 			this.menuStrip1.ResumeLayout(false);
-            MainWindow.panelCenter.ResumeLayout(false);
-			MainWindow.panelTreeView.ResumeLayout(false);
-			MainWindow.panelPropertries.ResumeLayout(false);
+            this.panelCenter.ResumeLayout(false);
+			this.panelTreeView.ResumeLayout(false);
+			this.panelPropertries.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
-		public static void ReDraw(Panel panel){
-			MainWindow.panelCenter.panelWork=panel;
-			MainWindow.panelCenter.Controls.Clear();
-			MainWindow.panelCenter.Controls.Add(MainWindow.panelCenter.panelWork);
+		public void ReDraw(Panel panel){
+			this.panelCenter.panelWork=panel;
+			this.panelCenter.Controls.Clear();
+			this.panelCenter.Controls.Add(this.panelCenter.panelWork);
 		}
-		public static void GenerateDataGrid (DataGridView datagridView)
+		public void GenerateDataGrid (DataGridView datagridView)
 		{
-			MainWindow.panelPropertries.Controls.Clear();
-			MainWindow.panelPropertries.dataGridView1=datagridView;
-			MainWindow.panelPropertries.Controls.Add(MainWindow.panelPropertries.dataGridView1);
+			this.panelPropertries.page1.Controls.Clear();
+			this.panelPropertries.dataGridView1=datagridView;
+			this.panelPropertries.page1.Controls.Add(this.panelPropertries.dataGridView1);
 		}
 		//splitters
         private Splitter splitterLeft;
@@ -132,9 +132,9 @@ namespace WinformsGenerator
 		private MenuStrip menuStrip1;
 
 		//Secciones
-        public static WorkSpace panelCenter= new WorkSpace();
-		public static TreeViewComponents panelTreeView = new TreeViewComponents();
-		public static Properties panelPropertries = new Properties();
+        public WorkSpace panelCenter= new WorkSpace();
+		public TreeViewComponents panelTreeView = new TreeViewComponents();
+		public Properties panelPropertries = new Properties();
 
     }
 }

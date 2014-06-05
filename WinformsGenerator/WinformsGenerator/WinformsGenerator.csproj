@@ -50,7 +50,7 @@
     <Compile Include="Elements\Controls\Label.cs" />
     <Compile Include="Elements\Controls\TextBox.cs" />
     <Compile Include="Controller.cs" />
-    <Compile Include="Elements\Formulario.cs" />
+    <Compile Include="Elements\Form.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />

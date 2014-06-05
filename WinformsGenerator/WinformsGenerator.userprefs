@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/GUI/TreeViewComponents.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/App.cs">
     <Files>
       <File FileName="WinformsGenerator/Elements/Controls/TextBox.cs" Line="36" Column="27" />
       <File FileName="WinformsGenerator/Elements/Controls/Label.cs" Line="37" Column="14" />
@@ -15,14 +15,15 @@
       <File FileName="WinformsGenerator/Elements/Formulario.cs" Line="42" Column="16" />
       <File FileName="WinformsGenerator/GUI/MainWindow.cs" Line="10" Column="28" />
       <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="21" Column="51" />
-      <File FileName="WinformsGenerator/App.cs" Line="41" Column="4" />
+      <File FileName="WinformsGenerator/App.cs" Line="3" Column="32" />
       <File FileName="WinformsGenerator/GUI/WorkSpace.cs" Line="17" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="WinformsGenerator" expanded="True">
-            <Node name="Elements" expanded="True" selected="True" />
+            <Node name="References" expanded="True" selected="True" />
+            <Node name="Elements" expanded="True" />
             <Node name="GUI" expanded="True" />
           </Node>
         </State>

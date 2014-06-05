@@ -6,32 +6,22 @@ using System.Collections.Generic;
 
 namespace WinformsGenerator
 {
-	public class HBox:Container
+	public class HBox:Grid
 	{
-		public int NumColumns {
-			get;
-			set;
-		}
-
 		public HBox ():base()
 		{
+			this.NumRows=1;
 			this.NumColumns=0;
-			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
-			this.Size=table.Size;
 		}
 
 
-		public HBox(HBox hb):base(hb.Id, hb.Dock, hb.Name,hb.elementos,hb.Size,hb.Location){
+		public HBox(HBox hb):base( (Grid)hb){
+			this.NumRows=hb.NumRows;
 			this.NumColumns=hb.NumColumns;
 		}
 
 		public override Element CopyElem (){
 			return new WinformsGenerator.HBox(this);
-		}
-
-		public void AddColumn ()
-		{
-			this.NumColumns++;
 		}
 
 		public override void AddElem (Element e)
@@ -43,61 +33,16 @@ namespace WinformsGenerator
 
 		}
 
-
 		public override System.Windows.Forms.Control DrawElement ()
 		{
-			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
-			table.Dock = this.Dock;
-			table.Name=this.Name;
-			table.ColumnCount=this.NumColumns;
-			table.RowCount=1;
-			table.BackColor=Color.Crimson;
-			table.Size=this.Size;
-			table.Location=this.Location;
-			table.Click+=delegate(object sender, EventArgs elementos){
-				this.ClickItem();
-			};
-			for(int j = 0; j<table.ColumnCount;j++){
-				table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent,(100/table.ColumnCount)));
-			}
-
-			int i=0;
-			foreach(Element e in this.elementos){
-				table.Controls.Add(e.DrawElement(),i,0);
-				if(i<table.ColumnCount){
-					i++;
-				}
-			}
-
+			TableLayoutPanel table=(TableLayoutPanel) base.DrawElement();
 			return table;
 
 		}
 		public override DataGridView GenerateDataGrid ()
 		{
-			DataGridView dataGridView = base.GenerateDataGrid();
-			string[] row = { "Columns",this.NumColumns.ToString()};
-			dataGridView.Rows.Add (row);
-			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
+			return base.GenerateDataGrid();
 
-				int y = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-				Boolean isNum;
-				switch((String)((DataGridView)sender).Rows[y].Cells[0].Value){
-				case "Columns":
-					int colNum;
-					isNum= int.TryParse((String)((DataGridView)sender).Rows[y].Cells[1].Value, out colNum);
-					if(isNum){
-						this.NumColumns=colNum;
-					}else{
-							this.NumColumns=0;
-						}
-					break;
-				default:
-					break;
-				}
-				MainWindow.panelTreeView.RefreshTreeView();
-				MainWindow.ReDraw((Panel)App.formulario.DrawElement());
-			};
-			return dataGridView;
 		}
 	}
 }

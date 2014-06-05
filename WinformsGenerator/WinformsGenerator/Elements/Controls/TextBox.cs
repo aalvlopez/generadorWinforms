@@ -19,7 +19,7 @@ namespace WinformsGenerator
 		}
 
 
-		public TextBox (TextBox t):base(t.Id, t.Dock, t.Name,t.Text,t.Size,t.Location){
+		public TextBox (TextBox t):base(t.Dock, t.Name,t.Text,t.Size,t.Location,t.Anchor){
 			this.TextAlign=t.TextAlign;
 		}
 
@@ -27,14 +27,19 @@ namespace WinformsGenerator
 			return new WinformsGenerator.TextBox(this);
 		}
 
-		public override System.Windows.Forms.Control DrawElement (){
-			System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
-			textBox.Dock=this.Dock;
-			textBox.Name=this.Name;
+		public override System.Windows.Forms.Control DrawElement ()
+		{
+			System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox ();
+			textBox.Name = this.Name;
 			textBox.Text = this.Text;
 			textBox.TextAlign = this.TextAlign;
-			textBox.Size=this.Size;
-			textBox.Location=this.Location;
+			textBox.Size = this.Size;
+			textBox.Location = new Point(this.Location.X,this.Location.Y);
+			textBox.BackColor=this.BackColor;
+			if (this.Anchor!=AnchorStyles.None) {
+				textBox.Anchor = this.Anchor;
+			}
+			textBox.Dock=this.Dock;
 			textBox.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};
@@ -64,8 +69,8 @@ namespace WinformsGenerator
 				default:
 					break;
 				}
-				MainWindow.panelTreeView.RefreshTreeView();
-				MainWindow.ReDraw((Panel)App.formulario.DrawElement());
+				Controller.RefreshTreeView();
+				Controller.ReDraw();
 			};
 
 			return dataGridView;

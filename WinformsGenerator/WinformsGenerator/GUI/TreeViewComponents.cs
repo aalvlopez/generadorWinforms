@@ -53,7 +53,7 @@ namespace WinformsGenerator
 						this.pasteMenuItem.Enabled = true;
 					}
 				}
-				if (this.treeView1.SelectedNode.Tag.GetType () == typeof(WinformsGenerator.Formulario)) {
+				if (this.treeView1.SelectedNode.Tag.GetType () == typeof(WinformsGenerator.Form)) {
 					this.removeMenuItem.Enabled = false;
 					this.copyMenuItem.Enabled = false;
 					this.cutMenuItem.Enabled = false;
@@ -116,9 +116,9 @@ namespace WinformsGenerator
 			this.pasteMenuItem.Click+=delegate(object sender,EventArgs e){
 				((Container)this.treeView1.SelectedNode.Tag).AddElem(((Element)this.nodeCopied.Tag).CopyElem());
 				this.nodeCopied.Tag=((Element)this.nodeCopied.Tag).CopyElem();
-				MainWindow.ReDraw((Panel)App.formulario.DrawElement());
-				MainWindow.panelTreeView.RefreshTreeView();
-				
+				Controller.ReDraw();
+				Controller.RefreshTreeView();
+
 			};
 
 
@@ -151,7 +151,6 @@ namespace WinformsGenerator
 						Element elem = (Element)Activator.CreateInstance(type);
 						item.Click+=delegate(object sender,EventArgs e){
 							Controller.addElemnt(elem.CopyElem(),((Container)this.treeView1.SelectedNode.Tag));
-							this.AddItem(sender);
 						};
 						l.Add(item);
 					}
@@ -181,9 +180,7 @@ namespace WinformsGenerator
 						Console.WriteLine(type.Name);
 						Element elem = (Element)Activator.CreateInstance(type);
 						item.Click+=delegate(object sender,EventArgs e){
-
 							Controller.addElemnt(elem.CopyElem(),((Container)this.treeView1.SelectedNode.Tag));
-							this.AddItem(sender);
 						};
 						l.Add(item);
 					}
@@ -233,8 +230,8 @@ namespace WinformsGenerator
 					if(e.Control && e.KeyCode == Keys.V){
 						((Container)this.treeView1.SelectedNode.Tag).AddElem(((Element)this.nodeCopied.Tag).CopyElem());
 						this.nodeCopied.Tag=((Element)this.nodeCopied.Tag).CopyElem();
-						MainWindow.ReDraw((Panel)App.formulario.DrawElement());
-						MainWindow.panelTreeView.RefreshTreeView();
+						Controller.ReDraw();
+						Controller.RefreshTreeView();
 					}
 				}
 				if((e.Control && e.KeyCode == Keys.X)||e.KeyCode==Keys.Delete){
@@ -252,12 +249,6 @@ namespace WinformsGenerator
 		}
 
 
-
-		private void AddItem(Object sender){
-			this.RefreshTreeView();
-		}
-
-
 		public void RefreshTreeView(){
 			this.treeView1.BeginUpdate();
 			this.treeView1.Nodes.Clear(); 
@@ -269,10 +260,10 @@ namespace WinformsGenerator
 		private void BuildTreeView ()
 		{
 			TreeNode node;
-			node = this.treeView1.Nodes.Add (App.formulario.Name);
-			node.Tag=App.formulario;
+			node = this.treeView1.Nodes.Add (Controller.GetForm().Name);
+			node.Tag=Controller.GetForm();
 			this.treeView1.SelectedNode=this.treeView1.Nodes[0];
-			foreach (Element elem in App.formulario.elementos) {
+			foreach (Element elem in Controller.GetForm().elementos) {
 				elem.GetTreeNode(node,this.contextMenuStrip1);
 
 			}
@@ -292,7 +283,6 @@ namespace WinformsGenerator
 		private ToolStripMenuItem copyMenuItem;
 		private ToolStripMenuItem pasteMenuItem;
 		private ToolStripMenuItem cutMenuItem;
-		private ToolStripMenuItem pMenuItem;
 
 		private ToolStripMenuItem containersMenuItem;
 		private ToolStripMenuItem controlsMenuItem;

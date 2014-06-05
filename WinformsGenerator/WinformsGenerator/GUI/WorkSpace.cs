@@ -14,7 +14,7 @@ namespace WinformsGenerator
 
 		private void InitializeComponent(){
 			
-            this.panelWork = (Panel)App.formulario.DrawElement();
+            this.panelWork = (Panel)Controller.Draw();
 
 			this.panelWork.SuspendLayout();
 			this.SuspendLayout();

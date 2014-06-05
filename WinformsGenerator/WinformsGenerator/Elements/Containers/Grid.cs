@@ -26,7 +26,7 @@ namespace WinformsGenerator
 		}
 
 
-		public Grid(Grid g):base(g.Id, g.Dock, g.Name,g.elementos,g.Size,g.Location){
+		public Grid(Grid g):base(g.Dock, g.Name,g.elementos,g.Size,g.Location,g.Anchor){
 			this.NumColumns=g.NumColumns;
 			this.NumRows=g.NumRows;
 		}
@@ -54,13 +54,16 @@ namespace WinformsGenerator
 		public override System.Windows.Forms.Control DrawElement ()
 		{
 			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
-			table.Dock = this.Dock;
 			table.Name=this.Name;
 			table.ColumnCount=this.NumColumns;
 			table.RowCount=this.NumRows;
-			table.BackColor=Color.BlueViolet;
 			table.Size=this.Size;
-			table.Location=this.Location;
+			table.Location=new Point(this.Location.X,this.Location.Y);
+			if (this.Anchor!=AnchorStyles.None) {
+				table.Anchor = this.Anchor;
+			}
+			table.Dock = this.Dock;
+			table.BackColor=this.BackColor;
 			table.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};
@@ -90,11 +93,15 @@ namespace WinformsGenerator
 		}
 		public override DataGridView GenerateDataGrid ()
 		{
-			DataGridView dataGridView = base.GenerateDataGrid();
-			string[] row = { "Rows",this.NumRows.ToString()};
-			dataGridView.Rows.Add (row);
-			string[] row2 = { "Columns",this.NumColumns.ToString()};
-			dataGridView.Rows.Add (row2);
+			DataGridView dataGridView = base.GenerateDataGrid ();
+			if (this.GetType () != typeof(WinformsGenerator.HBox)) {
+				string[] row = { "Rows",this.NumRows.ToString ()};
+				dataGridView.Rows.Add (row);
+			}
+			if (this.GetType () != typeof(WinformsGenerator.VBox)) {
+				string[] row2 = { "Columns",this.NumColumns.ToString ()};
+				dataGridView.Rows.Add (row2);
+			}
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
 
 				int y = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
@@ -121,8 +128,8 @@ namespace WinformsGenerator
 				default:
 					break;
 				}
-				MainWindow.panelTreeView.RefreshTreeView();
-				MainWindow.ReDraw((Panel)App.formulario.DrawElement());
+				Controller.RefreshTreeView();
+				Controller.ReDraw();
 			};
 			return dataGridView;
 		}

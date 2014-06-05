@@ -6,36 +6,29 @@ using System.Collections.Generic;
 
 namespace WinformsGenerator
 {
-	public class Border:Container
+	
+
+	public class Form:Container
 	{
-		public Border ():base(){
+		public Form ():base(){
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
 			this.Size=panel.Size;
 		}
-
-		public Border(Border b):base(b.Dock, b.Name,b.elementos,b.Size,b.Location,b.Anchor){}
-
-		public override Element CopyElem ()
-		{
-			Border b = new WinformsGenerator.Border (this);
-			return b;
-		}
-
 		public override void AddElem (Element elem)
 		{
 			this.elementos.Add(elem);
 		}
-
-		public override System.Windows.Forms.Control DrawElement (){
+		public override System.Windows.Forms.Control DrawElement ()
+		{
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
+			panel.BackColor=this.BackColor;
 			panel.Name=this.Name;
-			panel.Size=this.Size;
-			panel.Location=new Point(this.Location.X,this.Location.Y);
+			panel.Text=this.Text;
+			panel.Size = new Size(this.Size.Width,this.Size.Height);
 			if (this.Anchor!=AnchorStyles.None) {
 				panel.Anchor = this.Anchor;
 			}
-			panel.Dock = this.Dock;
-			panel.BackColor=this.BackColor;
+			panel.Dock = DockStyle.None;
 			panel.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};
@@ -44,10 +37,21 @@ namespace WinformsGenerator
 			}
 			return panel;
 		}
-
-		public override DataGridView GenerateDataGrid (){
-			return base.GenerateDataGrid ();
+		public System.Windows.Forms.Form DrawForm ()
+		{
+			System.Windows.Forms.Form form = new  System.Windows.Forms.Form();
+			form.Name=this.Name;
+			form.Size = this.Size;
+			form.Text=this.Text;
+			Application.EnableVisualStyles();
+			form.BackColor=this.BackColor;
+			Panel panel =Controller.Draw();
+			panel.Dock=DockStyle.Fill;
+			form.Controls.Add(panel);
+			return form;
 		}
+		public override Element CopyElem (){return null;}
+		
 	}
 }
 
