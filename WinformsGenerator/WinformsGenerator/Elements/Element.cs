@@ -44,9 +44,19 @@ namespace WinformsGenerator
 			set;
 		}
 
-		public Color BackColor{
-			get;
-			set;
+		Color backColor = Color.FromArgb(255,255,255);
+
+		[XmlIgnore]
+		public Color BackColor 
+		{
+		    get { return backColor; }
+		    set { backColor = value; }
+		}
+		[XmlElement("BackColor")]
+		public string BackColorHtml
+		{
+		    get { return ColorTranslator.ToHtml(backColor); }
+		    set { BackColor = ColorTranslator.FromHtml(value); }
 		}
 
 
@@ -181,10 +191,10 @@ namespace WinformsGenerator
 				   ((DataGridView)sender).Rows[((DataGridView)sender).SelectedCells[0].RowIndex].Cells[1]==((DataGridView)sender).SelectedCells[0]){
 					DataGridViewCell btn = (DataGridViewCell)((DataGridView)sender).SelectedCells[0];
 					ColorDialog c = new ColorDialog();
+					c.FullOpen=true;
 					c.Color = btn.Style.BackColor;
 					if (c.ShowDialog() == DialogResult.OK){
 						btn.Style.BackColor=c.Color;
-						Console.WriteLine(c.Color.ToString());
 					}
 					this.BackColor=btn.Style.BackColor;
 					
@@ -192,7 +202,6 @@ namespace WinformsGenerator
 					Controller.ReDraw();
 				}
 			};
-
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
 				bool isNum;
 				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;

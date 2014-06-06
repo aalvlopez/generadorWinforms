@@ -1,6 +1,6 @@
 
-//Main Window
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.DirectoryServices;
 
 namespace WinformsGenerator
 {
@@ -24,7 +24,18 @@ namespace WinformsGenerator
 			this.splitterLeft = new Splitter();
             this.splitterRight = new Splitter();
 
-			this.archivoToolStripMenuItem = new ToolStripMenuItem ();
+			this.newForm = new ToolStripMenuItem ();;
+			this.addForm = new ToolStripMenuItem ();;
+			this.copy = new ToolStripMenuItem ();;
+			this.cut = new ToolStripMenuItem ();;
+			this.paste = new ToolStripMenuItem ();;
+			this.delete = new ToolStripMenuItem ();;
+			this.open = new ToolStripMenuItem ();;
+			this.play = new ToolStripMenuItem ();;
+			this.stop = new ToolStripMenuItem ();;
+			this.save = new ToolStripMenuItem ();;
+			this.saveAs = new ToolStripMenuItem ();;
+
 			this.menuStrip1 = new MenuStrip ();
 			
 			this.menuStrip1.SuspendLayout ();
@@ -36,20 +47,128 @@ namespace WinformsGenerator
 			// 
 			// menuStrip1
 			// 
-			this.menuStrip1.Items.AddRange (new ToolStripItem[] {
-            this.archivoToolStripMenuItem}
-			);
-			this.menuStrip1.Location = new Point (0, 0);
+
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new Size (888, 24);
 			this.menuStrip1.Text = "menuStrip1";
 			// 
 			// archivoToolStripMenuItem
 			// 
-			this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-			this.archivoToolStripMenuItem.Size = new Size (60, 20);
-			this.archivoToolStripMenuItem.Text = "Archivo";
+			this.newForm.Name = "newForm";
+			this.newForm.Size = new Size (128, 128);
+			this.newForm.Image=Image.FromFile ("../../img/new.png");
+			this.newForm.Margin.All=20;
+			this.newForm.Click+=delegate(object sender,EventArgs e) {
+				Controller.NuevoForm();
+				Controller.SetSaveFile(null);
+				this.save.Enabled=false;
+			};
 
+			this.addForm.Name = "addForm";
+			this.addForm.Size = new Size (128, 128);
+			this.addForm.Image=Image.FromFile ("../../img/add.png");
+			this.addForm.Enabled=false;
+
+			this.open.Name = "open";
+			this.open.Size = new Size (128, 128);
+			this.open.Image=Image.FromFile ("../../img/open.png");
+			this.open.Click+=delegate(object sender, EventArgs e) {
+				OpenFileDialog openD = new OpenFileDialog();
+				openD.Filter = "xml files (*.xml)|*.xml" ;
+				DialogResult result = openD.ShowDialog();
+				if (result == DialogResult.OK)
+				{
+					Controller.SetSaveFile(openD.FileName);
+					Controller.OpenFile();
+					this.save.Enabled=true;
+				}
+
+			};
+
+			this.save.Name = "save";
+			this.save.Size = new Size (128, 128);
+			this.save.Image=Image.FromFile ("../../img/save.png");
+			this.save.Enabled=false;
+			this.save.Click+=delegate(object sender, EventArgs e) {
+				Controller.SaveAsFile();
+			};
+
+
+			this.saveAs.Name = "saveAs";
+			this.saveAs.Size = new Size (128, 128);
+			this.saveAs.Image=Image.FromFile ("../../img/saveAs.png");
+			this.saveAs.Click+=delegate(object sender, EventArgs e) {
+				this.SaveAs();
+			};
+
+			this.copy.Name = "copy";
+			this.copy.Size = new Size (128, 128);
+			this.copy.Image=Image.FromFile ("../../img/copy.png");
+			this.copy.Click+=delegate(object sender,EventArgs e){
+				Controller.CopyNode();
+			};
+
+			this.cut.Name = "cut";
+			this.cut.Size = new Size (128, 128);
+			this.cut.Image=Image.FromFile ("../../img/cut.png");
+			this.cut.Click+=delegate(object sender, EventArgs e){
+				Controller.CopyNode();
+				Controller.RemoveNode();
+			};
+
+			this.paste.Name = "paste";
+			this.paste.Size = new Size (128, 128);
+			this.paste.Image=Image.FromFile ("../../img/paste.png");
+			this.paste.Enabled=false;
+			this.paste.Click+=delegate(object sender, EventArgs e){
+				Controller.PasteNode();
+			};
+
+			this.delete.Name = "delete";
+			this.delete.Size = new Size (128, 128);
+			this.delete.Image=Image.FromFile ("../../img/delete.png");
+			this.delete.Click+=delegate(object sender, EventArgs e) {
+				Controller.RemoveNode();
+			};
+
+			this.play.Name = "play";
+			this.play.Size = new Size (128, 128);
+			this.play.Image=Image.FromFile ("../../img/play.png");
+			this.play.Click+=delegate(object sender, EventArgs e) {
+				Console.WriteLine("OLA");
+				DialogResult result;
+				if(Controller.GetSaveFile()==null){
+					result= this.SaveAs();
+					if(result==DialogResult.OK){
+						Controller.Test();
+					}
+				}else{
+					Controller.SaveAsFile();
+					Controller.Test();
+				}
+			};
+			this.play.ShortcutKeys=Keys.F5;
+
+			this.stop.Name = "stop";
+			this.stop.Size = new Size (128, 128);
+			this.stop.Image=Image.FromFile ("../../img/stop.png");
+			this.stop.Click+=delegate(object sender, EventArgs e) {
+				Controller.StopTest();
+			};
+			this.stop.ShortcutKeys=Keys.Shift | Keys.F5;
+
+			this.menuStrip1.Items.AddRange (new ToolStripMenuItem[] {
+          	this.newForm,
+			this.addForm,
+			this.open,
+			this.save,
+			this.saveAs,
+			this.copy,
+			this.cut,
+			this.paste,
+			this.delete,
+			this.play,
+			this.stop}
+			);
 			// 
             // panelTreeview
             // 
@@ -123,12 +242,73 @@ namespace WinformsGenerator
 			this.panelPropertries.dataGridView1=datagridView;
 			this.panelPropertries.page1.Controls.Add(this.panelPropertries.dataGridView1);
 		}
+
+		public void EnablePaste(){
+			this.paste.Enabled=true;
+		}
+		public void DisablePaste(){
+			this.paste.Enabled=false;
+		}
+		public void EnableSave(){
+			this.save.Enabled=true;
+		}
+		public void DisableSave(){
+			this.save.Enabled=false;
+		}
+		public void EnableCopy(){
+			this.copy.Enabled=true;
+		}
+		public void DisableCopy(){
+			this.copy.Enabled=false;
+		}
+		public void EnableCut(){
+			this.cut.Enabled=true;
+		}
+		public void DisableCut(){
+			this.cut.Enabled=false;
+		}
+
+		public void EnableDelete ()
+		{
+			this.delete.Enabled = true;
+		}
+
+		public void DisableDelete ()
+		{
+			this.delete.Enabled = false;
+		}
+
+
+		public DialogResult SaveAs ()
+		{
+			SaveFileDialog saveD = new SaveFileDialog();
+			saveD.DefaultExt="xml";
+			saveD.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*" ;
+			DialogResult result = saveD.ShowDialog();
+			if (result == DialogResult.OK)
+			{
+				Controller.SetSaveFile(saveD.FileName);
+				Controller.SaveAsFile();
+				this.save.Enabled=true;
+			}
+			return result;
+		}
 		//splitters
         private Splitter splitterLeft;
         private Splitter splitterRight;
 
 		//Menu
-		private ToolStripMenuItem archivoToolStripMenuItem;
+		private ToolStripMenuItem newForm;
+		private ToolStripMenuItem addForm;
+		private ToolStripMenuItem copy;
+		private ToolStripMenuItem cut;
+		private ToolStripMenuItem paste;
+		private ToolStripMenuItem delete;
+		private ToolStripMenuItem open;
+		private ToolStripMenuItem play;
+		private ToolStripMenuItem stop;
+		private ToolStripMenuItem save;
+		private ToolStripMenuItem saveAs;
 		private MenuStrip menuStrip1;
 
 		//Secciones

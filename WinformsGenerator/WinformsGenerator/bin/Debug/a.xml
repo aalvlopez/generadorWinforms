@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Form">
+  <Dock>None</Dock>
+  <Name>Formulario</Name>
+  <Text>prueba</Text>
+  <Location>
+    <X>0</X>
+    <Y>0</Y>
+  </Location>
+  <Size>
+    <Width>200</Width>
+    <Height>100</Height>
+  </Size>
+  <Anchor>None</Anchor>
+  <BackColor>Gray</BackColor>
+  <elementos />
+</Element>

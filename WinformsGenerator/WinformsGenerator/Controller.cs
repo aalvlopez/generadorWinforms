@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,6 +12,8 @@ namespace WinformsGenerator
 
 		private static WinformsGenerator.Form formulario = new WinformsGenerator.Form();
 		private static MainWindow window= new MainWindow();
+		private static String saveFile;
+		private static System.Windows.Forms.Form testForm;
 
 		public static void SelectItem (Element elemento)
 		{
@@ -50,6 +53,70 @@ namespace WinformsGenerator
 		public static void ReDraw ()
 		{
 			Controller.window.ReDraw(Controller.Draw());
+		}
+
+		public static void NuevoForm ()
+		{
+			Controller.formulario = new WinformsGenerator.Form();
+			Controller.ReDraw();
+			Controller.RefreshTreeView();
+		}
+
+		public static void CopyNode ()
+		{
+			Controller.window.panelTreeView.Copy ();
+			Controller.window.EnablePaste();
+		}
+		public static void PasteNode ()
+		{
+			Controller.window.panelTreeView.Paste ();
+		}
+
+		public static void RemoveNode ()
+		{
+			Controller.window.panelTreeView.Remove ();
+		}
+
+		public static void OpenFile ()
+		{
+			System.Xml.Serialization.XmlSerializer reader = 
+				new System.Xml.Serialization.XmlSerializer(typeof(WinformsGenerator.Element));
+			
+
+	        StreamReader file = new System.IO.StreamReader(Controller.saveFile);
+			Controller.formulario= (WinformsGenerator.Form)reader.Deserialize(file);
+	        file.Close();
+			Controller.ReDraw();
+			Controller.RefreshTreeView();
+		}
+
+		public static void SaveAsFile ()
+		{
+			System.Xml.Serialization.XmlSerializer writer = 
+				new System.Xml.Serialization.XmlSerializer(typeof(WinformsGenerator.Element));
+
+	        System.IO.StreamWriter file = new System.IO.StreamWriter(Controller.saveFile);
+	        writer.Serialize(file,(Element) Controller.GetForm());
+	        file.Close();
+		}
+
+		public static void Test ()
+		{
+
+			Controller.OpenFile();
+			Controller.testForm=Controller.formulario.DrawForm();
+			Controller.testForm.Show();
+		}
+
+		public static void StopTest ()
+		{
+			Controller.testForm.Close();
+		}
+		public static void SetSaveFile(String fileName){
+			Controller.saveFile=fileName;
+		}
+		public static String GetSaveFile(){
+			return Controller.saveFile;
 		}
 
 	}

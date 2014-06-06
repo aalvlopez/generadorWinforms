@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Form">
+  <Dock>None</Dock>
+  <Name>Formulario</Name>
+  <Text>prueba</Text>
+  <Location>
+    <X>0</X>
+    <Y>0</Y>
+  </Location>
+  <Size>
+    <Width>700</Width>
+    <Height>500</Height>
+  </Size>
+  <Anchor>None</Anchor>
+  <BackColor>#FFFF80</BackColor>
+  <elementos>
+    <Element xsi:type="VBox">
+      <Dock>Fill</Dock>
+      <Name>WinformsGenerator.VBox</Name>
+      <Text />
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <Width>200</Width>
+        <Height>100</Height>
+      </Size>
+      <Anchor>None</Anchor>
+      <BackColor>#FFFFFF</BackColor>
+      <elementos>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>WinformsGenerator.Border</Name>
+          <Text />
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>#FF8080</BackColor>
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Left</Dock>
+              <Name>WinformsGenerator.Button</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FEFF7B</BackColor>
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>WinformsGenerator.TextBox</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FFFFFF</BackColor>
+            </Element>
+          </elementos>
+        </Element>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>WinformsGenerator.Border</Name>
+          <Text />
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>#FF8080</BackColor>
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Left</Dock>
+              <Name>WinformsGenerator.Button</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#EEC59C</BackColor>
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>WinformsGenerator.TextBox</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FFFFFF</BackColor>
+            </Element>
+          </elementos>
+        </Element>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>WinformsGenerator.Border</Name>
+          <Text />
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>#FF8080</BackColor>
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Left</Dock>
+              <Name>WinformsGenerator.Button</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#A6E684</BackColor>
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>WinformsGenerator.TextBox</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FFFFFF</BackColor>
+            </Element>
+          </elementos>
+        </Element>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>WinformsGenerator.Border</Name>
+          <Text />
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>#FF8080</BackColor>
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Left</Dock>
+              <Name>WinformsGenerator.Button</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#B6F296</BackColor>
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>WinformsGenerator.TextBox</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FFFFFF</BackColor>
+            </Element>
+          </elementos>
+        </Element>
+      </elementos>
+      <NumColumns>1</NumColumns>
+      <NumRows>4</NumRows>
+    </Element>
+  </elementos>
+</Element>

@@ -19,25 +19,23 @@ namespace WinformsGenerator
 			Controller.RefreshTreeView();
 			Application.EnableVisualStyles();
             Application.Run(Controller.GetWindow());
-			App.WriteXML();
-			App.ReadXml();
 		}
 		 
-		public static void WriteXML()
+		public static void WriteXML(String name)
 	    {
 	        System.Xml.Serialization.XmlSerializer writer = 
 				new System.Xml.Serialization.XmlSerializer(typeof(WinformsGenerator.Element));
 
-	        System.IO.StreamWriter file = new System.IO.StreamWriter("p.xml");
+	        System.IO.StreamWriter file = new System.IO.StreamWriter(name);
 	        writer.Serialize(file,(Element) Controller.GetForm());
 	        file.Close();
 	    }
-		public static void ReadXml()
+		public static void ReadXml(String name)
 	    {
 	       System.Xml.Serialization.XmlSerializer reader = 
 				new System.Xml.Serialization.XmlSerializer(typeof(WinformsGenerator.Element));
 
-	        System.IO.StreamReader file = new System.IO.StreamReader("p.xml");
+	        System.IO.StreamReader file = new System.IO.StreamReader(name);
 			WinformsGenerator.Form f = (WinformsGenerator.Form)reader.Deserialize(file);
 	        file.Close();
 

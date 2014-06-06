@@ -1,0 +1,24 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsImport/ImportWinform.cs">
+    <Files>
+      <File FileName="WinformsImport/Elements/Controls/Control.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Elements/Controls/Button.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Elements/Containers/VBox.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Elements/Containers/HBox.cs" Line="2" Column="28" />
+      <File FileName="WinformsImport/Elements/Containers/Grid.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Elements/Containers/Container.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Elements/Containers/Border.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Controller.cs" Line="26" Column="3" />
+      <File FileName="WinformsImport/Elements/Element.cs" Line="5" Column="1" />
+      <File FileName="WinformsImport/Elements/Controls/Label.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Elements/Controls/TextBox.cs" Line="1" Column="14" />
+      <File FileName="WinformsImport/Elements/Form.cs" Line="41" Column="31" />
+      <File FileName="WinformsImport/ImportWinform.cs" Line="5" Column="35" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
