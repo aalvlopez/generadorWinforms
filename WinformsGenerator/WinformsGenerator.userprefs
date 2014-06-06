@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/App.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/GUI/MainWindow.cs">
     <Files>
-      <File FileName="WinformsGenerator/Controller.cs" Line="119" Column="31" />
-      <File FileName="WinformsGenerator/GUI/MainWindow.cs" Line="142" Column="25" />
-      <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="216" Column="44" />
+      <File FileName="WinformsGenerator/Controller.cs" Line="6" Column="34" />
+      <File FileName="WinformsGenerator/GUI/MainWindow.cs" Line="172" Column="27" />
+      <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="1" Column="1" />
       <File FileName="WinformsGenerator/Elements/Element.cs" Line="47" Column="48" />
-      <File FileName="WinformsGenerator/App.cs" Line="1" Column="1" />
+      <File FileName="WinformsGenerator/App.cs" Line="17" Column="1" />
       <File FileName="WinformsGenerator/Elements/Form.cs" Line="24" Column="4" />
     </Files>
     <Pads>
@@ -17,8 +17,9 @@
             <Node name="Elements" expanded="True">
               <Node name="Containers" expanded="True" />
             </Node>
-            <Node name="GUI" expanded="True" />
-            <Node name="App.cs" selected="True" />
+            <Node name="GUI" expanded="True">
+              <Node name="MainWindow.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>

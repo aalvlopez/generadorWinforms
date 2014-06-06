@@ -57,6 +57,7 @@
     <Folder Include="Elements\" />
     <Folder Include="Elements\Containers\" />
     <Folder Include="Elements\Controls\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
@@ -68,5 +69,18 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.DirectoryServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\add.png" />
+    <None Include="img\copy.png" />
+    <None Include="img\cut.png" />
+    <None Include="img\delete.png" />
+    <None Include="img\new.png" />
+    <None Include="img\open.png" />
+    <None Include="img\paste.png" />
+    <None Include="img\play.png" />
+    <None Include="img\save.png" />
+    <None Include="img\saveAs.png" />
+    <None Include="img\stop.png" />
   </ItemGroup>
 </Project>

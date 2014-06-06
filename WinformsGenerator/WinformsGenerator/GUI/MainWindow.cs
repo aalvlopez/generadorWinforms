@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.DirectoryServices;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -21,6 +22,8 @@ namespace WinformsGenerator
        
         private void InitializeComponent()
         {
+			
+			String outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
 			this.splitterLeft = new Splitter();
             this.splitterRight = new Splitter();
 
@@ -55,8 +58,9 @@ namespace WinformsGenerator
 			// 
 			this.newForm.Name = "newForm";
 			this.newForm.Size = new Size (128, 128);
-			this.newForm.Image=Image.FromFile ("../../img/new.png");
-			this.newForm.Margin.All=20;
+			
+            var imgFile = Path.Combine(outPutDirectory, "img/new.png");
+			this.newForm.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.newForm.Click+=delegate(object sender,EventArgs e) {
 				Controller.NuevoForm();
 				Controller.SetSaveFile(null);
@@ -65,12 +69,17 @@ namespace WinformsGenerator
 
 			this.addForm.Name = "addForm";
 			this.addForm.Size = new Size (128, 128);
-			this.addForm.Image=Image.FromFile ("../../img/add.png");
+
+
+            imgFile = Path.Combine(outPutDirectory, "img/add.png");
+			this.addForm.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.addForm.Enabled=false;
 
 			this.open.Name = "open";
 			this.open.Size = new Size (128, 128);
-			this.open.Image=Image.FromFile ("../../img/open.png");
+			
+            imgFile = Path.Combine(outPutDirectory, "img/open.png");
+			this.open.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.open.Click+=delegate(object sender, EventArgs e) {
 				OpenFileDialog openD = new OpenFileDialog();
 				openD.Filter = "xml files (*.xml)|*.xml" ;
@@ -86,7 +95,8 @@ namespace WinformsGenerator
 
 			this.save.Name = "save";
 			this.save.Size = new Size (128, 128);
-			this.save.Image=Image.FromFile ("../../img/save.png");
+            imgFile = Path.Combine(outPutDirectory, "img/save.png");
+			this.save.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.save.Enabled=false;
 			this.save.Click+=delegate(object sender, EventArgs e) {
 				Controller.SaveAsFile();
@@ -95,21 +105,24 @@ namespace WinformsGenerator
 
 			this.saveAs.Name = "saveAs";
 			this.saveAs.Size = new Size (128, 128);
-			this.saveAs.Image=Image.FromFile ("../../img/saveAs.png");
+            imgFile = Path.Combine(outPutDirectory, "img/saveAs.png");
+			this.saveAs.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.saveAs.Click+=delegate(object sender, EventArgs e) {
 				this.SaveAs();
 			};
 
 			this.copy.Name = "copy";
 			this.copy.Size = new Size (128, 128);
-			this.copy.Image=Image.FromFile ("../../img/copy.png");
+            imgFile = Path.Combine(outPutDirectory, "img/copy.png");
+			this.copy.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.copy.Click+=delegate(object sender,EventArgs e){
 				Controller.CopyNode();
 			};
 
 			this.cut.Name = "cut";
 			this.cut.Size = new Size (128, 128);
-			this.cut.Image=Image.FromFile ("../../img/cut.png");
+            imgFile = Path.Combine(outPutDirectory, "img/cut.png");
+			this.cut.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.cut.Click+=delegate(object sender, EventArgs e){
 				Controller.CopyNode();
 				Controller.RemoveNode();
@@ -117,22 +130,25 @@ namespace WinformsGenerator
 
 			this.paste.Name = "paste";
 			this.paste.Size = new Size (128, 128);
-			this.paste.Image=Image.FromFile ("../../img/paste.png");
+            imgFile = Path.Combine(outPutDirectory, "img/paste.png");
 			this.paste.Enabled=false;
+			this.paste.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.paste.Click+=delegate(object sender, EventArgs e){
 				Controller.PasteNode();
 			};
 
 			this.delete.Name = "delete";
 			this.delete.Size = new Size (128, 128);
-			this.delete.Image=Image.FromFile ("../../img/delete.png");
+            imgFile = Path.Combine(outPutDirectory, "img/delete.png");
+			this.delete.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.delete.Click+=delegate(object sender, EventArgs e) {
 				Controller.RemoveNode();
 			};
 
 			this.play.Name = "play";
 			this.play.Size = new Size (128, 128);
-			this.play.Image=Image.FromFile ("../../img/play.png");
+            imgFile = Path.Combine(outPutDirectory, "img/play.png");
+			this.play.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.play.Click+=delegate(object sender, EventArgs e) {
 				Console.WriteLine("OLA");
 				DialogResult result;
@@ -150,7 +166,8 @@ namespace WinformsGenerator
 
 			this.stop.Name = "stop";
 			this.stop.Size = new Size (128, 128);
-			this.stop.Image=Image.FromFile ("../../img/stop.png");
+            imgFile = Path.Combine(outPutDirectory, "img/stop.png");
+			this.stop.Image=Image.FromFile (imgFile.TrimStart("file:".ToCharArray()));
 			this.stop.Click+=delegate(object sender, EventArgs e) {
 				Controller.StopTest();
 			};
