@@ -19,7 +19,7 @@ namespace WinformsGenerator
 			this.Size=l.Size;
 		}
 
-		public Label (Label l):base(l.Dock, l.Name,l.Text,l.Size,l.Location,l.Anchor)
+		public Label (Label l):base(l.Dock, l.Name,l.Text,l.Size,l.Location,l.Anchor,l.BackColor)
 		{
 			this.TextAlign=l.TextAlign;
 		}

@@ -26,7 +26,7 @@ namespace WinformsGenerator
 		}
 
 
-		public Grid(Grid g):base(g.Dock, g.Name,g.elementos,g.Size,g.Location,g.Anchor){
+		public Grid(Grid g):base(g.Dock, g.Name,g.elementos,g.Size,g.Location,g.Anchor,g.BackColor){
 			this.NumColumns=g.NumColumns;
 			this.NumRows=g.NumRows;
 		}

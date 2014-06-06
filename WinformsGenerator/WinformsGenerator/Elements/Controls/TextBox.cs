@@ -19,7 +19,7 @@ namespace WinformsGenerator
 		}
 
 
-		public TextBox (TextBox t):base(t.Dock, t.Name,t.Text,t.Size,t.Location,t.Anchor){
+		public TextBox (TextBox t):base(t.Dock, t.Name,t.Text,t.Size,t.Location,t.Anchor,t.BackColor){
 			this.TextAlign=t.TextAlign;
 		}
 

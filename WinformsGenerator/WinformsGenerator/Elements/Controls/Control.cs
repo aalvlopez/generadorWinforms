@@ -8,7 +8,7 @@ namespace WinformsGenerator
 	public abstract class Control:Element
 	{
 		public Control ():base(){}
-		public Control (DockStyle style, String name,String text,Size size,Point location, AnchorStyles anchor):base(style, name,size,location,anchor,text){}
+		public Control (DockStyle style, String name,String text,Size size,Point location, AnchorStyles anchor,Color backColor):base(style, name,size,location,anchor,text,backColor){}
 		public override void GetTreeNode (TreeNode node,ContextMenuStrip menu)
 		{
 			TreeNode node2=node.Nodes.Add (this.Name);

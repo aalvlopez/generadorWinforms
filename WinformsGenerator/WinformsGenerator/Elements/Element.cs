@@ -70,7 +70,7 @@ namespace WinformsGenerator
 			this.Anchor=AnchorStyles.None;
 			this.BackColor=Color.Gray;
 		}
-		public Element (DockStyle style, String name,Size size,Point location,AnchorStyles anchor,String text)
+		public Element (DockStyle style, String name,Size size,Point location,AnchorStyles anchor,String text,Color backColor)
 		{
 			
 			this.Text=text;
@@ -79,6 +79,7 @@ namespace WinformsGenerator
 			this.Location=location;
 			this.Size= size;
 			this.Anchor=anchor;
+			this.BackColor=backColor;
 		}
 
 

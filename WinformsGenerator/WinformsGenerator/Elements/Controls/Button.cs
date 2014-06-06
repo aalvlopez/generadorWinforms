@@ -19,7 +19,7 @@ namespace WinformsGenerator
 
 
 
-		public Button (Button b):base(b.Dock,b.Name,b.Text,b.Size,b.Location,b.Anchor){
+		public Button (Button b):base(b.Dock,b.Name,b.Text,b.Size,b.Location,b.Anchor,b.BackColor){
 			this.TextAlign=b.TextAlign;
 		}
 

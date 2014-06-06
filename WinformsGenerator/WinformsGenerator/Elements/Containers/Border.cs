@@ -13,7 +13,7 @@ namespace WinformsGenerator
 			this.Size=panel.Size;
 		}
 
-		public Border(Border b):base(b.Dock, b.Name,b.elementos,b.Size,b.Location,b.Anchor){}
+		public Border(Border b):base(b.Dock, b.Name,b.elementos,b.Size,b.Location,b.Anchor,b.BackColor){}
 
 		public override Element CopyElem ()
 		{
