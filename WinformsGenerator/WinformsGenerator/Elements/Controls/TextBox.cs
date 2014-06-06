@@ -7,12 +7,15 @@ namespace WinformsGenerator
 {
 	public class TextBox:Control
 	{
+		private static int numElem=0;
 		HorizontalAlignment TextAlign {
 			get;
 			set;
 		}
 
 		public TextBox ():base(){
+			this.Name="TextBox"+TextBox.numElem.ToString();
+			TextBox.numElem++;
 			this.TextAlign=HorizontalAlignment.Center;
 			System.Windows.Forms.TextBox tb = new System.Windows.Forms.TextBox();
 			this.Size=tb.Size;
@@ -74,6 +77,13 @@ namespace WinformsGenerator
 			};
 
 			return dataGridView;
+		}
+
+		public override Element NewName ()
+		{
+			this.Name="TextBox"+TextBox.numElem.ToString();
+			TextBox.numElem++;
+			return this;
 		}
 	}
 }

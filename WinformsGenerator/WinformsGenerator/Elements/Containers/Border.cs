@@ -8,7 +8,10 @@ namespace WinformsGenerator
 {
 	public class Border:Container
 	{
+		private static int numElem=0; 
 		public Border ():base(){
+			this.Name="Border"+Border.numElem.ToString();
+			Border.numElem++;
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
 			this.Size=panel.Size;
 		}
@@ -47,6 +50,12 @@ namespace WinformsGenerator
 
 		public override DataGridView GenerateDataGrid (){
 			return base.GenerateDataGrid ();
+		}
+		public override Element NewName ()
+		{
+			this.Name="Border"+Border.numElem.ToString();
+			Border.numElem++;
+			return this;
 		}
 	}
 }

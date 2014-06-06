@@ -7,13 +7,15 @@ namespace WinformsGenerator
 {
 	public class Label:Control
 	{
-		
+		private static int numElem=0;
 		ContentAlignment TextAlign {
 			get;
 			set;
 		}
 		public Label ():base()
 		{
+			this.Name="Label"+Label.numElem.ToString();
+			Label.numElem++;
 			this.TextAlign=ContentAlignment.MiddleRight;
 			System.Windows.Forms.Label l = new System.Windows.Forms.Label();
 			this.Size=l.Size;
@@ -75,6 +77,12 @@ namespace WinformsGenerator
 			};
 
 			return dataGridView;
+		}
+		public override Element NewName ()
+		{
+			this.Name="Label"+Label.numElem.ToString();
+			Label.numElem++;
+			return this;
 		}
 	}
 }

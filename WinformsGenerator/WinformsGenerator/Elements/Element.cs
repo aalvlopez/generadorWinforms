@@ -65,7 +65,6 @@ namespace WinformsGenerator
 			
 			this.Text="prueba";
 			this.Dock=DockStyle.None;
-			this.Name=this.GetType().ToString();
 			this.Location=new Point(0,0);
 			this.Anchor=AnchorStyles.None;
 			this.BackColor=Color.Gray;
@@ -270,6 +269,7 @@ namespace WinformsGenerator
 
 		public abstract System.Windows.Forms.Control DrawElement();
 		public abstract void GetTreeNode(TreeNode node,ContextMenuStrip menu);
+		public abstract Element NewName();
 		public abstract Element CopyElem();
 	}
 }

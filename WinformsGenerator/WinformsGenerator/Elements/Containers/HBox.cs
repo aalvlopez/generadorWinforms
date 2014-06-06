@@ -8,8 +8,11 @@ namespace WinformsGenerator
 {
 	public class HBox:Grid
 	{
+		private static int numElem=0;
 		public HBox ():base()
 		{
+			this.Name="HBox"+HBox.numElem.ToString();
+			HBox.numElem++;
 			this.NumRows=1;
 			this.NumColumns=0;
 		}
@@ -43,6 +46,12 @@ namespace WinformsGenerator
 		{
 			return base.GenerateDataGrid();
 
+		}
+		public override Element NewName ()
+		{
+			this.Name="HBox"+HBox.numElem.ToString();
+			HBox.numElem++;
+			return this;
 		}
 	}
 }

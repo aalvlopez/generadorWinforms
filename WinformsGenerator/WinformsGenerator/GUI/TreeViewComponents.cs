@@ -149,7 +149,7 @@ namespace WinformsGenerator
 						item.Text = type.Name;
 						Element elem = (Element)Activator.CreateInstance(type);
 						item.Click+=delegate(object sender,EventArgs e){
-							Controller.addElemnt(elem.CopyElem(),((Container)this.treeView1.SelectedNode.Tag));
+							Controller.addElemnt(elem.CopyElem().NewName(),((Container)this.treeView1.SelectedNode.Tag));
 						};
 						l.Add(item);
 					}

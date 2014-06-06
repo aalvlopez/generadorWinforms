@@ -8,8 +8,11 @@ namespace WinformsGenerator
 {
 	public class VBox:Grid
 	{
+		private static int numElem=0;
 		public VBox ():base()
 		{
+			this.Name="VBox"+VBox.numElem.ToString();
+			VBox.numElem++;
 			this.NumRows=0;
 			this.NumColumns=1;
 		}
@@ -44,7 +47,12 @@ namespace WinformsGenerator
 		{
 			return base.GenerateDataGrid();
 		}
-
+		public override Element NewName ()
+		{
+			this.Name="VBox"+VBox.numElem.ToString();
+			VBox.numElem++;
+			return this;
+		}
 	}
 }
 

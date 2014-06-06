@@ -10,7 +10,10 @@ namespace WinformsGenerator
 
 	public class Form:Container
 	{
+		private static int numElem=0;
 		public Form ():base(){
+			this.Name="Form"+Form.numElem.ToString();
+			Form.numElem++;
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
 			this.Size=panel.Size;
 		}
@@ -52,6 +55,12 @@ namespace WinformsGenerator
 			return form;
 		}
 		public override Element CopyElem (){return null;}
+		public override Element NewName ()
+		{
+			this.Name="Form"+Form.numElem.ToString();
+			Form.numElem++;
+			return this;
+		}
 		
 	}
 }

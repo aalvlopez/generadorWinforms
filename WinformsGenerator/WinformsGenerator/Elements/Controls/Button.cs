@@ -7,11 +7,15 @@ namespace WinformsGenerator
 {
 	public class Button:Control
 	{
+		private static int numElem=0;
 		ContentAlignment TextAlign {
 			get;
 			set;
 		}
 		public Button ():base(){
+			this.Name="Button"+Button.numElem.ToString();
+			Button.numElem++;
+			Console.WriteLine(Button.numElem.ToString());
 			System.Windows.Forms.Button btn = new System.Windows.Forms.Button();
 			this.Size=btn.Size;
 			this.TextAlign = btn.TextAlign;
@@ -73,6 +77,12 @@ namespace WinformsGenerator
 			};
 
 			return dataGridView;
+		}
+		public override Element NewName ()
+		{
+			this.Name="Button"+Button.numElem.ToString();
+			Button.numElem++;
+			return this;
 		}
 	}
 }

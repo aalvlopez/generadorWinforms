@@ -8,6 +8,7 @@ namespace WinformsGenerator
 {
 	public class Grid:Container
 	{
+		private static int numElem=0;
 		public int NumColumns {
 			get;
 			set;
@@ -19,6 +20,8 @@ namespace WinformsGenerator
 		}
 
 		public Grid ():base(){
+			this.Name="Grid"+Grid.numElem.ToString();
+			Grid.numElem++;
 			this.NumColumns=0;
 			this.NumRows=0;
 			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
@@ -132,6 +135,12 @@ namespace WinformsGenerator
 				Controller.ReDraw();
 			};
 			return dataGridView;
+		}
+		public override Element NewName ()
+		{
+			this.Name="Grid"+Grid.numElem.ToString();
+			Grid.numElem++;
+			return this;
 		}
 
 	}

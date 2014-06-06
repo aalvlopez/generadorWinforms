@@ -27,7 +27,7 @@
         <Height>100</Height>
       </Size>
       <Anchor>None</Anchor>
-      <BackColor>#FFFFFF</BackColor>
+      <BackColor>White</BackColor>
       <elementos>
         <Element xsi:type="Border">
           <Dock>Fill</Dock>
@@ -72,7 +72,7 @@
                 <Height>20</Height>
               </Size>
               <Anchor>None</Anchor>
-              <BackColor>#FFFFFF</BackColor>
+              <BackColor>White</BackColor>
             </Element>
           </elementos>
         </Element>
@@ -119,7 +119,7 @@
                 <Height>20</Height>
               </Size>
               <Anchor>None</Anchor>
-              <BackColor>#FFFFFF</BackColor>
+              <BackColor>White</BackColor>
             </Element>
           </elementos>
         </Element>
@@ -166,7 +166,7 @@
                 <Height>20</Height>
               </Size>
               <Anchor>None</Anchor>
-              <BackColor>#FFFFFF</BackColor>
+              <BackColor>White</BackColor>
             </Element>
           </elementos>
         </Element>
@@ -213,7 +213,7 @@
                 <Height>20</Height>
               </Size>
               <Anchor>None</Anchor>
-              <BackColor>#FFFFFF</BackColor>
+              <BackColor>White</BackColor>
             </Element>
           </elementos>
         </Element>
