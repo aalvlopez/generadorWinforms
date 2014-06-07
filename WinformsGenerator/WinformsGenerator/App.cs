@@ -14,7 +14,7 @@ namespace WinformsGenerator
 		public static void Main ()
 		{
 			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
+			Application.SetCompatibleTextRenderingDefault(true);
 			Controller.init();
 			Controller.GetForm().Name="Formulario";
             Application.SetCompatibleTextRenderingDefault(false);

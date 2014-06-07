@@ -22,7 +22,6 @@ namespace WinformsGenerator
        
         private void InitializeComponent ()
 		{
-			
 			String outPutDirectory = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().CodeBase);
 			this.splitterLeft = new Splitter ();
 			this.splitterRight = new Splitter ();

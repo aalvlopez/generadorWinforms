@@ -17,9 +17,6 @@ namespace WinformsGenerator
 
 		public static void init ()
 		{
-			
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
 			 Controller.formulario= new WinformsGenerator.Form();
 			Controller.window = new MainWindow();
 		}
