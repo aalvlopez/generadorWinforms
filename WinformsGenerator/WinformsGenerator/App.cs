@@ -8,13 +8,14 @@ using System.Xml.Serialization;
 namespace WinformsGenerator
 {
 	 
-	public class App
+	public static class App
 	{
 
 		public static void Main ()
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			Controller.init();
 			Controller.GetForm().Name="Formulario";
             Application.SetCompatibleTextRenderingDefault(false);
 			Controller.RefreshTreeView();

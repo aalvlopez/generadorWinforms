@@ -10,11 +10,16 @@ namespace WinformsGenerator
 	public static class Controller
 	{
 
-		private static WinformsGenerator.Form formulario = new WinformsGenerator.Form();
-		private static MainWindow window= new MainWindow();
+		private static WinformsGenerator.Form formulario;
+		private static MainWindow window;
 		private static String saveFile;
 		private static System.Windows.Forms.Form testForm;
 
+		public static void init ()
+		{
+			 Controller.formulario= new WinformsGenerator.Form();
+			Controller.window = new MainWindow();
+		}
 		public static void SelectItem (Element elemento)
 		{
 			Controller.window.GenerateDataGrid(elemento.GenerateDataGrid());
