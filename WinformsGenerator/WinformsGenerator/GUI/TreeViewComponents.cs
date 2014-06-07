@@ -176,7 +176,6 @@ namespace WinformsGenerator
 						item.Name = type.Name;
             			item.Size = new System.Drawing.Size(110, 22);
 						item.Text = type.Name;
-						Console.WriteLine(type.Name);
 						Element elem = (Element)Activator.CreateInstance(type);
 						item.Click+=delegate(object sender,EventArgs e){
 							Controller.addElemnt(elem.CopyElem(),((Container)this.treeView1.SelectedNode.Tag));

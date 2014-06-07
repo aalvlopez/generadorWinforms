@@ -15,7 +15,6 @@ namespace WinformsGenerator
 		public Button ():base(){
 			this.Name="Button"+Button.numElem.ToString();
 			Button.numElem++;
-			Console.WriteLine(Button.numElem.ToString());
 			System.Windows.Forms.Button btn = new System.Windows.Forms.Button();
 			this.Size=btn.Size;
 			this.TextAlign = btn.TextAlign;

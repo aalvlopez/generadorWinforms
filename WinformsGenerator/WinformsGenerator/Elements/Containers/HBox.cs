@@ -15,6 +15,7 @@ namespace WinformsGenerator
 			HBox.numElem++;
 			this.NumRows=1;
 			this.NumColumns=0;
+			this.Dock=DockStyle.Top;
 		}
 
 

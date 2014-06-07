@@ -14,6 +14,7 @@ namespace WinformsGenerator
 			Border.numElem++;
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
 			this.Size=panel.Size;
+			this.Dock = DockStyle.Fill;
 		}
 
 		public Border(Border b):base(b.Dock, b.Name,b.elementos,b.Size,b.Location,b.Anchor,b.BackColor){}

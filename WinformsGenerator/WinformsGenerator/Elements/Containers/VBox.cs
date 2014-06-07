@@ -15,6 +15,7 @@ namespace WinformsGenerator
 			VBox.numElem++;
 			this.NumRows=0;
 			this.NumColumns=1;
+			this.Dock=DockStyle.Fill;
 		}
 
 

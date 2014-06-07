@@ -44,7 +44,7 @@ namespace WinformsGenerator
 			set;
 		}
 
-		Color backColor = Color.FromArgb(255,255,255);
+		private Color backColor;
 
 		[XmlIgnore]
 		public Color BackColor 
@@ -67,7 +67,8 @@ namespace WinformsGenerator
 			this.Dock=DockStyle.None;
 			this.Location=new Point(0,0);
 			this.Anchor=AnchorStyles.None;
-			this.BackColor=Color.Gray;
+			this.BackColor=Color.White;
+		
 		}
 		public Element (DockStyle style, String name,Size size,Point location,AnchorStyles anchor,String text,Color backColor)
 		{
@@ -231,7 +232,6 @@ namespace WinformsGenerator
 					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out x);
 					if(isNum){
 						this.Location=new Point(x,this.Location.Y);
-						Console.WriteLine(this.Location.ToString());
 					}
 					break;
 				case "Location.Y":
