@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
@@ -12,14 +13,14 @@ namespace WinformsGenerator
 
 		public static void Main ()
 		{
-
+			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Controller.GetForm().Name="Formulario";
-			Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 			Controller.RefreshTreeView();
             Application.Run(Controller.GetWindow());
 		}
+
 	}
 }
 
