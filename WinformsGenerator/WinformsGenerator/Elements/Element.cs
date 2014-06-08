@@ -20,6 +20,7 @@ namespace WinformsGenerator
 	[XmlInclude(typeof(WinformsGenerator.Grid))]
 	public abstract class Element
 	{ 
+		public static ColorDialog c = new ColorDialog();
 		public DockStyle Dock {
 			get;
 			set;
@@ -166,37 +167,7 @@ namespace WinformsGenerator
 		}
 
 
-		public void ClickItem(){
-			foreach(TreeNode t in Controller.GetWindow().panelTreeView.treeView1.Nodes){
-				if((Element)t.Tag == this){
-					Controller.GetWindow().panelTreeView.treeView1.SelectedNode=t;
-					Controller.GetWindow().panelTreeView.treeView1.Select();
-					Controller.SelectItem((Element)t.Tag);
-				}else{
-					if(t.Nodes.Count>0){
-						if(this.findTag(t)){
-							break;
-						}
-					}
-				}
-			}
-		}
-		public Boolean findTag (TreeNode node)
-		{
-			foreach(TreeNode t in node.Nodes){
-				if((Element)t.Tag==(this)){
-					Controller.GetWindow().panelTreeView.treeView1.SelectedNode=t;
-					Controller.GetWindow().panelTreeView.treeView1.Select();
-					Controller.SelectItem((Element)t.Tag);
-					return true;
-				}else{
-					if( this.findTag(t)){
-						return true;
-					}
-				}
-			}
-			return false;
-		}
+
 		public virtual DataGridView GenerateDataGrid ()
 		{
 			DataGridView dataGridView = new DataGridView ();
@@ -274,11 +245,10 @@ namespace WinformsGenerator
 				if((String)((DataGridView)sender).Rows[((DataGridView)sender).SelectedCells[0].RowIndex].Cells[0].Value=="BackColor"&&
 				   ((DataGridView)sender).Rows[((DataGridView)sender).SelectedCells[0].RowIndex].Cells[1]==((DataGridView)sender).SelectedCells[0]){
 					DataGridViewCell btn = (DataGridViewCell)((DataGridView)sender).SelectedCells[0];
-					ColorDialog c = new ColorDialog();
-					c.FullOpen=true;
-					c.Color = btn.Style.BackColor;
-					if (c.ShowDialog() == DialogResult.OK){
-						btn.Style.BackColor=c.Color;
+					Element.c.Color = btn.Style.BackColor;
+					Element.c.FullOpen=true;
+					if (Element.c.ShowDialog() == DialogResult.OK){
+						btn.Style.BackColor=Element.c.Color;
 					}
 					this.BackColor=btn.Style.BackColor;
 					
@@ -337,6 +307,57 @@ namespace WinformsGenerator
 				Controller.ReDraw();
 			};
 
+			dataGridView.Leave+=delegate(object sender, EventArgs e) {
+				bool isNum;
+				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
+				switch((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value){
+				case "Dock":
+					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+					break;
+				case "Name":
+					this.Name=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+					break;
+				case "Size.Height":
+					int height;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out height);
+					if(isNum){
+						this.Size=new Size(this.Size.Width,height);
+					}
+					break;
+				case "Size.Width":
+					int width;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out width);
+					if(isNum){
+						this.Size=new Size(width,this.Size.Height);
+					}
+					break;
+				case "Location.X":
+					int x;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out x);
+					if(isNum){
+						this.Location=new Point(x,this.Location.Y);
+					}
+					break;
+				case "Location.Y":
+					int y;
+					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out y);
+					if(isNum){
+						this.Location=new Point(this.Location.X,y);
+					}
+					break;
+				case "Anchor":
+					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+					break;
+				case "Text":
+					this.Text=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+					break;
+				default:
+					break;
+				}
+				Controller.RefreshTreeView();
+				Controller.ReDraw();
+				Controller.ReSelectElement();
+			};
 
             dataGridView.Dock = DockStyle.Fill;
 
@@ -382,6 +403,14 @@ namespace WinformsGenerator
 					prop.SetValue(this,(string)((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
 			
 			};
+			dataGridView.Leave+=delegate(object sender, EventArgs e) {
+				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
+				PropertyInfo prop =(PropertyInfo) (typeof(WinformsGenerator.Element).GetProperty((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value));
+					prop.SetValue(this,(string)((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
+				Controller.ReSelectElement();
+			
+			};
+
 			dataGridView.Dock = DockStyle.Fill;
 
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;

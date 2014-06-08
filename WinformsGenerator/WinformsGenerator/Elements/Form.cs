@@ -35,7 +35,7 @@ namespace WinformsGenerator
 			panel.Dock = DockStyle.None;
 
 			panel.Click+=delegate(object sender, EventArgs elementos){
-				this.ClickItem();
+				Controller.ClickItem(this);
 			};
 			foreach(Element e in this.elementos){
 				panel.Controls.Add(e.DrawElement());

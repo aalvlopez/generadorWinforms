@@ -44,7 +44,7 @@ namespace WinformsGenerator
 			btn.Size=this.Size;
 			btn.BackColor=this.BackColor;
 			btn.Click+=delegate(object sender, EventArgs elementos){
-				this.ClickItem();
+				Controller.ClickItem(this);
 			};
 			this.SetEvents(btn);
 			return btn;

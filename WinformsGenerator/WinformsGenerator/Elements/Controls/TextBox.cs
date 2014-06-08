@@ -44,7 +44,7 @@ namespace WinformsGenerator
 			}
 			textBox.Dock=this.Dock;
 			textBox.Click+=delegate(object sender, EventArgs elementos){
-				this.ClickItem();
+				Controller.ClickItem(this);
 			};
 			return textBox;
 		}

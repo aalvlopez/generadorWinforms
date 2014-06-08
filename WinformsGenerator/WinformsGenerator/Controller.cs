@@ -124,5 +124,38 @@ namespace WinformsGenerator
 			return Controller.saveFile;
 		}
 
+
+		public static void ClickItem(Element e){
+			foreach(TreeNode t in Controller.window.panelTreeView.treeView1.Nodes){
+				if((Element)t.Tag == e){
+					Controller.window.panelTreeView.treeView1.SelectedNode=t;
+					Controller.SelectItem((Element)t.Tag);
+				}else{
+					if(t.Nodes.Count>0){
+						if(Controller.findTag(t,e)){
+							break;
+						}
+					}
+				}
+			}
+		}
+		public static Boolean findTag (TreeNode node,Element e)
+		{
+			foreach(TreeNode t in node.Nodes){
+				if((Element)t.Tag==(e)){
+					Controller.window.panelTreeView.treeView1.SelectedNode=t;
+					Controller.SelectItem((Element)t.Tag);
+					return true;
+				}else{
+					if( Controller.findTag(t,e)){
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+		public static void ReSelectElement(){
+			ClickItem((Element)Controller.window.panelTreeView.treeView1.SelectedNode.Tag);
+		}
 	}
 }

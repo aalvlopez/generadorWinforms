@@ -44,7 +44,7 @@ namespace WinformsGenerator
 			}
 			label.Dock=this.Dock;
 			label.Click+=delegate(object sender, EventArgs elementos){
-				this.ClickItem();
+				Controller.ClickItem(this);
 			};
 			return label;
 		}

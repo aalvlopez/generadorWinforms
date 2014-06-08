@@ -229,6 +229,8 @@ namespace WinformsGenerator
 					Controller.SaveAsFile();
 					Controller.Test();
 				}
+				this.play.Enabled=false;
+				this.stop.Enabled=true;
 			};
 			this.play.ShortcutKeys=Keys.F5;
 
@@ -243,8 +245,11 @@ namespace WinformsGenerator
 					this.stop.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 				}
 			}
+			this.stop.Enabled=false;
 			this.stop.Click+=delegate(object sender, EventArgs e) {
 				Controller.StopTest();
+				this.play.Enabled=true;
+				this.stop.Enabled=false;
 			};
 			this.stop.ShortcutKeys=Keys.Shift | Keys.F5;
 

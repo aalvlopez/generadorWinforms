@@ -42,31 +42,7 @@ namespace WinformsGenerator
 			);
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.Size = new System.Drawing.Size (111, 70);
-			this.contextMenuStrip1.Opened += delegate(object sender , EventArgs e) {
-				if (this.treeView1.SelectedNode.Tag.GetType ().IsSubclassOf (typeof(WinformsGenerator.Control))) {
-					this.addMenuItem.Enabled = false;
-					this.pasteMenuItem.Enabled = false;
-				} else {
-					this.addMenuItem.Enabled = true;
-					if (this.nodeCopied != null) {
-						this.pasteMenuItem.Enabled = true;
-					}
-				}
-				if (this.treeView1.SelectedNode.Tag.GetType () == typeof(WinformsGenerator.Form)) {
-					this.removeMenuItem.Enabled = false;
-					this.copyMenuItem.Enabled = false;
-					this.cutMenuItem.Enabled = false;
-				} else {
-					this.removeMenuItem.Enabled = true;
-					this.copyMenuItem.Enabled = true;
-					this.cutMenuItem.Enabled = true;
-				}
-
-			};
-			 
-
-
-
+	
 			// 
             // addMenuItem
             // 
@@ -225,9 +201,31 @@ namespace WinformsGenerator
 
 			this.treeView1.NodeMouseClick+=delegate(object sender, TreeNodeMouseClickEventArgs e){
 				
+
 				this.treeView1.SelectedNode=e.Node;
 
 				Controller.SelectItem((Element)e.Node.Tag);
+				if(e.Button==MouseButtons.Right){
+					Console.WriteLine(((Element)this.treeView1.SelectedNode.Tag).Name);
+					if (this.treeView1.SelectedNode.Tag.GetType ().IsSubclassOf (typeof(WinformsGenerator.Control))) {
+						this.addMenuItem.Enabled = false;
+						this.pasteMenuItem.Enabled = false;
+					} else {
+						this.addMenuItem.Enabled = true;
+						if (this.nodeCopied != null) {
+							this.pasteMenuItem.Enabled = true;
+						}
+					}
+					if (this.treeView1.SelectedNode.Tag.GetType () == typeof(WinformsGenerator.Form)) {
+						this.removeMenuItem.Enabled = false;
+						this.copyMenuItem.Enabled = false;
+						this.cutMenuItem.Enabled = false;
+					} else {
+						this.removeMenuItem.Enabled = true;
+						this.copyMenuItem.Enabled = true;
+						this.cutMenuItem.Enabled = true;
+					}
+				}
 			};
 
 			this.treeView1.KeyDown+=delegate(object sender, KeyEventArgs e){

@@ -14,22 +14,22 @@
   <Anchor>None</Anchor>
   <BackColor>White</BackColor>
   <Click />
-  <elementos>
-    <Element xsi:type="Button">
-      <Dock>None</Dock>
-      <Name>Button1</Name>
-      <Text>prueba</Text>
-      <Location>
-        <X>0</X>
-        <Y>0</Y>
-      </Location>
-      <Size>
-        <Width>75</Width>
-        <Height>23</Height>
-      </Size>
-      <Anchor>None</Anchor>
-      <BackColor>White</BackColor>
-      <Click>OnClickApp</Click>
-    </Element>
-  </elementos>
+  <DoubleClick />
+  <Enter />
+  <GotFocus />
+  <LostFocus />
+  <Leave />
+  <KeyDown />
+  <KeyPress />
+  <KeyUp />
+  <MouseClick />
+  <MouseDoubleClick />
+  <MouseDown />
+  <MouseEnter />
+  <MouseLeave />
+  <MouseHover />
+  <MouseUp />
+  <MouseWheel />
+  <Resize />
+  <elementos />
 </Element>
