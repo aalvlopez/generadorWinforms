@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -14,7 +15,6 @@ namespace WinformsGenerator
 		}
 		public Button ():base(){
 			this.Name="Button"+Button.numElem.ToString();
-			Button.numElem++;
 			System.Windows.Forms.Button btn = new System.Windows.Forms.Button();
 			this.Size=btn.Size;
 			this.TextAlign = btn.TextAlign;
@@ -22,12 +22,12 @@ namespace WinformsGenerator
 
 
 
-		public Button (Button b):base(b.Dock,b.Name,b.Text,b.Size,b.Location,b.Anchor,b.BackColor){
-			this.TextAlign=b.TextAlign;
-		}
-
 		public override Element CopyElem (){
-			return new WinformsGenerator.Button(this);
+			var button = new WinformsGenerator.Button();
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+				prop.SetValue(button,prop.GetValue(this,null),null);
+			}
+			return button;
 		}
 
 		public override System.Windows.Forms.Control DrawElement ()
@@ -46,6 +46,7 @@ namespace WinformsGenerator
 			btn.Click+=delegate(object sender, EventArgs elementos){
 				this.ClickItem();
 			};
+			this.SetEvents(btn);
 			return btn;
 		}
 
@@ -79,9 +80,10 @@ namespace WinformsGenerator
 		}
 		public override Element NewName ()
 		{
-			this.Name="Button"+Button.numElem.ToString();
+			var button = this.CopyElem();
+			button.Name="Button"+Button.numElem.ToString();
 			Button.numElem++;
-			return this;
+			return button;
 		}
 	}
 }

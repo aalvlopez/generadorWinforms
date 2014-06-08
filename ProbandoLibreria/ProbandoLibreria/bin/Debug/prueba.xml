@@ -13,6 +13,7 @@
   </Size>
   <Anchor>None</Anchor>
   <BackColor>#FFFF80</BackColor>
+  <Click />
   <elementos>
     <Element xsi:type="VBox">
       <Dock>Fill</Dock>
@@ -28,6 +29,15 @@
       </Size>
       <Anchor>None</Anchor>
       <BackColor>White</BackColor>
+      <Click>OnClick</Click>
+      <DoubleClick>OnDouble</DoubleClick>
+      <Enter>Enter</Enter>
+      <GotFocus>GotFocus</GotFocus>
+      <LostFocus>LostFocus</LostFocus>
+      <Leave>Leave</Leave>
+      <KeyDown>KeyDown</KeyDown>
+      <KeyPress>KeyPress</KeyPress>
+      <KeyUp>KeyUp</KeyUp>
       <elementos>
         <Element xsi:type="Border">
           <Dock>Fill</Dock>
@@ -43,6 +53,10 @@
           </Size>
           <Anchor>None</Anchor>
           <BackColor>#FF8080</BackColor>
+          <Click />
+          <DoubleClick>OnDouble</DoubleClick>
+          <GotFocus>GotFocus</GotFocus>
+          <KeyDown>KeyDow</KeyDown>
           <elementos>
             <Element xsi:type="Button">
               <Dock>Left</Dock>
@@ -58,6 +72,15 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>#FEFF7B</BackColor>
+              <Click />
+              <DoubleClick>OnDouble</DoubleClick>
+              <Enter>Enter</Enter>
+              <GotFocus>GotFocus</GotFocus>
+              <LostFocus>LostFocus</LostFocus>
+              <Leave>Leave</Leave>
+              <KeyDown>KeyDown</KeyDown>
+              <KeyPress>KeyPress</KeyPress>
+              <KeyUp>KeyUp</KeyUp>
             </Element>
             <Element xsi:type="TextBox">
               <Dock>Fill</Dock>
@@ -73,6 +96,9 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>White</BackColor>
+              <Click />
+              <DoubleClick>OnDouble</DoubleClick>
+              <GotFocus>GotFocus</GotFocus>
             </Element>
           </elementos>
         </Element>
@@ -90,6 +116,10 @@
           </Size>
           <Anchor>None</Anchor>
           <BackColor>#FF8080</BackColor>
+          <Click />
+          <DoubleClick>OnDouble</DoubleClick>
+          <GotFocus>GotFocus</GotFocus>
+          <KeyPress>KeyPress</KeyPress>
           <elementos>
             <Element xsi:type="Button">
               <Dock>Left</Dock>
@@ -105,6 +135,7 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>#EEC59C</BackColor>
+              <Click />
             </Element>
             <Element xsi:type="TextBox">
               <Dock>Fill</Dock>
@@ -120,6 +151,7 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>White</BackColor>
+              <Click />
             </Element>
           </elementos>
         </Element>
@@ -137,6 +169,7 @@
           </Size>
           <Anchor>None</Anchor>
           <BackColor>#FF8080</BackColor>
+          <Click />
           <elementos>
             <Element xsi:type="Button">
               <Dock>Left</Dock>
@@ -152,6 +185,7 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>#A6E684</BackColor>
+              <Click />
             </Element>
             <Element xsi:type="TextBox">
               <Dock>Fill</Dock>
@@ -167,6 +201,7 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>White</BackColor>
+              <Click />
             </Element>
           </elementos>
         </Element>
@@ -184,6 +219,7 @@
           </Size>
           <Anchor>None</Anchor>
           <BackColor>#FF8080</BackColor>
+          <Click />
           <elementos>
             <Element xsi:type="Button">
               <Dock>Left</Dock>
@@ -199,6 +235,7 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>#B6F296</BackColor>
+              <Click />
             </Element>
             <Element xsi:type="TextBox">
               <Dock>Fill</Dock>
@@ -214,12 +251,37 @@
               </Size>
               <Anchor>None</Anchor>
               <BackColor>White</BackColor>
+              <Click />
             </Element>
           </elementos>
         </Element>
+        <Element xsi:type="Label">
+          <Dock>None</Dock>
+          <Name>Label1</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>100</Width>
+            <Height>23</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click>OnClick</Click>
+          <DoubleClick>OnDouble</DoubleClick>
+          <Enter>Enter</Enter>
+          <GotFocus>GotFocus</GotFocus>
+          <LostFocus>LostFocus</LostFocus>
+          <Leave>Leave</Leave>
+          <KeyDown>KeyDown</KeyDown>
+          <KeyPress>KeyPress</KeyPress>
+          <KeyUp>KeyUp</KeyUp>
+        </Element>
       </elementos>
       <NumColumns>1</NumColumns>
-      <NumRows>4</NumRows>
+      <NumRows>5</NumRows>
     </Element>
   </elementos>
 </Element>

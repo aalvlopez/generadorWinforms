@@ -30,6 +30,7 @@ namespace WinformsImport
 				textBox.Anchor = this.Anchor;
 			}
 			textBox.Dock=this.Dock;
+			this.SetEvents(textBox);
 			return textBox;
 		}
 	}

@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -21,7 +22,6 @@ namespace WinformsGenerator
 
 		public Grid ():base(){
 			this.Name="Grid"+Grid.numElem.ToString();
-			Grid.numElem++;
 			this.NumColumns=0;
 			this.NumRows=0;
 			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
@@ -29,13 +29,16 @@ namespace WinformsGenerator
 		}
 
 
-		public Grid(Grid g):base(g.Dock, g.Name,g.elementos,g.Size,g.Location,g.Anchor,g.BackColor){
-			this.NumColumns=g.NumColumns;
-			this.NumRows=g.NumRows;
-		}
 
 		public override Element CopyElem (){
-			return new WinformsGenerator.Grid(this);
+			var grid = new WinformsGenerator.Grid();
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+				prop.SetValue(grid,prop.GetValue(this,null),null);
+			}
+			foreach (Element e in this.elementos) {
+				grid.AddElem(e.CopyElem());
+			}
+			return grid;
 		}
 
 		public void AddColumn ()
@@ -138,9 +141,10 @@ namespace WinformsGenerator
 		}
 		public override Element NewName ()
 		{
-			this.Name="Grid"+Grid.numElem.ToString();
+			var grid = this.CopyElem();
+			grid.Name="Grid"+Grid.numElem.ToString();
 			Grid.numElem++;
-			return this;
+			return grid;
 		}
 
 	}

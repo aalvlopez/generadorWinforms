@@ -22,7 +22,7 @@ namespace WinformsGenerator
 		}
 		public static void SelectItem (Element elemento)
 		{
-			Controller.window.GenerateDataGrid(elemento.GenerateDataGrid());
+			Controller.window.GenerateDataGrid(elemento.GenerateDataGrid(),elemento.EventDataGrid());
 		}
 
 		public static void addElemnt (Element elemento, Container parent)

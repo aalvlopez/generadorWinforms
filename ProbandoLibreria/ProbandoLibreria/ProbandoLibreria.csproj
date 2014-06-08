@@ -39,10 +39,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="WinformsImport">
-      <HintPath>bin\Debug\WinformsImport.dll</HintPath>
+      <HintPath>..\..\WinformsImport\WinformsImport\bin\Debug\WinformsImport.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Probando.cs" />
+    <Compile Include="Prueba.cs" />
   </ItemGroup>
 </Project>

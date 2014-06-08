@@ -18,7 +18,8 @@ namespace WinformsGenerator
 			this.page1 = new TabPage();
 			this.page2 = new TabPage();
 			this.dataGridView1 = new DataGridView();
-
+			this.dataGridView2 = new DataGridView();
+			
 			this.page1.SuspendLayout();
 			this.page2.SuspendLayout();
 			this.tab.SuspendLayout();
@@ -30,6 +31,9 @@ namespace WinformsGenerator
             this.dataGridView1.Dock = DockStyle.Fill;
             this.dataGridView1.Name = "dataGridView1";
 
+			this.dataGridView2.Dock = DockStyle.Fill;
+            this.dataGridView2.Name = "dataGridView2";
+
 			this.page1.Text = "Propiedades";
 			this.page1.Dock = DockStyle.Fill;
         	this.page1.TabIndex = 0;
@@ -38,7 +42,7 @@ namespace WinformsGenerator
 			this.page2.Text = "Eventos";
 			this.page2.Dock = DockStyle.Fill;
         	this.page2.TabIndex = 1;
-
+			this.page2.Controls.Add(this.dataGridView2);
 
 			this.tab.Dock=DockStyle.Fill;
 			this.tab.Controls.Add(this.page1);
@@ -53,6 +57,7 @@ namespace WinformsGenerator
 		}
 		
         public DataGridView dataGridView1;
+        public DataGridView dataGridView2;
 		public TabControl tab;
 		public TabPage page1;
 		public TabPage page2;

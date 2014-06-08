@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -59,6 +60,81 @@ namespace WinformsGenerator
 		    set { BackColor = ColorTranslator.FromHtml(value); }
 		}
 
+		//Eventos
+
+		public string Click {
+			get;
+			set;
+		}
+		public string DoubleClick {
+			get;
+			set;
+		}
+		public string Enter {
+			get;
+			set;
+		}
+		public string GotFocus {
+			get;
+			set;
+		}
+		public string LostFocus {
+			get;
+			set;
+		}
+		public string Leave {
+			get;
+			set;
+		}
+		public string KeyDown {
+			get;
+			set;
+		}
+		public string KeyPress {
+			get;
+			set;
+		}
+		public string KeyUp {
+			get;
+			set;
+		}
+		public string MouseClick {
+			get;
+			set;
+		}
+		public string MouseDoubleClick {
+			get;
+			set;
+		}
+		public string MouseDown {
+			get;
+			set;
+		}
+		public string MouseEnter {
+			get;
+			set;
+		}
+		public string MouseLeave {
+			get;
+			set;
+		}
+		public string MouseHover {
+			get;
+			set;
+		}
+		public string MouseUp {
+			get;
+			set;
+		}
+		public string MouseWheel {
+			get;
+			set;
+		}
+		public string Resize {
+			get;
+			set;
+		}
+
 
 		public Element ()
 		{
@@ -68,18 +144,25 @@ namespace WinformsGenerator
 			this.Location=new Point(0,0);
 			this.Anchor=AnchorStyles.None;
 			this.BackColor=Color.White;
+			this.Click="";
+			this.DoubleClick="";
+			this.Enter="";
+			this.GotFocus="";
+			this.LostFocus="";
+			this.Leave="";
+			this.KeyDown="";
+			this.KeyPress="";
+			this.KeyUp="";
+			this.MouseClick="";
+			this.MouseDoubleClick="";
+			this.MouseDown="";
+			this.MouseEnter="";
+			this.MouseLeave="";
+			this.MouseHover="";
+			this.MouseUp="";
+			this.MouseWheel="";
+			this.Resize="";
 		
-		}
-		public Element (DockStyle style, String name,Size size,Point location,AnchorStyles anchor,String text,Color backColor)
-		{
-			
-			this.Text=text;
-			this.Dock=style;
-			this.Name=name;
-			this.Location=location;
-			this.Size= size;
-			this.Anchor=anchor;
-			this.BackColor=backColor;
 		}
 
 
@@ -239,12 +322,10 @@ namespace WinformsGenerator
 					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out y);
 					if(isNum){
 						this.Location=new Point(this.Location.X,y);
-						Console.WriteLine(this.Location.ToString());
 					}
 					break;
 				case "Anchor":
 					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
-					Console.WriteLine(this.Anchor.ToString());
 					break;
 				case "Text":
 					this.Text=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
@@ -265,6 +346,67 @@ namespace WinformsGenerator
             dataGridView.Name = "dataGridView1";
 			dataGridView.ResumeLayout(false);
 			return dataGridView;
+		}
+
+		public virtual DataGridView EventDataGrid ()
+		{
+			DataGridView dataGridView = new DataGridView ();
+			dataGridView.SuspendLayout ();
+			dataGridView.ColumnCount = 2;
+			dataGridView.Columns [0].Name = "Propiedad";
+			dataGridView.Columns [1].Name = "Valor";
+			dataGridView.Columns [0].ReadOnly = true;
+			dataGridView.RowHeadersVisible = false;
+			dataGridView.Columns [0].MinimumWidth = 50;
+			dataGridView.Columns [1].MinimumWidth = 50;
+			dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+			dataGridView.AllowUserToAddRows = false;
+			dataGridView.AllowUserToDeleteRows = false;
+			dataGridView.AllowUserToOrderColumns = false;
+			dataGridView.Columns [0].SortMode = DataGridViewColumnSortMode.NotSortable;
+			dataGridView.Columns [1].SortMode = DataGridViewColumnSortMode.NotSortable;
+
+
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+				if(prop.GetValue(this,null).GetType()==typeof(String)&& prop.Name!="Name"&& prop.Name!="Text"&& prop.Name!="BackColorHtml"){
+					string[] row1 = { prop.Name,(string)prop.GetValue(this,null) };
+					dataGridView.Rows.Add (row1);
+				}
+			}
+
+
+
+			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
+				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
+				PropertyInfo prop =(PropertyInfo) (typeof(WinformsGenerator.Element).GetProperty((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value));
+					prop.SetValue(this,(string)((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
+			
+			};
+			dataGridView.Dock = DockStyle.Fill;
+
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
+			dataGridView.MultiSelect = false;
+            dataGridView.Name = "dataGridView1";
+			dataGridView.ResumeLayout(false);
+			return dataGridView;
+		}
+
+		public virtual void SetEvents (System.Windows.Forms.Control control)
+		{
+			Assembly asm = Assembly.GetExecutingAssembly ();
+			foreach (Type type in asm.GetTypes()) {
+				foreach(MethodInfo method in type.GetMethods()){
+					if(method.Name == this.Click && method.IsStatic){
+						Console.WriteLine(method.Name);
+						control.MouseClick+=delegate(object sender, MouseEventArgs e) {
+							method.Invoke(null , null);
+						};
+						break;
+					}
+				}
+			}
+
 		}
 
 		public abstract System.Windows.Forms.Control DrawElement();

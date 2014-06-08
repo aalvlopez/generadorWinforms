@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -11,18 +12,22 @@ namespace WinformsGenerator
 		private static int numElem=0; 
 		public Border ():base(){
 			this.Name="Border"+Border.numElem.ToString();
-			Border.numElem++;
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
 			this.Size=panel.Size;
 			this.Dock = DockStyle.Fill;
 		}
 
-		public Border(Border b):base(b.Dock, b.Name,b.elementos,b.Size,b.Location,b.Anchor,b.BackColor){}
 
 		public override Element CopyElem ()
 		{
-			Border b = new WinformsGenerator.Border (this);
-			return b;
+			var border = new WinformsGenerator.Border ();
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+				prop.SetValue (border, prop.GetValue (this, null), null);
+			}
+			foreach (Element e in this.elementos) {
+				border.AddElem(e.CopyElem());
+			}
+			return border;
 		}
 
 		public override void AddElem (Element elem)
@@ -54,9 +59,10 @@ namespace WinformsGenerator
 		}
 		public override Element NewName ()
 		{
-			this.Name="Border"+Border.numElem.ToString();
+			var border = this.CopyElem ();
+			border.Name = "Border" + Border.numElem.ToString ();
 			Border.numElem++;
-			return this;
+			return border;
 		}
 	}
 }

@@ -31,6 +31,7 @@ namespace WinformsImport
 				label.Anchor = this.Anchor;
 			}
 			label.Dock=this.Dock;
+			this.SetEvents(label);
 			return label;
 		}
 	}

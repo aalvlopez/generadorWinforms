@@ -10,6 +10,7 @@ namespace ProbandoLibreria
 		}
 		public static void Main ()
 		{
+
 			Application.Run(WinformsImport.ImportWinform.OpenWinform("prueba.xml"));
 		}
 	}

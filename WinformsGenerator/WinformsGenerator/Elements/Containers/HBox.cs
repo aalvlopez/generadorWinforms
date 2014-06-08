@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -12,20 +13,22 @@ namespace WinformsGenerator
 		public HBox ():base()
 		{
 			this.Name="HBox"+HBox.numElem.ToString();
-			HBox.numElem++;
 			this.NumRows=1;
 			this.NumColumns=0;
 			this.Dock=DockStyle.Top;
 		}
 
 
-		public HBox(HBox hb):base( (Grid)hb){
-			this.NumRows=hb.NumRows;
-			this.NumColumns=hb.NumColumns;
-		}
 
 		public override Element CopyElem (){
-			return new WinformsGenerator.HBox(this);
+			var hBox = new WinformsGenerator.Border();
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+				prop.SetValue(hBox,prop.GetValue(this,null),null);
+			}
+			foreach (Element e in this.elementos) {
+				hBox.AddElem(e.CopyElem());
+			}
+			return hBox;
 		}
 
 		public override void AddElem (Element e)
@@ -50,9 +53,10 @@ namespace WinformsGenerator
 		}
 		public override Element NewName ()
 		{
-			this.Name="HBox"+HBox.numElem.ToString();
+			var hBox = this.CopyElem();
+			hBox.Name="HBox"+HBox.numElem.ToString();
 			HBox.numElem++;
-			return this;
+			return hBox;
 		}
 	}
 }

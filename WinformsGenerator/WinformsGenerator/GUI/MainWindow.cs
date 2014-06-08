@@ -67,7 +67,6 @@ namespace WinformsGenerator
 					this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 				}
 			}
-			Console.WriteLine(imgFile.TrimStart("file:".ToCharArray()));
 			this.newForm.Click+=delegate(object sender,EventArgs e) {
 				Controller.NuevoForm();
 				Controller.SetSaveFile(null);
@@ -329,11 +328,14 @@ namespace WinformsGenerator
 			this.panelCenter.Controls.Clear();
 			this.panelCenter.Controls.Add(this.panelCenter.panelWork);
 		}
-		public void GenerateDataGrid (DataGridView datagridView)
+		public void GenerateDataGrid (DataGridView datagridView, DataGridView eventGrid)
 		{
 			this.panelPropertries.page1.Controls.Clear();
 			this.panelPropertries.dataGridView1=datagridView;
 			this.panelPropertries.page1.Controls.Add(this.panelPropertries.dataGridView1);
+			this.panelPropertries.page2.Controls.Clear();
+			this.panelPropertries.dataGridView2=eventGrid;
+			this.panelPropertries.page2.Controls.Add(this.panelPropertries.dataGridView2);
 		}
 
 		public void EnablePaste(){

@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -15,19 +16,18 @@ namespace WinformsGenerator
 
 		public TextBox ():base(){
 			this.Name="TextBox"+TextBox.numElem.ToString();
-			TextBox.numElem++;
 			this.TextAlign=HorizontalAlignment.Center;
 			System.Windows.Forms.TextBox tb = new System.Windows.Forms.TextBox();
 			this.Size=tb.Size;
 		}
 
 
-		public TextBox (TextBox t):base(t.Dock, t.Name,t.Text,t.Size,t.Location,t.Anchor,t.BackColor){
-			this.TextAlign=t.TextAlign;
-		}
-
 		public override Element CopyElem (){
-			return new WinformsGenerator.TextBox(this);
+			var textBox = new WinformsGenerator.TextBox();
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+				prop.SetValue(textBox,prop.GetValue(this,null),null);
+			}
+			return textBox;
 		}
 
 		public override System.Windows.Forms.Control DrawElement ()
@@ -81,9 +81,10 @@ namespace WinformsGenerator
 
 		public override Element NewName ()
 		{
-			this.Name="TextBox"+TextBox.numElem.ToString();
+			var textbox = this.CopyElem();
+			textbox.Name="TextBox"+TextBox.numElem.ToString();
 			TextBox.numElem++;
-			return this;
+			return textbox;
 		}
 	}
 }

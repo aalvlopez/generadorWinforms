@@ -2,6 +2,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace WinformsGenerator
 {
@@ -15,19 +16,18 @@ namespace WinformsGenerator
 		public Label ():base()
 		{
 			this.Name="Label"+Label.numElem.ToString();
-			Label.numElem++;
 			this.TextAlign=ContentAlignment.MiddleRight;
 			System.Windows.Forms.Label l = new System.Windows.Forms.Label();
 			this.Size=l.Size;
 		}
 
-		public Label (Label l):base(l.Dock, l.Name,l.Text,l.Size,l.Location,l.Anchor,l.BackColor)
-		{
-			this.TextAlign=l.TextAlign;
-		}
 
 		public override Element CopyElem (){
-			return new WinformsGenerator.Label(this);
+			var label = new WinformsGenerator.Label();
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+				prop.SetValue(label,prop.GetValue(this,null),null);
+			}
+			return label;
 		}
 
 		public override System.Windows.Forms.Control DrawElement ()
@@ -80,9 +80,10 @@ namespace WinformsGenerator
 		}
 		public override Element NewName ()
 		{
-			this.Name="Label"+Label.numElem.ToString();
+			var label = this.CopyElem();
+			label.Name="Label"+Label.numElem.ToString();
 			Label.numElem++;
-			return this;
+			return label;
 		}
 	}
 }

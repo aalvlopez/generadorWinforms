@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace WinformsImport
 {
@@ -29,6 +30,8 @@ namespace WinformsImport
 			btn.Dock=this.Dock;
 			btn.Size=this.Size;
 			btn.BackColor=this.BackColor;
+			this.SetEvents(btn);
+
 			return btn;
 		}
 	}
