@@ -151,132 +151,131 @@ namespace WinformsImport
 			foreach (Type type in asm.GetTypes()) {
 				foreach(MethodInfo method in type.GetMethods()){
 					if(method.Name == this.Click && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.Click);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.Click+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.DoubleClick && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.DoubleClick);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.DoubleClick+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.Enter && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.Enter);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.Enter+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.GotFocus && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.GotFocus);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.GotFocus+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.LostFocus && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.LostFocus);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.LostFocus+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.Leave && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.Leave);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.Leave+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.KeyDown && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.KeyDown);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.KeyDown+=delegate(object sender, KeyEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.KeyPress && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.KeyPress);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.KeyPress+=delegate(object sender, KeyPressEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.KeyUp && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.KeyUp);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.KeyUp+=delegate(object sender, KeyEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.MouseClick && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseClick);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseClick+=delegate(object sender, MouseEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.MouseDoubleClick && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseDoubleClick);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseDoubleClick+=delegate(object sender, MouseEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.MouseDown && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseDown);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseDown+=delegate(object sender, MouseEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.MouseEnter && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseEnter);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseEnter+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.MouseLeave && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseLeave);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseLeave+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.MouseHover && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseHover);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseHover+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
-						};
-						break;
-					}
+							m.Invoke(null , new Object[]{sender,e});
+						};					}
 					if(method.Name == this.MouseUp && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseUp);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseUp+=delegate(object sender, MouseEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.MouseWheel && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.MouseWheel);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.MouseWheel+=delegate(object sender, MouseEventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
 					if(method.Name == this.Resize && method.IsStatic){
-					Console.WriteLine(method.Name);
+						Console.WriteLine(method.Name + "==" + this.Resize);
+						MethodInfo m = type.GetMethod(method.Name);
 						control.Resize+=delegate(object sender, EventArgs e) {
-							method.Invoke(null , new Object[]{sender,e});
+							m.Invoke(null , new Object[]{sender,e});
 						};
-						break;
 					}
-					
+
 				}
 			}
 

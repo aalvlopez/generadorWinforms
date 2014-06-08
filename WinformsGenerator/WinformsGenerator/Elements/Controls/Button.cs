@@ -46,7 +46,6 @@ namespace WinformsGenerator
 			btn.Click+=delegate(object sender, EventArgs elementos){
 				Controller.ClickItem(this);
 			};
-			this.SetEvents(btn);
 			return btn;
 		}
 

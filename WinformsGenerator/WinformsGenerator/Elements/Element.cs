@@ -421,23 +421,6 @@ namespace WinformsGenerator
 			return dataGridView;
 		}
 
-		public virtual void SetEvents (System.Windows.Forms.Control control)
-		{
-			Assembly asm = Assembly.GetExecutingAssembly ();
-			foreach (Type type in asm.GetTypes()) {
-				foreach(MethodInfo method in type.GetMethods()){
-					if(method.Name == this.Click && method.IsStatic){
-						Console.WriteLine(method.Name);
-						control.MouseClick+=delegate(object sender, MouseEventArgs e) {
-							method.Invoke(null , null);
-						};
-						break;
-					}
-				}
-			}
-
-		}
-
 		public abstract System.Windows.Forms.Control DrawElement();
 		public abstract void GetTreeNode(TreeNode node,ContextMenuStrip menu);
 		public abstract Element NewName();

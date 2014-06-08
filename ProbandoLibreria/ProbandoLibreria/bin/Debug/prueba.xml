@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Form">
   <Dock>None</Dock>
-  <Name>Formulario</Name>
+  <Name>Form2</Name>
   <Text>prueba</Text>
   <Location>
     <X>0</X>
@@ -12,13 +12,30 @@
     <Height>500</Height>
   </Size>
   <Anchor>None</Anchor>
-  <BackColor>#FFFF80</BackColor>
+  <BackColor>White</BackColor>
   <Click />
+  <DoubleClick />
+  <Enter />
+  <GotFocus />
+  <LostFocus />
+  <Leave />
+  <KeyDown />
+  <KeyPress />
+  <KeyUp />
+  <MouseClick />
+  <MouseDoubleClick />
+  <MouseDown />
+  <MouseEnter />
+  <MouseLeave />
+  <MouseHover />
+  <MouseUp />
+  <MouseWheel />
+  <Resize />
   <elementos>
     <Element xsi:type="VBox">
       <Dock>Fill</Dock>
-      <Name>WinformsGenerator.VBox</Name>
-      <Text />
+      <Name>VBox0</Name>
+      <Text>prueba</Text>
       <Location>
         <X>0</X>
         <Y>0</Y>
@@ -28,260 +45,565 @@
         <Height>100</Height>
       </Size>
       <Anchor>None</Anchor>
-      <BackColor>White</BackColor>
-      <Click>OnClick</Click>
-      <DoubleClick>OnDouble</DoubleClick>
-      <Enter>Enter</Enter>
-      <GotFocus>GotFocus</GotFocus>
-      <LostFocus>LostFocus</LostFocus>
-      <Leave>Leave</Leave>
-      <KeyDown>KeyDown</KeyDown>
-      <KeyPress>KeyPress</KeyPress>
-      <KeyUp>KeyUp</KeyUp>
+      <BackColor>Red</BackColor>
+      <Click />
+      <DoubleClick />
+      <Enter />
+      <GotFocus />
+      <LostFocus />
+      <Leave />
+      <KeyDown />
+      <KeyPress />
+      <KeyUp />
+      <MouseClick />
+      <MouseDoubleClick />
+      <MouseDown />
+      <MouseEnter />
+      <MouseLeave />
+      <MouseHover />
+      <MouseUp />
+      <MouseWheel />
+      <Resize />
       <elementos>
         <Element xsi:type="Border">
           <Dock>Fill</Dock>
-          <Name>WinformsGenerator.Border</Name>
-          <Text />
-          <Location>
-            <X>0</X>
-            <Y>0</Y>
-          </Location>
-          <Size>
-            <Width>200</Width>
-            <Height>100</Height>
-          </Size>
-          <Anchor>None</Anchor>
-          <BackColor>#FF8080</BackColor>
-          <Click />
-          <DoubleClick>OnDouble</DoubleClick>
-          <GotFocus>GotFocus</GotFocus>
-          <KeyDown>KeyDow</KeyDown>
-          <elementos>
-            <Element xsi:type="Button">
-              <Dock>Left</Dock>
-              <Name>WinformsGenerator.Button</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>75</Width>
-                <Height>23</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>#FEFF7B</BackColor>
-              <Click />
-              <DoubleClick>OnDouble</DoubleClick>
-              <Enter>Enter</Enter>
-              <GotFocus>GotFocus</GotFocus>
-              <LostFocus>LostFocus</LostFocus>
-              <Leave>Leave</Leave>
-              <KeyDown>KeyDown</KeyDown>
-              <KeyPress>KeyPress</KeyPress>
-              <KeyUp>KeyUp</KeyUp>
-            </Element>
-            <Element xsi:type="TextBox">
-              <Dock>Fill</Dock>
-              <Name>WinformsGenerator.TextBox</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>100</Width>
-                <Height>20</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>White</BackColor>
-              <Click />
-              <DoubleClick>OnDouble</DoubleClick>
-              <GotFocus>GotFocus</GotFocus>
-            </Element>
-          </elementos>
-        </Element>
-        <Element xsi:type="Border">
-          <Dock>Fill</Dock>
-          <Name>WinformsGenerator.Border</Name>
-          <Text />
-          <Location>
-            <X>0</X>
-            <Y>0</Y>
-          </Location>
-          <Size>
-            <Width>200</Width>
-            <Height>100</Height>
-          </Size>
-          <Anchor>None</Anchor>
-          <BackColor>#FF8080</BackColor>
-          <Click />
-          <DoubleClick>OnDouble</DoubleClick>
-          <GotFocus>GotFocus</GotFocus>
-          <KeyPress>KeyPress</KeyPress>
-          <elementos>
-            <Element xsi:type="Button">
-              <Dock>Left</Dock>
-              <Name>WinformsGenerator.Button</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>75</Width>
-                <Height>23</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>#EEC59C</BackColor>
-              <Click />
-            </Element>
-            <Element xsi:type="TextBox">
-              <Dock>Fill</Dock>
-              <Name>WinformsGenerator.TextBox</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>100</Width>
-                <Height>20</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>White</BackColor>
-              <Click />
-            </Element>
-          </elementos>
-        </Element>
-        <Element xsi:type="Border">
-          <Dock>Fill</Dock>
-          <Name>WinformsGenerator.Border</Name>
-          <Text />
-          <Location>
-            <X>0</X>
-            <Y>0</Y>
-          </Location>
-          <Size>
-            <Width>200</Width>
-            <Height>100</Height>
-          </Size>
-          <Anchor>None</Anchor>
-          <BackColor>#FF8080</BackColor>
-          <Click />
-          <elementos>
-            <Element xsi:type="Button">
-              <Dock>Left</Dock>
-              <Name>WinformsGenerator.Button</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>75</Width>
-                <Height>23</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>#A6E684</BackColor>
-              <Click />
-            </Element>
-            <Element xsi:type="TextBox">
-              <Dock>Fill</Dock>
-              <Name>WinformsGenerator.TextBox</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>100</Width>
-                <Height>20</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>White</BackColor>
-              <Click />
-            </Element>
-          </elementos>
-        </Element>
-        <Element xsi:type="Border">
-          <Dock>Fill</Dock>
-          <Name>WinformsGenerator.Border</Name>
-          <Text />
-          <Location>
-            <X>0</X>
-            <Y>0</Y>
-          </Location>
-          <Size>
-            <Width>200</Width>
-            <Height>100</Height>
-          </Size>
-          <Anchor>None</Anchor>
-          <BackColor>#FF8080</BackColor>
-          <Click />
-          <elementos>
-            <Element xsi:type="Button">
-              <Dock>Left</Dock>
-              <Name>WinformsGenerator.Button</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>75</Width>
-                <Height>23</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>#B6F296</BackColor>
-              <Click />
-            </Element>
-            <Element xsi:type="TextBox">
-              <Dock>Fill</Dock>
-              <Name>WinformsGenerator.TextBox</Name>
-              <Text>prueba</Text>
-              <Location>
-                <X>0</X>
-                <Y>0</Y>
-              </Location>
-              <Size>
-                <Width>100</Width>
-                <Height>20</Height>
-              </Size>
-              <Anchor>None</Anchor>
-              <BackColor>White</BackColor>
-              <Click />
-            </Element>
-          </elementos>
-        </Element>
-        <Element xsi:type="Label">
-          <Dock>None</Dock>
-          <Name>Label1</Name>
+          <Name>Border1</Name>
           <Text>prueba</Text>
           <Location>
             <X>0</X>
             <Y>0</Y>
           </Location>
           <Size>
-            <Width>100</Width>
-            <Height>23</Height>
+            <Width>200</Width>
+            <Height>100</Height>
           </Size>
           <Anchor>None</Anchor>
-          <BackColor>White</BackColor>
-          <Click>OnClick</Click>
-          <DoubleClick>OnDouble</DoubleClick>
-          <Enter>Enter</Enter>
-          <GotFocus>GotFocus</GotFocus>
-          <LostFocus>LostFocus</LostFocus>
-          <Leave>Leave</Leave>
-          <KeyDown>KeyDown</KeyDown>
-          <KeyPress>KeyPress</KeyPress>
-          <KeyUp>KeyUp</KeyUp>
+          <BackColor>Silver</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Right</Dock>
+              <Name>Button1</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>Yellow</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter>Enter</Enter>
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick>OnClick</MouseClick>
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>TextBox0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#408080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="Label">
+              <Dock>Top</Dock>
+              <Name>Label0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FF8080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+          </elementos>
+        </Element>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>Border1</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>Silver</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Right</Dock>
+              <Name>Button1</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>Yellow</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>TextBox0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#408080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="Label">
+              <Dock>Top</Dock>
+              <Name>Label0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FF8080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+          </elementos>
+        </Element>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>Border1</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>Silver</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Right</Dock>
+              <Name>Button1</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>Yellow</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>TextBox0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#408080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="Label">
+              <Dock>Top</Dock>
+              <Name>Label0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FF8080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+          </elementos>
+        </Element>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>Border1</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>Silver</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <elementos>
+            <Element xsi:type="Button">
+              <Dock>Right</Dock>
+              <Name>Button1</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>75</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>Yellow</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Fill</Dock>
+              <Name>TextBox0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#408080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+            <Element xsi:type="Label">
+              <Dock>Top</Dock>
+              <Name>Label0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>#FF8080</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+            </Element>
+          </elementos>
         </Element>
       </elementos>
       <NumColumns>1</NumColumns>
-      <NumRows>5</NumRows>
+      <NumRows>4</NumRows>
     </Element>
   </elementos>
 </Element>
