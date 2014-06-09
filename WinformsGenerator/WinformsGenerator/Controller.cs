@@ -20,6 +20,7 @@ namespace WinformsGenerator
 			 Controller.formulario= new WinformsGenerator.Form();
 			Controller.window = new MainWindow();
 		}
+
 		public static void SelectItem (Element elemento)
 		{
 			Controller.window.GenerateDataGrid(elemento.GenerateDataGrid(),elemento.EventDataGrid());
@@ -51,6 +52,7 @@ namespace WinformsGenerator
 		{
 			return Controller.window;
 		}
+
 		public static System.Windows.Forms.Panel Draw(){
 			return (Panel) Controller.formulario.DrawElement();
 		}
@@ -72,6 +74,7 @@ namespace WinformsGenerator
 			Controller.window.panelTreeView.Copy ();
 			Controller.window.EnablePaste();
 		}
+
 		public static void PasteNode ()
 		{
 			Controller.window.panelTreeView.Paste ();
@@ -86,8 +89,6 @@ namespace WinformsGenerator
 		{
 			System.Xml.Serialization.XmlSerializer reader = 
 				new System.Xml.Serialization.XmlSerializer(typeof(WinformsGenerator.Element));
-			
-
 	        StreamReader file = new System.IO.StreamReader(Controller.saveFile);
 			Controller.formulario= (WinformsGenerator.Form)reader.Deserialize(file);
 	        file.Close();
@@ -99,7 +100,6 @@ namespace WinformsGenerator
 		{
 			System.Xml.Serialization.XmlSerializer writer = 
 				new System.Xml.Serialization.XmlSerializer(typeof(WinformsGenerator.Element));
-
 	        System.IO.StreamWriter file = new System.IO.StreamWriter(Controller.saveFile);
 	        writer.Serialize(file,(Element) Controller.GetForm());
 	        file.Close();
@@ -107,9 +107,12 @@ namespace WinformsGenerator
 
 		public static void Test ()
 		{
-
 			Controller.OpenFile();
 			Controller.testForm=Controller.formulario.DrawForm();
+			Controller.testForm.FormClosed+=delegate(object sender , FormClosedEventArgs e){
+				Controller.window.DisableStop();
+				Controller.window.EnablePlay();
+			};
 			Controller.testForm.Show();
 		}
 
@@ -117,13 +120,14 @@ namespace WinformsGenerator
 		{
 			Controller.testForm.Close();
 		}
+
 		public static void SetSaveFile(String fileName){
 			Controller.saveFile=fileName;
 		}
+
 		public static String GetSaveFile(){
 			return Controller.saveFile;
 		}
-
 
 		public static void ClickItem(Element e){
 			foreach(TreeNode t in Controller.window.panelTreeView.treeView1.Nodes){
@@ -139,6 +143,7 @@ namespace WinformsGenerator
 				}
 			}
 		}
+
 		public static Boolean findTag (TreeNode node,Element e)
 		{
 			foreach(TreeNode t in node.Nodes){
@@ -154,6 +159,7 @@ namespace WinformsGenerator
 			}
 			return false;
 		}
+
 		public static void ReSelectElement(){
 			ClickItem((Element)Controller.window.panelTreeView.treeView1.SelectedNode.Tag);
 		}

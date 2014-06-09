@@ -7,27 +7,27 @@ using System.Reflection;
 
 namespace WinformsGenerator
 {
-	public class Border:Container
+	public class GroupBox:Container
 	{
 		private static int numElem=0; 
-		public Border ():base(){
-			this.Name="Border"+Border.numElem.ToString();
-			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
-			this.Size=panel.Size;
+		public GroupBox ():base(){
+			this.Name="GroupBox"+GroupBox.numElem.ToString();
+			System.Windows.Forms.GroupBox group = new System.Windows.Forms.GroupBox();
+			this.Size=group.Size;
 			this.Dock = DockStyle.Fill;
 		}
 
 
 		public override Element CopyElem ()
 		{
-			var border = new WinformsGenerator.Border ();
+			var group = new WinformsGenerator.GroupBox ();
 			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
-				prop.SetValue (border, prop.GetValue (this, null), null);
+				prop.SetValue (group, prop.GetValue (this, null), null);
 			}
 			foreach (Element e in this.elementos) {
-				border.AddElem(e.CopyElem());
+				group.AddElem(e.CopyElem());
 			}
-			return border;
+			return group;
 		}
 
 		public override void AddElem (Element elem)
@@ -36,22 +36,23 @@ namespace WinformsGenerator
 		}
 
 		public override System.Windows.Forms.Control DrawElement (){
-			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
-			panel.Name=this.Name;
-			panel.Size=this.Size;
-			panel.Location=new Point(this.Location.X,this.Location.Y);
+			System.Windows.Forms.GroupBox group = new System.Windows.Forms.GroupBox();
+			group.Name=this.Name;
+			group.Size=this.Size;
+			group.Location=new Point(this.Location.X,this.Location.Y);
 			if (this.Anchor!=AnchorStyles.None) {
-				panel.Anchor = this.Anchor;
+				group.Anchor = this.Anchor;
 			}
-			panel.Dock = this.Dock;
-			panel.BackColor=this.BackColor;
-			panel.Click+=delegate(object sender, EventArgs elementos){
+			group.Dock = this.Dock;
+			group.BackColor=this.BackColor;
+			group.Text = this.Text;
+			group.Click+=delegate(object sender, EventArgs elementos){
 				Controller.ClickItem(this);
 			};
 			foreach(Element e in this.elementos){
-				panel.Controls.Add(e.DrawElement());
+				group.Controls.Add(e.DrawElement());
 			}
-			return panel;
+			return group;
 		}
 
 		public override System.Windows.Forms.DataGridView GenerateDataGrid (){
@@ -60,8 +61,8 @@ namespace WinformsGenerator
 		public override Element NewName ()
 		{
 			var border = this.CopyElem ();
-			border.Name = "Border" + Border.numElem.ToString ();
-			Border.numElem++;
+			border.Name = "GroupBox" + GroupBox.numElem.ToString ();
+			GroupBox.numElem++;
 			return border;
 		}
 	}

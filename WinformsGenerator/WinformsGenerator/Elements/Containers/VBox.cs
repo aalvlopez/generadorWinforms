@@ -46,7 +46,7 @@ namespace WinformsGenerator
 		}
 
 
-		public override DataGridView GenerateDataGrid ()
+		public override System.Windows.Forms.DataGridView GenerateDataGrid ()
 		{
 			return base.GenerateDataGrid();
 		}

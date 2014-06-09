@@ -21,7 +21,6 @@ namespace WinformsGenerator
 			this.Size=tb.Size;
 		}
 
-
 		public override Element CopyElem (){
 			var textBox = new WinformsGenerator.TextBox();
 			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
@@ -49,32 +48,32 @@ namespace WinformsGenerator
 			return textBox;
 		}
 
+		public override System.Windows.Forms.DataGridView GenerateDataGrid (){
+			System.Windows.Forms.DataGridView dataGridView = base.GenerateDataGrid ();
 
-		public override DataGridView GenerateDataGrid (){
-			DataGridView dataGridView = base.GenerateDataGrid ();
 			string[] row = { "TextAlign"};
 			dataGridView.Rows.Add (row);
-
-
 			var combo=new DataGridViewComboBoxCell();
 			combo.DataSource=Enum.GetValues(typeof(HorizontalAlignment));
 			combo.Value = this.TextAlign;
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=combo;
 
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
-
-				int y = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-				switch((String)((DataGridView)sender).Rows[y].Cells[0].Value){
+				int y = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
+				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[0].Value){
 				case "TextAlign":
-					this.TextAlign=(HorizontalAlignment) Enum.Parse(typeof(HorizontalAlignment),((DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					this.TextAlign=(HorizontalAlignment) Enum.Parse(typeof(HorizontalAlignment),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
 					break;
 				
 				default:
 					break;
 				}
+
 				Controller.RefreshTreeView();
 				Controller.ReDraw();
 			};
+
+
 
 			return dataGridView;
 		}

@@ -14,26 +14,32 @@ namespace WinformsGenerator
 		}
 
 		private void InitializeComponent(){
-			this.tab= new TabControl();
+			this.tab= new System.Windows.Forms.TabControl();
 			this.page1 = new TabPage();
 			this.page2 = new TabPage();
-			this.dataGridView1 = new DataGridView();
-			this.dataGridView2 = new DataGridView();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			
 			this.page1.SuspendLayout();
 			this.page2.SuspendLayout();
 			this.tab.SuspendLayout();
 			this.SuspendLayout();
+
 			// 
           	// dataGridView1
 			//
-
             this.dataGridView1.Dock = DockStyle.Fill;
             this.dataGridView1.Name = "dataGridView1";
 
+			// 
+          	// dataGridView2
+			//
 			this.dataGridView2.Dock = DockStyle.Fill;
             this.dataGridView2.Name = "dataGridView2";
 
+			// 
+          	// Tab
+			//
 			this.page1.Text = "Propiedades";
 			this.page1.Dock = DockStyle.Fill;
         	this.page1.TabIndex = 0;
@@ -56,9 +62,9 @@ namespace WinformsGenerator
 			this.ResumeLayout(false);
 		}
 		
-        public DataGridView dataGridView1;
-        public DataGridView dataGridView2;
-		public TabControl tab;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView2;
+		public System.Windows.Forms.TabControl tab;
 		public TabPage page1;
 		public TabPage page2;
 	}

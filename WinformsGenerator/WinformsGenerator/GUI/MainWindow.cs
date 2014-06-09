@@ -23,9 +23,8 @@ namespace WinformsGenerator
         private void InitializeComponent ()
 		{
 			String outPutDirectory = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().CodeBase);
-			this.splitterLeft = new Splitter ();
-			this.splitterRight = new Splitter ();
-
+			this.splitterLeft = new System.Windows.Forms.Splitter ();
+			this.splitterRight = new System.Windows.Forms.Splitter ();
 			this.newForm = new ToolStripMenuItem ();
 			this.addForm = new ToolStripMenuItem ();
 			this.copy = new ToolStripMenuItem ();
@@ -37,7 +36,6 @@ namespace WinformsGenerator
 			this.stop = new ToolStripMenuItem ();
 			this.save = new ToolStripMenuItem ();
 			this.saveAs = new ToolStripMenuItem ();
-
 			this.menuStrip1 = new MenuStrip ();
 			
 			this.menuStrip1.SuspendLayout ();
@@ -49,12 +47,29 @@ namespace WinformsGenerator
 			// 
 			// menuStrip1
 			// 
-
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Text = "menuStrip1";
+			this.menuStrip1.Items.AddRange (new ToolStripMenuItem[] {
+          	this.newForm,
+			this.addForm,
+			this.open,
+			this.save,
+			this.saveAs,
+			this.copy,
+			this.cut,
+			this.paste,
+			this.delete,
+			this.play,
+			this.stop}
+			);
+
 			// 
 			// archivoToolStripMenuItem
 			// 
+
+			//
+			//newForm
+			//
 			this.newForm.Name = "newForm";
 			this.newForm.Size = new Size (128, 128);
 			
@@ -73,21 +88,9 @@ namespace WinformsGenerator
 				this.save.Enabled=false;
 			};
 
-			this.addForm.Name = "addForm";
-			this.addForm.Size = new Size (128, 128);
-
-
-            imgFile = Path.Combine(outPutDirectory, "img/add.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.addForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\add.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.addForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.addForm.Enabled=false;
-
+			//
+			//open
+			//
 			this.open.Name = "open";
 			this.open.Size = new Size (128, 128);
 			
@@ -113,6 +116,9 @@ namespace WinformsGenerator
 
 			};
 
+			//
+			//save
+			//
 			this.save.Name = "save";
 			this.save.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/save.png");
@@ -129,7 +135,9 @@ namespace WinformsGenerator
 				Controller.SaveAsFile();
 			};
 
-
+			//
+			//saveAs
+			//
 			this.saveAs.Name = "saveAs";
 			this.saveAs.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/saveAs.png");
@@ -144,7 +152,10 @@ namespace WinformsGenerator
 			this.saveAs.Click+=delegate(object sender, EventArgs e) {
 				this.SaveAs();
 			};
-
+			
+			//
+			//copy
+			//
 			this.copy.Name = "copy";
 			this.copy.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/copy.png");
@@ -159,7 +170,10 @@ namespace WinformsGenerator
 			this.copy.Click+=delegate(object sender,EventArgs e){
 				Controller.CopyNode();
 			};
-
+			
+			//
+			//cut
+			//
 			this.cut.Name = "cut";
 			this.cut.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/cut.png");
@@ -175,7 +189,10 @@ namespace WinformsGenerator
 				Controller.CopyNode();
 				Controller.RemoveNode();
 			};
-
+			
+			//
+			//paste
+			//
 			this.paste.Name = "paste";
 			this.paste.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/paste.png");
@@ -191,7 +208,10 @@ namespace WinformsGenerator
 			this.paste.Click+=delegate(object sender, EventArgs e){
 				Controller.PasteNode();
 			};
-
+			
+			//
+			//delete
+			//
 			this.delete.Name = "delete";
 			this.delete.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/delete.png");
@@ -206,7 +226,10 @@ namespace WinformsGenerator
 			this.delete.Click+=delegate(object sender, EventArgs e) {
 				Controller.RemoveNode();
 			};
-
+			
+			//
+			//play
+			//
 			this.play.Name = "play";
 			this.play.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/play.png");
@@ -233,7 +256,10 @@ namespace WinformsGenerator
 				this.stop.Enabled=true;
 			};
 			this.play.ShortcutKeys=Keys.F5;
-
+			
+			//
+			//stop
+			//
 			this.stop.Name = "stop";
 			this.stop.Size = new Size (128, 128);
             imgFile = Path.Combine(outPutDirectory, "img/stop.png");
@@ -253,19 +279,7 @@ namespace WinformsGenerator
 			};
 			this.stop.ShortcutKeys=Keys.Shift | Keys.F5;
 
-			this.menuStrip1.Items.AddRange (new ToolStripMenuItem[] {
-          	this.newForm,
-			this.addForm,
-			this.open,
-			this.save,
-			this.saveAs,
-			this.copy,
-			this.cut,
-			this.paste,
-			this.delete,
-			this.play,
-			this.stop}
-			);
+
 			// 
             // panelTreeview
             // 
@@ -278,8 +292,8 @@ namespace WinformsGenerator
             // 
             this.splitterLeft.BorderStyle = BorderStyle.FixedSingle;
             this.splitterLeft.Name = "splitter1";
+            this.splitterLeft.Dock = DockStyle.Left;
 			this.splitterLeft.Size=new Size(5,317);
-            this.splitterLeft.TabStop = false;
 
 
             // 
@@ -295,7 +309,6 @@ namespace WinformsGenerator
             this.splitterRight.BorderStyle = BorderStyle.FixedSingle;
             this.splitterRight.Dock = DockStyle.Right;
             this.splitterRight.Name = "splitter2";
-            this.splitterRight.TabStop = false;
 			this.splitterRight.Size=new Size(5,317);
             
 
@@ -309,7 +322,6 @@ namespace WinformsGenerator
             // 
             // Form1
             // 
-			
             this.Name = "Form1";
             this.Size = new Size(1158, 700);
 			this.Text = "WinformsGenerator";
@@ -333,7 +345,7 @@ namespace WinformsGenerator
 			this.panelCenter.Controls.Clear();
 			this.panelCenter.Controls.Add(this.panelCenter.panelWork);
 		}
-		public void GenerateDataGrid (DataGridView datagridView, DataGridView eventGrid)
+		public void GenerateDataGrid (System.Windows.Forms.DataGridView datagridView, System.Windows.Forms.DataGridView eventGrid)
 		{
 			this.panelPropertries.page1.Controls.Clear();
 			this.panelPropertries.dataGridView1=datagridView;
@@ -346,24 +358,31 @@ namespace WinformsGenerator
 		public void EnablePaste(){
 			this.paste.Enabled=true;
 		}
+
 		public void DisablePaste(){
 			this.paste.Enabled=false;
 		}
+
 		public void EnableSave(){
 			this.save.Enabled=true;
 		}
+
 		public void DisableSave(){
 			this.save.Enabled=false;
 		}
+
 		public void EnableCopy(){
 			this.copy.Enabled=true;
 		}
+
 		public void DisableCopy(){
 			this.copy.Enabled=false;
 		}
+
 		public void EnableCut(){
 			this.cut.Enabled=true;
 		}
+
 		public void DisableCut(){
 			this.cut.Enabled=false;
 		}
@@ -378,6 +397,15 @@ namespace WinformsGenerator
 			this.delete.Enabled = false;
 		}
 
+		public void EnablePlay ()
+		{
+			this.play.Enabled = true;
+		}
+
+		public void DisableStop ()
+		{
+			this.stop.Enabled = false;
+		}
 
 		public DialogResult SaveAs ()
 		{
@@ -393,23 +421,24 @@ namespace WinformsGenerator
 			}
 			return result;
 		}
+
 		//splitters
-        private Splitter splitterLeft;
-        private Splitter splitterRight;
+        private System.Windows.Forms.Splitter splitterLeft;
+        private System.Windows.Forms.Splitter splitterRight;
 
 		//Menu
-		private ToolStripMenuItem newForm;
-		private ToolStripMenuItem addForm;
-		private ToolStripMenuItem copy;
-		private ToolStripMenuItem cut;
-		private ToolStripMenuItem paste;
-		private ToolStripMenuItem delete;
-		private ToolStripMenuItem open;
-		private ToolStripMenuItem play;
-		private ToolStripMenuItem stop;
-		private ToolStripMenuItem save;
-		private ToolStripMenuItem saveAs;
-		private MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem newForm;
+		private System.Windows.Forms.ToolStripMenuItem addForm;
+		private System.Windows.Forms.ToolStripMenuItem copy;
+		private System.Windows.Forms.ToolStripMenuItem cut;
+		private System.Windows.Forms.ToolStripMenuItem paste;
+		private System.Windows.Forms.ToolStripMenuItem delete;
+		private System.Windows.Forms.ToolStripMenuItem open;
+		private System.Windows.Forms.ToolStripMenuItem play;
+		private System.Windows.Forms.ToolStripMenuItem stop;
+		private System.Windows.Forms.ToolStripMenuItem save;
+		private System.Windows.Forms.ToolStripMenuItem saveAs;
+		private System.Windows.Forms.MenuStrip menuStrip1;
 
 		//Secciones
         public WorkSpace panelCenter= new WorkSpace();

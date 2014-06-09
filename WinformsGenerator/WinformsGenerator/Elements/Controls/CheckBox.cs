@@ -6,47 +6,64 @@ using System.Reflection;
 
 namespace WinformsGenerator
 {
-	public class Label:Control
+
+	public class CheckBox:Control
 	{
 		private static int numElem=0;
+		public Boolean Checked {
+			get;
+			set;
+		}
 		ContentAlignment TextAlign {
 			get;
 			set;
 		}
-		public Label ():base()
-		{
-			this.Name="Label"+Label.numElem.ToString();
-			this.TextAlign=ContentAlignment.MiddleRight;
-			System.Windows.Forms.Label l = new System.Windows.Forms.Label();
-			this.Size=l.Size;
+
+		public CheckBox ():base(){
+			this.Name="CheckBox"+CheckBox.numElem.ToString();
+			System.Windows.Forms.CheckBox check = new System.Windows.Forms.CheckBox();
+			this.Size=check.Size;
+			this.TextAlign=check.TextAlign;
+			this.Checked=false;
 		}
 
 
+
 		public override Element CopyElem (){
-			var label = new WinformsGenerator.Label();
+			var check = new WinformsGenerator.CheckBox();
 			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
-				prop.SetValue(label,prop.GetValue(this,null),null);
+				prop.SetValue(check,prop.GetValue(this,null),null);
 			}
-			return label;
+			return check;
 		}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{
-			System.Windows.Forms.Label label = new System.Windows.Forms.Label ();
-			label.Name = this.Name;
-			label.Text = this.Text;
-			label.TextAlign = this.TextAlign;
-			label.Size = this.Size;
-			label.Location = new Point(this.Location.X,this.Location.Y);
-			label.BackColor=this.BackColor;
+			System.Windows.Forms.CheckBox check = new System.Windows.Forms.CheckBox();
+			check.Name = this.Name;
+			check.Text = this.Text;
+			check.Location = new Point(this.Location.X,this.Location.Y);
 			if (this.Anchor!=AnchorStyles.None) {
-				label.Anchor = this.Anchor;
+				check.Anchor = this.Anchor;
 			}
-			label.Dock=this.Dock;
-			label.Click+=delegate(object sender, EventArgs elementos){
+			check.Dock=this.Dock;
+			check.Size=this.Size;
+			check.BackColor=this.BackColor;
+
+			check.TextAlign=this.TextAlign;
+			check.Checked=this.Checked;
+			check.Click+=delegate(object sender, EventArgs elementos){
 				Controller.ClickItem(this);
 			};
-			return label;
+			return check;
+		}
+
+		public override Element NewName ()
+		{
+			var check = this.CopyElem();
+			check.Name="CheckBox"+CheckBox.numElem.ToString();
+			CheckBox.numElem++;
+			return check;
 		}
 
 		public override System.Windows.Forms.DataGridView GenerateDataGrid ()
@@ -61,12 +78,23 @@ namespace WinformsGenerator
 			combo.Value = this.TextAlign;
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=combo;
 
+			string[]row1 ={"Checked"};
+			dataGridView.Rows.Add(row1);
+
+			var check=new DataGridViewCheckBoxCell();
+			check.Value=this.Checked;
+			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=check;
+
+
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
 
 				int y = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
 				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[0].Value){
 				case "TextAlign":
 					this.TextAlign=(ContentAlignment) Enum.Parse(typeof(ContentAlignment),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					break;
+				case "Checked":
+					this.Checked=(Boolean)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value;
 					break;
 				
 				default:
@@ -78,13 +106,7 @@ namespace WinformsGenerator
 
 			return dataGridView;
 		}
-		public override Element NewName ()
-		{
-			var label = this.CopyElem();
-			label.Name="Label"+Label.numElem.ToString();
-			Label.numElem++;
-			return label;
-		}
 	}
 }
+
 

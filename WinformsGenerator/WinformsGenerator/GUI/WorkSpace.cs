@@ -13,22 +13,17 @@ namespace WinformsGenerator
 		}
 
 		private void InitializeComponent(){
-			
             this.panelWork = (Panel)Controller.Draw();
-
 			this.panelWork.SuspendLayout();
 			this.SuspendLayout();
-			
-            
-
-
+			this.BackColor=Color.DarkGray;
 			this.Controls.Add(this.panelWork);
-
 			this.panelWork.ResumeLayout(false);
+			this.HScroll=true;
+			this.VScroll=true;
 			this.ResumeLayout(false);
 		}
 
-		
         public Panel panelWork;
 	}
 }

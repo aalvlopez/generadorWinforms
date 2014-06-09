@@ -16,7 +16,7 @@ namespace WinformsGenerator
 			node2.Tag=this;
 		}
 
-		public override DataGridView GenerateDataGrid ()
+		public override System.Windows.Forms.DataGridView GenerateDataGrid ()
 		{
 			return base.GenerateDataGrid();
 		}

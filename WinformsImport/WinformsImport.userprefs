@@ -1,10 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsImport/Elements/Controls/TextBox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsImport/Elements/Element.cs">
     <Files>
-      <File FileName="WinformsImport/Elements/Controls/Button.cs" Line="1" Column="14" />
-      <File FileName="WinformsImport/Elements/Element.cs" Line="5" Column="1" />
-      <File FileName="WinformsImport/Elements/Controls/TextBox.cs" Line="5" Column="13" />
+      <File FileName="WinformsImport/Elements/Controls/Button.cs" Line="33" Column="4" />
+      <File FileName="WinformsImport/Elements/Controls/TextBox.cs" Line="33" Column="28" />
+      <File FileName="WinformsImport/Controller.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/Elements/Element.cs" Line="63" Column="9" />
+      <File FileName="WinformsImport/Elements/Controls/Label.cs" Line="35" Column="17" />
+      <File FileName="WinformsImport/Elements/Containers/Border.cs" Line="14" Column="63" />
+      <File FileName="WinformsImport/Elements/Containers/Container.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/Elements/Containers/Grid.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/ImportWinform.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/Elements/Form.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/Elements/Controls/Control.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/Elements/Containers/VBox.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport/Elements/Containers/HBox.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

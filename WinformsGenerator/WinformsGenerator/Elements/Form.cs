@@ -6,21 +6,22 @@ using System.Collections.Generic;
 
 namespace WinformsGenerator
 {
-	
-
 	public class Form:Container
 	{
 		private static int numElem=0;
+
 		public Form ():base(){
 			this.Name="Form"+Form.numElem.ToString();
 			Form.numElem++;
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
 			this.Size=panel.Size;
 		}
+
 		public override void AddElem (Element elem)
 		{
 			this.elementos.Add(elem);
 		}
+
 		public override System.Windows.Forms.Control DrawElement ()
 		{
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
@@ -42,6 +43,7 @@ namespace WinformsGenerator
 			}
 			return panel;
 		}
+
 		public System.Windows.Forms.Form DrawForm ()
 		{
 			System.Windows.Forms.Form form = new  System.Windows.Forms.Form();
@@ -54,14 +56,17 @@ namespace WinformsGenerator
 			form.Controls.Add(panel);
 			return form;
 		}
-		public override Element CopyElem (){return null;}
+
+		public override Element CopyElem (){
+			return null;
+		}
+
 		public override Element NewName ()
 		{
 			this.Name="Form"+Form.numElem.ToString();
 			Form.numElem++;
 			return this;
 		}
-		
 	}
 }
 

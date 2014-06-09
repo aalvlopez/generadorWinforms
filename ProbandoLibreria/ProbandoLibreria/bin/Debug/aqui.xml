@@ -8,8 +8,8 @@
     <Y>0</Y>
   </Location>
   <Size>
-    <Width>200</Width>
-    <Height>100</Height>
+    <Width>700</Width>
+    <Height>800</Height>
   </Size>
   <Anchor>None</Anchor>
   <BackColor>White</BackColor>
@@ -31,5 +31,316 @@
   <MouseUp />
   <MouseWheel />
   <Resize />
-  <elementos />
+  <elementos>
+    <Element xsi:type="VBox">
+      <Dock>Fill</Dock>
+      <Name>VBox0</Name>
+      <Text>prueba</Text>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <Width>200</Width>
+        <Height>100</Height>
+      </Size>
+      <Anchor>None</Anchor>
+      <BackColor>White</BackColor>
+      <Click />
+      <DoubleClick />
+      <Enter />
+      <GotFocus />
+      <LostFocus />
+      <Leave />
+      <KeyDown />
+      <KeyPress />
+      <KeyUp />
+      <MouseClick />
+      <MouseDoubleClick />
+      <MouseDown />
+      <MouseEnter />
+      <MouseLeave />
+      <MouseHover />
+      <MouseUp />
+      <MouseWheel />
+      <Resize />
+      <elementos>
+        <Element xsi:type="Button">
+          <Dock>None</Dock>
+          <Name>Button1</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>75</Width>
+            <Height>23</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+        </Element>
+        <Element xsi:type="Label">
+          <Dock>None</Dock>
+          <Name>Label0</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>100</Width>
+            <Height>23</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+        </Element>
+        <Element xsi:type="TextBox">
+          <Dock>None</Dock>
+          <Name>TextBox0</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>100</Width>
+            <Height>20</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+        </Element>
+        <Element xsi:type="RadioButton">
+          <Dock>None</Dock>
+          <Name>RadioButton0</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>104</Width>
+            <Height>24</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <Checked>false</Checked>
+        </Element>
+        <Element xsi:type="ProgressBar">
+          <Dock>None</Dock>
+          <Name>ProgressBar0</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>100</Width>
+            <Height>23</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <Value>0</Value>
+        </Element>
+        <Element xsi:type="DateTimePicker">
+          <Dock>None</Dock>
+          <Name>DateTimePicker0</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>20</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <Format>Long</Format>
+          <Value>2014-06-09T04:26:19.251243+02:00</Value>
+        </Element>
+        <Element xsi:type="PictureBox">
+          <Dock>None</Dock>
+          <Name>PictureBox0</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>100</Width>
+            <Height>50</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <Image />
+        </Element>
+        <Element xsi:type="MonthCalendar">
+          <Dock>None</Dock>
+          <Name>MonthCalendar1</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>170</Width>
+            <Height>134</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <CalendarDimensions>
+            <Width>1</Width>
+            <Height>1</Height>
+          </CalendarDimensions>
+        </Element>
+      </elementos>
+      <NumColumns>1</NumColumns>
+      <NumRows>10</NumRows>
+    </Element>
+  </elementos>
 </Element>

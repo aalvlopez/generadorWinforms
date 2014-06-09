@@ -97,9 +97,9 @@ namespace WinformsGenerator
 			return table;
 			
 		}
-		public override DataGridView GenerateDataGrid ()
+		public override System.Windows.Forms.DataGridView GenerateDataGrid ()
 		{
-			DataGridView dataGridView = base.GenerateDataGrid ();
+			System.Windows.Forms.DataGridView dataGridView = base.GenerateDataGrid ();
 			if (this.GetType () != typeof(WinformsGenerator.HBox)) {
 				string[] row = { "Rows",this.NumRows.ToString ()};
 				dataGridView.Rows.Add (row);
@@ -110,12 +110,12 @@ namespace WinformsGenerator
 			}
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
 
-				int y = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
+				int y = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
 				Boolean isNum ;
-				switch((String)((DataGridView)sender).Rows[y].Cells[0].Value){
+				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[0].Value){
 				case "Columns":
 					int colNum;
-					isNum= int.TryParse((String)((DataGridView)sender).Rows[y].Cells[1].Value, out colNum);
+					isNum= int.TryParse((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value, out colNum);
 					if(isNum){
 						this.NumColumns=colNum;
 					}else{
@@ -124,7 +124,7 @@ namespace WinformsGenerator
 					break;
 				case "Rows":
 					int rowNum;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[y].Cells[1].Value, out rowNum);
+					isNum = int.TryParse((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value, out rowNum);
 					if(isNum){
 						this.NumRows=rowNum;
 					}else{
@@ -137,6 +137,8 @@ namespace WinformsGenerator
 				Controller.RefreshTreeView();
 				Controller.ReDraw();
 			};
+
+
 			return dataGridView;
 		}
 		public override Element NewName ()

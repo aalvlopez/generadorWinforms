@@ -24,8 +24,6 @@ namespace WinformsGenerator
 			this.pasteMenuItem = new ToolStripMenuItem ();
 			this.containersMenuItem = new ToolStripMenuItem ();
 			this.controlsMenuItem = new ToolStripMenuItem ();
-
-
 			this.treeView1 = new System.Windows.Forms.TreeView ();
 			this.contextMenuStrip1.SuspendLayout ();
 			this.SuspendLayout ();
@@ -56,7 +54,6 @@ namespace WinformsGenerator
 			// 
             // removeMenuItem
             // 
-
             this.removeMenuItem.Name = "removeMenuItem";
             this.removeMenuItem.Size = new System.Drawing.Size(110, 22);
             this.removeMenuItem.Text = "Remove";
@@ -68,8 +65,6 @@ namespace WinformsGenerator
 			//
 			//copyMenuItem
 			//
-
-
             this.copyMenuItem.Name = "copyMenuItem";
             this.copyMenuItem.Size = new System.Drawing.Size(110, 22);
             this.copyMenuItem.Text = "Copy Ctr+C";
@@ -82,7 +77,6 @@ namespace WinformsGenerator
 			// 
             // pasteMenuItem
             // 
-
             this.pasteMenuItem.Name = "pasteMenuItem";
             this.pasteMenuItem.Size = new System.Drawing.Size(110, 22);
             this.pasteMenuItem.Text = "Paste Ctr+V";
@@ -95,11 +89,9 @@ namespace WinformsGenerator
 
 			};
 
-
 			// 
             // cutMenuItem
             // 
-
             this.cutMenuItem.Name = "cutMenuItem";
             this.cutMenuItem.Size = new System.Drawing.Size(110, 22);
             this.cutMenuItem.Text = "Cut Ctr+X";
@@ -111,9 +103,12 @@ namespace WinformsGenerator
 				
 			};
 
+			// 
+            // containersMenuItem
+            // 
+
 			List<ToolStripItem> l = new List<ToolStripItem>();
 			Assembly asm = Assembly.GetExecutingAssembly();
-
 		    foreach (Type type in asm.GetTypes())
 		    {
 		        if (type.Namespace == "WinformsGenerator"){
@@ -130,19 +125,16 @@ namespace WinformsGenerator
 					}
 				}
 		    }
-
-			// 
-            // containersMenuItem
-            // 
-
 			this.containersMenuItem.DropDownItems.AddRange(l.ToArray());
             this.containersMenuItem.Name = "containersMenuItem";
             this.containersMenuItem.Size = new System.Drawing.Size(110, 22);
             this.containersMenuItem.Text = "Containers";
 
-
+			
+			// 
+            // controlsMenuItem
+            // 
 			l = new List<ToolStripItem>();
-
 		    foreach (Type type in asm.GetTypes())
 		    {
 		        if (type.Namespace == "WinformsGenerator"){
@@ -159,16 +151,10 @@ namespace WinformsGenerator
 					}
 				}
 		    }
-
-			// 
-            // controlsMenuItem
-            // 
 			this.controlsMenuItem.DropDownItems.AddRange(l.ToArray());
             this.controlsMenuItem.Name = "controlsMenuItem";
             this.controlsMenuItem.Size = new System.Drawing.Size(110, 22);
             this.controlsMenuItem.Text = "Controls";
-
-
 
 			// 
             // treeView1
@@ -178,7 +164,6 @@ namespace WinformsGenerator
 			this.BuildTreeView();
             this.treeView1.Size = new Size(124, 317);
             this.treeView1.TabIndex = 0;
-
 			this.treeView1.AfterSelect+=delegate(object sender , TreeViewEventArgs e){
 				if(this.treeView1.SelectedNode.Tag.GetType().Equals(typeof(WinformsGenerator.Form))){
 					Controller.GetWindow().DisableCopy();
@@ -200,13 +185,9 @@ namespace WinformsGenerator
 			};
 
 			this.treeView1.NodeMouseClick+=delegate(object sender, TreeNodeMouseClickEventArgs e){
-				
-
 				this.treeView1.SelectedNode=e.Node;
-
 				Controller.SelectItem((Element)e.Node.Tag);
 				if(e.Button==MouseButtons.Right){
-					Console.WriteLine(((Element)this.treeView1.SelectedNode.Tag).Name);
 					if (this.treeView1.SelectedNode.Tag.GetType ().IsSubclassOf (typeof(WinformsGenerator.Control))) {
 						this.addMenuItem.Enabled = false;
 						this.pasteMenuItem.Enabled = false;
@@ -229,7 +210,6 @@ namespace WinformsGenerator
 			};
 
 			this.treeView1.KeyDown+=delegate(object sender, KeyEventArgs e){
-
 				if(e.Control && (e.KeyCode == Keys.C||e.KeyCode == Keys.X)){
 					this.Copy();
 				}else{
@@ -240,10 +220,7 @@ namespace WinformsGenerator
 				if((e.Control && e.KeyCode == Keys.X)||e.KeyCode==Keys.Delete){
 					this.Remove();
 				}
-
 			};
-
-
 
             this.Controls.Add(this.treeView1);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -267,13 +244,14 @@ namespace WinformsGenerator
 			this.treeView1.SelectedNode=this.treeView1.Nodes[0];
 			foreach (Element elem in Controller.GetForm().elementos) {
 				elem.GetTreeNode(node,this.contextMenuStrip1);
-
 			}
 			node.ContextMenuStrip = this.contextMenuStrip1;
-            node.ExpandAll();
-            
+            node.ExpandAll(); 
 		}
 
+		//
+		//Acciones
+		//
 		public void Copy(){
 			this.nodeCopied=this.treeView1.SelectedNode;
 			this.pasteMenuItem.Enabled=true;
@@ -294,19 +272,19 @@ namespace WinformsGenerator
 			this.RefreshTreeView();
 		}
 
-		public TreeView treeView1;
+		public System.Windows.Forms.TreeView treeView1;
         private ContextMenuStrip contextMenuStrip1;
 
-		private ToolStripMenuItem addMenuItem;
-		private ToolStripMenuItem removeMenuItem;
-		private ToolStripMenuItem copyMenuItem;
-		private ToolStripMenuItem pasteMenuItem;
-		private ToolStripMenuItem cutMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem addMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem removeMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem copyMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem pasteMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cutMenuItem;
 
-		private ToolStripMenuItem containersMenuItem;
-		private ToolStripMenuItem controlsMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem containersMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem controlsMenuItem;
 
-		public TreeNode nodeCopied;
+		public System.Windows.Forms.TreeNode nodeCopied;
 
 	}
 }

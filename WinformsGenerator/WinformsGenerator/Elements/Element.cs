@@ -8,16 +8,23 @@ using System.Reflection;
 
 namespace WinformsGenerator
 {
-
-	
 	[XmlInclude(typeof(WinformsGenerator.Form))]
 	[XmlInclude(typeof(WinformsGenerator.Button))]
 	[XmlInclude(typeof(WinformsGenerator.TextBox))]
 	[XmlInclude(typeof(WinformsGenerator.Label))]
+	[XmlInclude(typeof(WinformsGenerator.CheckBox))]
+	[XmlInclude(typeof(WinformsGenerator.RadioButton))]
+	[XmlInclude(typeof(WinformsGenerator.ComboBox))]
+	[XmlInclude(typeof(WinformsGenerator.DateTimePicker))]
+	[XmlInclude(typeof(WinformsGenerator.MonthCalendar))]
+	[XmlInclude(typeof(WinformsGenerator.PictureBox))]
+	[XmlInclude(typeof(WinformsGenerator.ProgressBar))]
+	[XmlInclude(typeof(WinformsGenerator.Splitter))]
 	[XmlInclude(typeof(WinformsGenerator.Border))]
 	[XmlInclude(typeof(WinformsGenerator.HBox))]
 	[XmlInclude(typeof(WinformsGenerator.VBox))]
 	[XmlInclude(typeof(WinformsGenerator.Grid))]
+	[XmlInclude(typeof(WinformsGenerator.GroupBox))]
 	public abstract class Element
 	{ 
 		public static ColorDialog c = new ColorDialog();
@@ -47,7 +54,6 @@ namespace WinformsGenerator
 		}
 
 		private Color backColor;
-
 		[XmlIgnore]
 		public Color BackColor 
 		{
@@ -62,7 +68,6 @@ namespace WinformsGenerator
 		}
 
 		//Eventos
-
 		public string Click {
 			get;
 			set;
@@ -136,7 +141,6 @@ namespace WinformsGenerator
 			set;
 		}
 
-
 		public Element ()
 		{
 			
@@ -166,18 +170,11 @@ namespace WinformsGenerator
 		
 		}
 
-
-
-		public virtual DataGridView GenerateDataGrid ()
+		public virtual System.Windows.Forms.DataGridView GenerateDataGrid ()
 		{
-			DataGridView dataGridView = new DataGridView ();
-      		
-
-
+			System.Windows.Forms.DataGridView dataGridView = new System.Windows.Forms.DataGridView ();
 			dataGridView.SuspendLayout ();
-			
 			dataGridView.ColumnCount = 2;
-
 
 			dataGridView.Columns [0].Name = "Propiedad";
 			dataGridView.Columns [1].Name = "Valor";
@@ -194,26 +191,40 @@ namespace WinformsGenerator
 
 			string[] row1 = { "Name", this.Name };
 			dataGridView.Rows.Add (row1);
-
-			string[] row7 = {"Text",this.Text };
-			dataGridView.Rows.Add (row7);
+			if (!this.GetType ().Equals (typeof(WinformsGenerator.DateTimePicker))&&
+			    !this.GetType ().Equals (typeof(WinformsGenerator.MonthCalendar))&&
+			    this.GetType ().Equals (typeof(WinformsGenerator.Splitter))&&
+			    this.GetType ().Equals (typeof(WinformsGenerator.ProgressBar))) {
+				string[] row7 = {"Text",this.Text };
+				dataGridView.Rows.Add (row7);
+			}
 
 			if (!this.GetType ().Equals (typeof(WinformsGenerator.Form))) {
 				string[] row0 = { "Dock"};
 				dataGridView.Rows.Add (row0);
 				var combo = new DataGridViewComboBoxCell ();
-				combo.DataSource = Enum.GetValues (typeof(DockStyle));
+				if(!this.GetType().Equals(typeof(WinformsGenerator.Splitter))){
+					combo.DataSource = Enum.GetValues (typeof(DockStyle));
+				}else{
+					DockStyle[] x =(DockStyle[])Enum.GetValues(typeof(DockStyle));
+					var l = new List<DockStyle>(x);
+					l.Remove(DockStyle.None);
+					combo.DataSource=l.ToArray();
+				}
 				combo.Value = this.Dock;
 				dataGridView.Rows [dataGridView.Rows.Count-1].Cells [1] = combo;
 			}
 
 			string[] row2 = { "Size.Height", this.Size.Height.ToString () };
 			dataGridView.Rows.Add (row2);
+
 			string[] row3 = { "Size.Width", this.Size.Width.ToString () };
 			dataGridView.Rows.Add (row3);
+
 			if (!this.GetType ().Equals (typeof(WinformsGenerator.Form))) {
 				string[] row4 = { "Location.X", this.Location.X.ToString () };
 				dataGridView.Rows.Add (row4);
+
 				string[] row5 = { "Location.Y", this.Location.Y.ToString () };
 				dataGridView.Rows.Add (row5);
 
@@ -242,9 +253,9 @@ namespace WinformsGenerator
 			((DataGridViewTextBoxCell)(dataGridView.Rows [dataGridView.Rows.Count - 1].Cells [1])).Style.BackColor=this.BackColor;
 
 			dataGridView.CellMouseClick+=delegate(object sender, DataGridViewCellMouseEventArgs e){
-				if((String)((DataGridView)sender).Rows[((DataGridView)sender).SelectedCells[0].RowIndex].Cells[0].Value=="BackColor"&&
-				   ((DataGridView)sender).Rows[((DataGridView)sender).SelectedCells[0].RowIndex].Cells[1]==((DataGridView)sender).SelectedCells[0]){
-					DataGridViewCell btn = (DataGridViewCell)((DataGridView)sender).SelectedCells[0];
+				if((String)((System.Windows.Forms.DataGridView)sender).Rows[((System.Windows.Forms.DataGridView)sender).SelectedCells[0].RowIndex].Cells[0].Value=="BackColor"&&
+				   ((System.Windows.Forms.DataGridView)sender).Rows[((System.Windows.Forms.DataGridView)sender).SelectedCells[0].RowIndex].Cells[1]==((System.Windows.Forms.DataGridView)sender).SelectedCells[0]){
+					DataGridViewCell btn = (DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0];
 					Element.c.Color = btn.Style.BackColor;
 					Element.c.FullOpen=true;
 					if (Element.c.ShowDialog() == DialogResult.OK){
@@ -256,49 +267,50 @@ namespace WinformsGenerator
 					Controller.ReDraw();
 				}
 			};
+
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
 				bool isNum;
-				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-				switch((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value){
+				int rowEdited = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
+				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[0].Value){
 				case "Dock":
-					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
 					break;
 				case "Name":
-					this.Name=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+					this.Name=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
 					break;
 				case "Size.Height":
 					int height;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out height);
+					isNum = int.TryParse((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value, out height);
 					if(isNum){
 						this.Size=new Size(this.Size.Width,height);
 					}
 					break;
 				case "Size.Width":
 					int width;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out width);
+					isNum = int.TryParse((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value, out width);
 					if(isNum){
 						this.Size=new Size(width,this.Size.Height);
 					}
 					break;
 				case "Location.X":
 					int x;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out x);
+					isNum = int.TryParse((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value, out x);
 					if(isNum){
 						this.Location=new Point(x,this.Location.Y);
 					}
 					break;
 				case "Location.Y":
 					int y;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out y);
+					isNum = int.TryParse((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value, out y);
 					if(isNum){
 						this.Location=new Point(this.Location.X,y);
 					}
 					break;
 				case "Anchor":
-					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
 					break;
 				case "Text":
-					this.Text=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+					this.Text=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
 					break;
 				default:
 					break;
@@ -306,72 +318,71 @@ namespace WinformsGenerator
 				Controller.RefreshTreeView();
 				Controller.ReDraw();
 			};
-
-			dataGridView.Leave+=delegate(object sender, EventArgs e) {
-				bool isNum;
-				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-				switch((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value){
-				case "Dock":
-					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
-					break;
-				case "Name":
-					this.Name=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
-					break;
-				case "Size.Height":
-					int height;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out height);
-					if(isNum){
-						this.Size=new Size(this.Size.Width,height);
-					}
-					break;
-				case "Size.Width":
-					int width;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out width);
-					if(isNum){
-						this.Size=new Size(width,this.Size.Height);
-					}
-					break;
-				case "Location.X":
-					int x;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out x);
-					if(isNum){
-						this.Location=new Point(x,this.Location.Y);
-					}
-					break;
-				case "Location.Y":
-					int y;
-					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out y);
-					if(isNum){
-						this.Location=new Point(this.Location.X,y);
-					}
-					break;
-				case "Anchor":
-					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
-					break;
-				case "Text":
-					this.Text=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
-					break;
-				default:
-					break;
-				}
-				Controller.RefreshTreeView();
-				Controller.ReDraw();
-				Controller.ReSelectElement();
-			};
+//
+//			dataGridView.Leave+=delegate(object sender, EventArgs e) {
+//				bool isNum;
+//				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
+//				switch((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value){
+//				case "Dock":
+//					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+//					break;
+//				case "Name":
+//					this.Name=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+//					break;
+//				case "Size.Height":
+//					int height;
+//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out height);
+//					if(isNum){
+//						this.Size=new Size(this.Size.Width,height);
+//					}
+//					break;
+//				case "Size.Width":
+//					int width;
+//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out width);
+//					if(isNum){
+//						this.Size=new Size(width,this.Size.Height);
+//					}
+//					break;
+//				case "Location.X":
+//					int x;
+//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out x);
+//					if(isNum){
+//						this.Location=new Point(x,this.Location.Y);
+//					}
+//					break;
+//				case "Location.Y":
+//					int y;
+//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out y);
+//					if(isNum){
+//						this.Location=new Point(this.Location.X,y);
+//					}
+//					break;
+//				case "Anchor":
+//					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+//					break;
+//				case "Text":
+//					this.Text=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+//					break;
+//				default:
+//					break;
+//				}
+//				Controller.RefreshTreeView();
+//				Controller.ReDraw();
+////				Controller.ReSelectElement();
+//			};
 
             dataGridView.Dock = DockStyle.Fill;
-
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
 			dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView1";
 			dataGridView.ResumeLayout(false);
+
 			return dataGridView;
 		}
 
-		public virtual DataGridView EventDataGrid ()
+		public virtual System.Windows.Forms.DataGridView EventDataGrid ()
 		{
-			DataGridView dataGridView = new DataGridView ();
+			System.Windows.Forms.DataGridView dataGridView = new System.Windows.Forms.DataGridView ();
 			dataGridView.SuspendLayout ();
 			dataGridView.ColumnCount = 2;
 			dataGridView.Columns [0].Name = "Propiedad";
@@ -387,7 +398,6 @@ namespace WinformsGenerator
 			dataGridView.Columns [0].SortMode = DataGridViewColumnSortMode.NotSortable;
 			dataGridView.Columns [1].SortMode = DataGridViewColumnSortMode.NotSortable;
 
-
 			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
 				if(prop.GetValue(this,null).GetType()==typeof(String)&& prop.Name!="Name"&& prop.Name!="Text"&& prop.Name!="BackColorHtml"){
 					string[] row1 = { prop.Name,(string)prop.GetValue(this,null) };
@@ -395,26 +405,23 @@ namespace WinformsGenerator
 				}
 			}
 
-
-
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
-				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-				PropertyInfo prop =(PropertyInfo) (typeof(WinformsGenerator.Element).GetProperty((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value));
-					prop.SetValue(this,(string)((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
+				int rowEdited = ((System.Windows.Forms.DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
+				PropertyInfo prop =(PropertyInfo) (typeof(WinformsGenerator.Element).GetProperty((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[0].Value));
+					prop.SetValue(this,(string)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
 			
 			};
+
 			dataGridView.Leave+=delegate(object sender, EventArgs e) {
-				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-				PropertyInfo prop =(PropertyInfo) (typeof(WinformsGenerator.Element).GetProperty((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value));
-					prop.SetValue(this,(string)((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
+				int rowEdited = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
+				PropertyInfo prop =(PropertyInfo) (typeof(WinformsGenerator.Element).GetProperty((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[0].Value));
+					prop.SetValue(this,(string)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
 				Controller.ReSelectElement();
 			
 			};
 
 			dataGridView.Dock = DockStyle.Fill;
-
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
 			dataGridView.MultiSelect = false;
             dataGridView.Name = "dataGridView1";
 			dataGridView.ResumeLayout(false);

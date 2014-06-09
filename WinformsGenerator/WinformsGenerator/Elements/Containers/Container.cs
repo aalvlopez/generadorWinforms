@@ -24,7 +24,7 @@ namespace WinformsGenerator
 			node2.ExpandAll ();
 		}
 
-		public override DataGridView GenerateDataGrid (){
+		public override System.Windows.Forms.DataGridView GenerateDataGrid (){
 			return base.GenerateDataGrid ();
 		}
 		
