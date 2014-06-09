@@ -16,6 +16,7 @@ namespace WinformsGenerator
             this.panelWork = (Panel)Controller.Draw();
 			this.panelWork.SuspendLayout();
 			this.SuspendLayout();
+
 			this.BackColor=Color.DarkGray;
 			this.Controls.Add(this.panelWork);
 			this.panelWork.ResumeLayout(false);

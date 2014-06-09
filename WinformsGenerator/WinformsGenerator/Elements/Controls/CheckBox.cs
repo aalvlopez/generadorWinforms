@@ -52,9 +52,7 @@ namespace WinformsGenerator
 
 			check.TextAlign=this.TextAlign;
 			check.Checked=this.Checked;
-			check.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			return check;
 		}
 

@@ -70,9 +70,6 @@ namespace WinformsGenerator
 			}
 			table.Dock = this.Dock;
 			table.BackColor=this.BackColor;
-			table.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
 			for(int a = 0; a<table.RowCount;a++){
 				table.RowStyles.Add(new RowStyle(SizeType.Percent,(100/table.RowCount)));
 			}

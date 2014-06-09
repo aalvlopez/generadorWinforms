@@ -9,22 +9,34 @@ using System.Reflection;
 namespace WinformsGenerator
 {
 	[XmlInclude(typeof(WinformsGenerator.Form))]
+
 	[XmlInclude(typeof(WinformsGenerator.Button))]
 	[XmlInclude(typeof(WinformsGenerator.TextBox))]
 	[XmlInclude(typeof(WinformsGenerator.Label))]
 	[XmlInclude(typeof(WinformsGenerator.CheckBox))]
 	[XmlInclude(typeof(WinformsGenerator.RadioButton))]
 	[XmlInclude(typeof(WinformsGenerator.ComboBox))]
+	[XmlInclude(typeof(WinformsGenerator.ComboBoxItem))]
 	[XmlInclude(typeof(WinformsGenerator.DateTimePicker))]
 	[XmlInclude(typeof(WinformsGenerator.MonthCalendar))]
 	[XmlInclude(typeof(WinformsGenerator.PictureBox))]
 	[XmlInclude(typeof(WinformsGenerator.ProgressBar))]
 	[XmlInclude(typeof(WinformsGenerator.Splitter))]
+	[XmlInclude(typeof(WinformsGenerator.ToolBar))]
+	[XmlInclude(typeof(WinformsGenerator.StatusBar))]
+	[XmlInclude(typeof(WinformsGenerator.MenuStrip))]
+	[XmlInclude(typeof(WinformsGenerator.TreeView))]
+	[XmlInclude(typeof(WinformsGenerator.GroupBox))]
+
+	[XmlInclude(typeof(WinformsGenerator.ToolBarItem))]
+	[XmlInclude(typeof(WinformsGenerator.StatusBarItem))]
+	[XmlInclude(typeof(WinformsGenerator.MenuStripItem))]
+	[XmlInclude(typeof(WinformsGenerator.TreeViewItem))]
+	
 	[XmlInclude(typeof(WinformsGenerator.Border))]
 	[XmlInclude(typeof(WinformsGenerator.HBox))]
 	[XmlInclude(typeof(WinformsGenerator.VBox))]
 	[XmlInclude(typeof(WinformsGenerator.Grid))]
-	[XmlInclude(typeof(WinformsGenerator.GroupBox))]
 	public abstract class Element
 	{ 
 		public static ColorDialog c = new ColorDialog();
@@ -193,8 +205,8 @@ namespace WinformsGenerator
 			dataGridView.Rows.Add (row1);
 			if (!this.GetType ().Equals (typeof(WinformsGenerator.DateTimePicker))&&
 			    !this.GetType ().Equals (typeof(WinformsGenerator.MonthCalendar))&&
-			    this.GetType ().Equals (typeof(WinformsGenerator.Splitter))&&
-			    this.GetType ().Equals (typeof(WinformsGenerator.ProgressBar))) {
+			    !this.GetType ().Equals (typeof(WinformsGenerator.Splitter))&&
+			    !this.GetType ().Equals (typeof(WinformsGenerator.ProgressBar))) {
 				string[] row7 = {"Text",this.Text };
 				dataGridView.Rows.Add (row7);
 			}
@@ -318,58 +330,6 @@ namespace WinformsGenerator
 				Controller.RefreshTreeView();
 				Controller.ReDraw();
 			};
-//
-//			dataGridView.Leave+=delegate(object sender, EventArgs e) {
-//				bool isNum;
-//				int rowEdited = ((DataGridViewCell)((DataGridView)sender).SelectedCells[0]).RowIndex;
-//				switch((String)((DataGridView)sender).Rows[rowEdited].Cells[0].Value){
-//				case "Dock":
-//					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
-//					break;
-//				case "Name":
-//					this.Name=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
-//					break;
-//				case "Size.Height":
-//					int height;
-//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out height);
-//					if(isNum){
-//						this.Size=new Size(this.Size.Width,height);
-//					}
-//					break;
-//				case "Size.Width":
-//					int width;
-//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out width);
-//					if(isNum){
-//						this.Size=new Size(width,this.Size.Height);
-//					}
-//					break;
-//				case "Location.X":
-//					int x;
-//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out x);
-//					if(isNum){
-//						this.Location=new Point(x,this.Location.Y);
-//					}
-//					break;
-//				case "Location.Y":
-//					int y;
-//					isNum = int.TryParse((String)((DataGridView)sender).Rows[rowEdited].Cells[1].Value, out y);
-//					if(isNum){
-//						this.Location=new Point(this.Location.X,y);
-//					}
-//					break;
-//				case "Anchor":
-//					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
-//					break;
-//				case "Text":
-//					this.Text=((DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
-//					break;
-//				default:
-//					break;
-//				}
-//				Controller.RefreshTreeView();
-//				Controller.ReDraw();
-////				Controller.ReSelectElement();
-//			};
 
             dataGridView.Dock = DockStyle.Fill;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -412,14 +372,6 @@ namespace WinformsGenerator
 			
 			};
 
-			dataGridView.Leave+=delegate(object sender, EventArgs e) {
-				int rowEdited = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
-				PropertyInfo prop =(PropertyInfo) (typeof(WinformsGenerator.Element).GetProperty((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[0].Value));
-					prop.SetValue(this,(string)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString(),null);
-				Controller.ReSelectElement();
-			
-			};
-
 			dataGridView.Dock = DockStyle.Fill;
             dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dataGridView.MultiSelect = false;
@@ -429,7 +381,7 @@ namespace WinformsGenerator
 		}
 
 		public abstract System.Windows.Forms.Control DrawElement();
-		public abstract void GetTreeNode(TreeNode node,ContextMenuStrip menu);
+		public abstract void GetTreeNode(TreeNode node,ContextMenuStrip menu,ContextMenuStrip menuItem);
 		public abstract Element NewName();
 		public abstract Element CopyElem();
 	}

@@ -42,9 +42,7 @@ namespace WinformsGenerator
 				textBox.Anchor = this.Anchor;
 			}
 			textBox.Dock=this.Dock;
-			textBox.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			return textBox;
 		}
 

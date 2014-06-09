@@ -22,262 +22,16 @@ namespace WinformsGenerator
        
         private void InitializeComponent ()
 		{
-			String outPutDirectory = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().CodeBase);
 			this.splitterLeft = new System.Windows.Forms.Splitter ();
 			this.splitterRight = new System.Windows.Forms.Splitter ();
-			this.newForm = new ToolStripMenuItem ();
-			this.addForm = new ToolStripMenuItem ();
-			this.copy = new ToolStripMenuItem ();
-			this.cut = new ToolStripMenuItem ();
-			this.paste = new ToolStripMenuItem ();
-			this.delete = new ToolStripMenuItem ();
-			this.open = new ToolStripMenuItem ();
-			this.play = new ToolStripMenuItem ();
-			this.stop = new ToolStripMenuItem ();
-			this.save = new ToolStripMenuItem ();
-			this.saveAs = new ToolStripMenuItem ();
-			this.menuStrip1 = new MenuStrip ();
+
+			this.menuStrip1 = new WinformsGenerator.WindowMenuStrip ();
 			
 			this.menuStrip1.SuspendLayout ();
 			this.panelCenter.SuspendLayout ();
 			this.panelTreeView.SuspendLayout ();
 			this.panelPropertries.SuspendLayout ();
 			this.SuspendLayout ();
-           
-			// 
-			// menuStrip1
-			// 
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Text = "menuStrip1";
-			this.menuStrip1.Items.AddRange (new ToolStripMenuItem[] {
-          	this.newForm,
-			this.addForm,
-			this.open,
-			this.save,
-			this.saveAs,
-			this.copy,
-			this.cut,
-			this.paste,
-			this.delete,
-			this.play,
-			this.stop}
-			);
-
-			// 
-			// archivoToolStripMenuItem
-			// 
-
-			//
-			//newForm
-			//
-			this.newForm.Name = "newForm";
-			this.newForm.Size = new Size (128, 128);
-			
-			var imgFile = Path.Combine (outPutDirectory, "img/new.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\new.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.newForm.Click+=delegate(object sender,EventArgs e) {
-				Controller.NuevoForm();
-				Controller.SetSaveFile(null);
-				this.save.Enabled=false;
-			};
-
-			//
-			//open
-			//
-			this.open.Name = "open";
-			this.open.Size = new Size (128, 128);
-			
-            imgFile = Path.Combine(outPutDirectory, "img/open.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.open.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\open.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.open.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.open.Click+=delegate(object sender, EventArgs e) {
-				OpenFileDialog openD = new OpenFileDialog();
-				openD.Filter = "xml files (*.xml)|*.xml" ;
-				DialogResult result = openD.ShowDialog();
-				if (result == DialogResult.OK)
-				{
-					Controller.SetSaveFile(openD.FileName);
-					Controller.OpenFile();
-					this.save.Enabled=true;
-				}
-
-			};
-
-			//
-			//save
-			//
-			this.save.Name = "save";
-			this.save.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/save.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.save.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\save.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.save.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.save.Enabled=false;
-			this.save.Click+=delegate(object sender, EventArgs e) {
-				Controller.SaveAsFile();
-			};
-
-			//
-			//saveAs
-			//
-			this.saveAs.Name = "saveAs";
-			this.saveAs.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/saveAs.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.saveAs.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\saveAs.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.saveAs.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.saveAs.Click+=delegate(object sender, EventArgs e) {
-				this.SaveAs();
-			};
-			
-			//
-			//copy
-			//
-			this.copy.Name = "copy";
-			this.copy.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/copy.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.copy.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\copy.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.copy.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.copy.Click+=delegate(object sender,EventArgs e){
-				Controller.CopyNode();
-			};
-			
-			//
-			//cut
-			//
-			this.cut.Name = "cut";
-			this.cut.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/cut.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.cut.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\cut.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.cut.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.cut.Click+=delegate(object sender, EventArgs e){
-				Controller.CopyNode();
-				Controller.RemoveNode();
-			};
-			
-			//
-			//paste
-			//
-			this.paste.Name = "paste";
-			this.paste.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/paste.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.paste.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\paste.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.paste.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.paste.Enabled=false;
-			this.paste.Click+=delegate(object sender, EventArgs e){
-				Controller.PasteNode();
-			};
-			
-			//
-			//delete
-			//
-			this.delete.Name = "delete";
-			this.delete.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/delete.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.delete.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\delete.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.delete.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.delete.Click+=delegate(object sender, EventArgs e) {
-				Controller.RemoveNode();
-			};
-			
-			//
-			//play
-			//
-			this.play.Name = "play";
-			this.play.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/play.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.play.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\play.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.play.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.play.Click+=delegate(object sender, EventArgs e) {
-				DialogResult result;
-				if(Controller.GetSaveFile()==null){
-					result= this.SaveAs();
-					if(result==DialogResult.OK){
-						Controller.Test();
-					}
-				}else{
-					Controller.SaveAsFile();
-					Controller.Test();
-				}
-				this.play.Enabled=false;
-				this.stop.Enabled=true;
-			};
-			this.play.ShortcutKeys=Keys.F5;
-			
-			//
-			//stop
-			//
-			this.stop.Name = "stop";
-			this.stop.Size = new Size (128, 128);
-            imgFile = Path.Combine(outPutDirectory, "img/stop.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.stop.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\stop.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.stop.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-				}
-			}
-			this.stop.Enabled=false;
-			this.stop.Click+=delegate(object sender, EventArgs e) {
-				Controller.StopTest();
-				this.play.Enabled=true;
-				this.stop.Enabled=false;
-			};
-			this.stop.ShortcutKeys=Keys.Shift | Keys.F5;
 
 
 			// 
@@ -321,12 +75,13 @@ namespace WinformsGenerator
 
             // 
             // Form1
-            // 
+            //  
+
             this.Name = "Form1";
             this.Size = new Size(1158, 700);
 			this.Text = "WinformsGenerator";
-
-            this.Controls.Add(this.splitterRight);
+ 
+			this.Controls.Add(this.splitterRight);
             this.Controls.Add(this.panelCenter);
             this.Controls.Add(this.splitterLeft);
             this.Controls.Add(this.panelPropertries);
@@ -356,89 +111,63 @@ namespace WinformsGenerator
 		}
 
 		public void EnablePaste(){
-			this.paste.Enabled=true;
+			this.menuStrip1.EnablePaste();
 		}
-
 		public void DisablePaste(){
-			this.paste.Enabled=false;
+			this.menuStrip1.DisablePaste();
 		}
 
 		public void EnableSave(){
-			this.save.Enabled=true;
+			this.menuStrip1.EnableSave();
 		}
 
 		public void DisableSave(){
-			this.save.Enabled=false;
+			this.menuStrip1.DisableSave();
 		}
 
 		public void EnableCopy(){
-			this.copy.Enabled=true;
+			this.menuStrip1.EnableCopy();
 		}
 
 		public void DisableCopy(){
-			this.copy.Enabled=false;
+			this.menuStrip1.DisableCopy();
 		}
 
 		public void EnableCut(){
-			this.cut.Enabled=true;
+			this.menuStrip1.EnableCut();
 		}
 
 		public void DisableCut(){
-			this.cut.Enabled=false;
+			this.menuStrip1.DisableCut();
 		}
 
 		public void EnableDelete ()
 		{
-			this.delete.Enabled = true;
+			this.menuStrip1.EnableDelete();
 		}
 
 		public void DisableDelete ()
 		{
-			this.delete.Enabled = false;
+			this.menuStrip1.DisableDelete();
 		}
 
 		public void EnablePlay ()
 		{
-			this.play.Enabled = true;
+			this.menuStrip1.EnablePlay();
 		}
 
 		public void DisableStop ()
 		{
-			this.stop.Enabled = false;
-		}
+			this.menuStrip1.DisableStop();
 
-		public DialogResult SaveAs ()
-		{
-			SaveFileDialog saveD = new SaveFileDialog();
-			saveD.DefaultExt="xml";
-			saveD.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*" ;
-			DialogResult result = saveD.ShowDialog();
-			if (result == DialogResult.OK)
-			{
-				Controller.SetSaveFile(saveD.FileName);
-				Controller.SaveAsFile();
-				this.save.Enabled=true;
-			}
-			return result;
 		}
-
 		//splitters
         private System.Windows.Forms.Splitter splitterLeft;
         private System.Windows.Forms.Splitter splitterRight;
 
-		//Menu
-		private System.Windows.Forms.ToolStripMenuItem newForm;
-		private System.Windows.Forms.ToolStripMenuItem addForm;
-		private System.Windows.Forms.ToolStripMenuItem copy;
-		private System.Windows.Forms.ToolStripMenuItem cut;
-		private System.Windows.Forms.ToolStripMenuItem paste;
-		private System.Windows.Forms.ToolStripMenuItem delete;
-		private System.Windows.Forms.ToolStripMenuItem open;
-		private System.Windows.Forms.ToolStripMenuItem play;
-		private System.Windows.Forms.ToolStripMenuItem stop;
-		private System.Windows.Forms.ToolStripMenuItem save;
-		private System.Windows.Forms.ToolStripMenuItem saveAs;
-		private System.Windows.Forms.MenuStrip menuStrip1;
+		//menuStrip
+		
+		private WinformsGenerator.WindowMenuStrip menuStrip1;
 
 		//Secciones
         public WorkSpace panelCenter= new WorkSpace();

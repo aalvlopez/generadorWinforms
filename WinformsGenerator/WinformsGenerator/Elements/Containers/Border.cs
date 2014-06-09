@@ -45,9 +45,7 @@ namespace WinformsGenerator
 			}
 			panel.Dock = this.Dock;
 			panel.BackColor=this.BackColor;
-			panel.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			foreach(Element e in this.elementos){
 				panel.Controls.Add(e.DrawElement());
 			}

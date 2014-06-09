@@ -50,9 +50,7 @@ namespace WinformsGenerator
 
 			radio.TextAlign=this.TextAlign;
 			radio.Checked=this.Checked;
-			radio.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+		
 			return radio;
 		}
 

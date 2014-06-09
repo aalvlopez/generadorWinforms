@@ -15,53 +15,95 @@ namespace WinformsGenerator
 		private static String saveFile;
 		private static System.Windows.Forms.Form testForm;
 
+
+		//Inicia el controlador
 		public static void init ()
 		{
-			 Controller.formulario= new WinformsGenerator.Form();
+			Controller.formulario= new WinformsGenerator.Form();
 			Controller.window = new MainWindow();
 		}
 
-		public static void SelectItem (Element elemento)
+		//Genera el DataGrid al selectionar un elemento
+		public static void SelectElement (Element elemento)
 		{
 			Controller.window.GenerateDataGrid(elemento.GenerateDataGrid(),elemento.EventDataGrid());
 		}
-
-		public static void addElemnt (Element elemento, Container parent)
+		
+		//Genera el DataGrid al selectionar un item de un elemento
+		public static void SelectItem (Item item)
 		{
-			parent.AddElem(elemento);
+			Controller.window.GenerateDataGrid(item.GenerateDataGrid(),item.EventDataGrid());
+		}
+
+		//Añade un elemento a un container
+		public static void addElemnt (Element elemento)
+		{
+			((Container)Controller.window.panelTreeView.GetSelectedNode().Tag).AddElem(elemento);
 			Controller.ReDraw();
 			Controller.RefreshTreeView();
 		}
 
-		public static void RemoveElement (Element elemento, Container parent){
-			parent.RemoveElem(elemento);
-			Controller.window.ReDraw((Panel)Controller.formulario.DrawElement());
-		}
-
-		public static WinformsGenerator.Form GetForm ()
+		//Añade un item a un controlador que admite items
+		public static void addItem ()
 		{
-			return Controller.formulario;
+			if (Controller.window.panelTreeView.GetSelectedNode ().Tag.GetType ().IsSubclassOf(typeof(WinformsGenerator.ControlItems))) {
+				((ControlItems)Controller.window.panelTreeView.GetSelectedNode ().Tag).AddItem ();
+			} else {
+				((ItemAnidado)Controller.window.panelTreeView.GetSelectedNode ().Tag).AddItem ();
+			}
+			Controller.ReDraw();
+			Controller.RefreshTreeView();
 		}
 
+		//elimina un elemento del treeview
+		public static void RemoveElement (){
+			((Container)Controller.window.panelTreeView.GetSelectedNode().Parent.Tag).RemoveElem((Element)Controller.window.panelTreeView.GetSelectedNode().Tag);
+			Controller.ReDraw();
+		}
+
+		//elimina un Item de un elemento del treeview
+		public static void RemoveItem ()
+		{
+			if (Controller.window.panelTreeView.GetSelectedNode ().Parent.Tag.GetType ().IsSubclassOf (typeof(ItemAnidado))) {
+				((ItemAnidado)Controller.window.panelTreeView.GetSelectedNode().Parent.Tag).RemoveItem((ItemAnidado)Controller.window.panelTreeView.GetSelectedNode().Tag);
+			} else {
+				((ControlItems)Controller.window.panelTreeView.GetSelectedNode ().Parent.Tag).RemoveItem ((Item)Controller.window.panelTreeView.GetSelectedNode ().Tag);
+			}
+			Controller.ReDraw();
+		}
+
+		
+		//redibuja el treeview
 		public static void RefreshTreeView ()
 		{
 			Controller.window.panelTreeView.RefreshTreeView ();
 		}
 
+
+		//devuleve el formulario principal
+		public static WinformsGenerator.Form GetForm ()
+		{
+			return Controller.formulario;
+		}
+		
+		//devuelve la ventana principal
 		public static MainWindow GetWindow ()
 		{
 			return Controller.window;
 		}
 
+		//devuelve el panel de trabajo
 		public static System.Windows.Forms.Panel Draw(){
 			return (Panel) Controller.formulario.DrawElement();
 		}
 
+		//redibuja el panel de trabajo
 		public static void ReDraw ()
 		{
 			Controller.window.ReDraw(Controller.Draw());
 		}
 
+		//Crea nuevo formulario
 		public static void NuevoForm ()
 		{
 			Controller.formulario = new WinformsGenerator.Form();
@@ -69,22 +111,26 @@ namespace WinformsGenerator
 			Controller.RefreshTreeView();
 		}
 
+		//Copia el nodo seleccionado del treeview
 		public static void CopyNode ()
 		{
 			Controller.window.panelTreeView.Copy ();
 			Controller.window.EnablePaste();
 		}
 
+		//pega el nodo seleccionado del treeview
 		public static void PasteNode ()
 		{
 			Controller.window.panelTreeView.Paste ();
 		}
 
+		//elmina el nodo seleccionado del treeview
 		public static void RemoveNode ()
 		{
 			Controller.window.panelTreeView.Remove ();
 		}
 
+		//abre un xml con un formulario
 		public static void OpenFile ()
 		{
 			System.Xml.Serialization.XmlSerializer reader = 
@@ -96,6 +142,7 @@ namespace WinformsGenerator
 			Controller.RefreshTreeView();
 		}
 
+		//guarda el fomrulario creado en un xml en una ruta elegida
 		public static void SaveAsFile ()
 		{
 			System.Xml.Serialization.XmlSerializer writer = 
@@ -105,6 +152,7 @@ namespace WinformsGenerator
 	        file.Close();
 		}
 
+		//Crea el formulario para probarlo
 		public static void Test ()
 		{
 			Controller.OpenFile();
@@ -116,24 +164,28 @@ namespace WinformsGenerator
 			Controller.testForm.Show();
 		}
 
+		//Cierra el formulario de prueba
 		public static void StopTest ()
 		{
 			Controller.testForm.Close();
 		}
 
+		//guarda la direccion de guardado del formulario en el fichero XML
 		public static void SetSaveFile(String fileName){
 			Controller.saveFile=fileName;
 		}
 
+		//devuleve la direccion del fichero en el que se guarda el formulario
 		public static String GetSaveFile(){
 			return Controller.saveFile;
 		}
 
+		//Busca el nodo del treeview al que etá asociado un elemento dado
 		public static void ClickItem(Element e){
 			foreach(TreeNode t in Controller.window.panelTreeView.treeView1.Nodes){
 				if((Element)t.Tag == e){
 					Controller.window.panelTreeView.treeView1.SelectedNode=t;
-					Controller.SelectItem((Element)t.Tag);
+					Controller.SelectElement((Element)t.Tag);
 				}else{
 					if(t.Nodes.Count>0){
 						if(Controller.findTag(t,e)){
@@ -143,13 +195,12 @@ namespace WinformsGenerator
 				}
 			}
 		}
-
 		public static Boolean findTag (TreeNode node,Element e)
 		{
 			foreach(TreeNode t in node.Nodes){
 				if((Element)t.Tag==(e)){
 					Controller.window.panelTreeView.treeView1.SelectedNode=t;
-					Controller.SelectItem((Element)t.Tag);
+					Controller.SelectElement((Element)t.Tag);
 					return true;
 				}else{
 					if( Controller.findTag(t,e)){
@@ -160,8 +211,10 @@ namespace WinformsGenerator
 			return false;
 		}
 
+		//reselecciona un elemento
 		public static void ReSelectElement(){
 			ClickItem((Element)Controller.window.panelTreeView.treeView1.SelectedNode.Tag);
 		}
+
 	}
 }

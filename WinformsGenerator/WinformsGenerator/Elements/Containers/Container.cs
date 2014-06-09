@@ -14,11 +14,11 @@ namespace WinformsGenerator
 		}
 
 
-		public override void GetTreeNode (TreeNode node,ContextMenuStrip menu){
+		public override void GetTreeNode (TreeNode node,ContextMenuStrip menu,ContextMenuStrip menuItem){
 			TreeNode node2=node.Nodes.Add(this.Name);
 			node2.Tag=this;
 			foreach (Element elem in this.elementos) {
-				elem.GetTreeNode (node2,menu);
+				elem.GetTreeNode (node2,menu,menuItem);
 			}
 			node2.ContextMenuStrip = menu;
 			node2.ExpandAll ();

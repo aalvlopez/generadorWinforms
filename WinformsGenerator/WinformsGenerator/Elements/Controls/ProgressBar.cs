@@ -45,9 +45,7 @@ namespace WinformsGenerator
 			prog.Text=this.Text;
 
 			prog.Value = this.Value;
-			prog.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			return prog;
 		}
 

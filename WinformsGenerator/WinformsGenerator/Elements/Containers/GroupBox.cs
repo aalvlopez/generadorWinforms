@@ -46,9 +46,7 @@ namespace WinformsGenerator
 			group.Dock = this.Dock;
 			group.BackColor=this.BackColor;
 			group.Text = this.Text;
-			group.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			foreach(Element e in this.elementos){
 				group.Controls.Add(e.DrawElement());
 			}

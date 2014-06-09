@@ -36,9 +36,7 @@ namespace WinformsGenerator
 			split.Dock=this.Dock;
 			split.Size=this.Size;
 			split.BackColor=this.BackColor;
-			split.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			return split;
 		}
 

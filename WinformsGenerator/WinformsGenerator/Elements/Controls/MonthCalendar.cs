@@ -43,9 +43,7 @@ namespace WinformsGenerator
 
 			month.CalendarDimensions=this.CalendarDimensions;
 			month.ShowWeekNumbers=true;
-			month.GotFocus+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			return month;
 		}
 

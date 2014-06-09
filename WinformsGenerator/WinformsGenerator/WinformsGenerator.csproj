@@ -59,14 +59,25 @@
     <Compile Include="Elements\Controls\MonthCalendar.cs" />
     <Compile Include="Elements\Controls\Splitter.cs" />
     <Compile Include="Elements\Controls\PictureBox.cs" />
-    <Compile Include="Elements\LosComplicados\ComboBox.cs" />
-    <Compile Include="Elements\LosComplicados\StatusBar.cs" />
-    <Compile Include="Elements\LosComplicados\ToolBar.cs" />
-    <Compile Include="Elements\LosComplicados\TreeView.cs" />
-    <Compile Include="Elements\LosComplicados\MainMenu.cs" />
     <Compile Include="Elements\LosComplicados\TabControl.cs" />
     <Compile Include="Elements\LosComplicados\DataGridView.cs" />
     <Compile Include="Elements\LosComplicados\ListView.cs" />
+    <Compile Include="GUI\WindowMenuStrip.cs" />
+    <Compile Include="GUI\ElementContextMenu.cs" />
+    <Compile Include="GUI\ItemContextMenu.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ControlItems.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ComboBox.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\MenuStrip.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\Item.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ComboBoxItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\MenuStripItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ItemAnidado.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\TreeView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\TreeViewItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ToolBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ToolBarItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\StatusBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\StatusBarItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />
@@ -75,6 +86,8 @@
     <Folder Include="Elements\Controls\" />
     <Folder Include="img\" />
     <Folder Include="Elements\LosComplicados\" />
+    <Folder Include="Elements\LosNoTanComplicados\" />
+    <Folder Include="Elements\Controls\ControlsWithItems\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />

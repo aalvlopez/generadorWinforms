@@ -48,9 +48,7 @@ namespace WinformsGenerator
 			if (File.Exists (this.Image)) {
 				pict.Image = System.Drawing.Image.FromFile(this.Image);
 			}
-			pict.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			return pict;
 		}
 

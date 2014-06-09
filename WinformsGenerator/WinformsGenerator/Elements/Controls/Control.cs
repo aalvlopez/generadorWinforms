@@ -9,11 +9,16 @@ namespace WinformsGenerator
 	{
 		public Control ():base(){}
 
-		public override void GetTreeNode (TreeNode node,ContextMenuStrip menu)
+		public override void GetTreeNode (TreeNode node, ContextMenuStrip menu,ContextMenuStrip menuItem)
 		{
-			TreeNode node2=node.Nodes.Add (this.Name);
+			TreeNode node2 = node.Nodes.Add (this.Name);
 			node2.ContextMenuStrip = menu;
-			node2.Tag=this;
+			node2.Tag = this;
+			if (this.GetType ().IsSubclassOf (typeof(WinformsGenerator.ControlItems))) {
+				foreach (Item i in ((WinformsGenerator.ControlItems)this).items) {
+					i.GetTreeNode (node2,menuItem);
+				}
+			}
 		}
 
 		public override System.Windows.Forms.DataGridView GenerateDataGrid ()
@@ -23,6 +28,7 @@ namespace WinformsGenerator
 
 		public override abstract System.Windows.Forms.Control DrawElement ();
 		public override abstract Element NewName ();
+		public override abstract Element CopyElem ();
 	}
 }
 

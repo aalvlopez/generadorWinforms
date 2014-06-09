@@ -16,7 +16,6 @@ namespace WinformsGenerator
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Controller.init();
-			Controller.GetForm().Name="Formulario";
             Application.SetCompatibleTextRenderingDefault(false);
 			Controller.RefreshTreeView();
             Application.Run(Controller.GetWindow());

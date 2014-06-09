@@ -45,9 +45,7 @@ namespace WinformsGenerator
 			btn.BackColor=this.BackColor;
 			
 			btn.TextAlign = this.TextAlign;
-			btn.Click+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
+
 			return btn;
 		}
 

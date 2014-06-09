@@ -51,9 +51,6 @@ namespace WinformsGenerator
 			dtPic.Format = this.Format;
 			dtPic.Value=this.Value;
 
-			dtPic.GotFocus+=delegate(object sender, EventArgs elementos){
-				Controller.ClickItem(this);
-			};
 			return dtPic;
 		}
 
