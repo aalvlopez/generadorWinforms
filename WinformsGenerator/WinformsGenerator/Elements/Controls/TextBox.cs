@@ -23,7 +23,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var textBox = new WinformsGenerator.TextBox();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.TextBox).GetProperties()) {
 				prop.SetValue(textBox,prop.GetValue(this,null),null);
 			}
 			return textBox;

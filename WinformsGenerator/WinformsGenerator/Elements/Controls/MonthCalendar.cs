@@ -23,7 +23,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var month = new WinformsGenerator.MonthCalendar();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.MonthCalendar).GetProperties()) {
 				prop.SetValue(month,prop.GetValue(this,null),null);
 			}
 			return month;

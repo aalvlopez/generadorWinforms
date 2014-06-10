@@ -26,14 +26,19 @@ namespace WinformsGenerator
 	[XmlInclude(typeof(WinformsGenerator.StatusBar))]
 	[XmlInclude(typeof(WinformsGenerator.MenuStrip))]
 	[XmlInclude(typeof(WinformsGenerator.TreeView))]
-	[XmlInclude(typeof(WinformsGenerator.GroupBox))]
+	[XmlInclude(typeof(WinformsGenerator.DataGridView))]
+	[XmlInclude(typeof(WinformsGenerator.ListView))]
 	
 	[XmlInclude(typeof(WinformsGenerator.ComboBoxItem))]
+	[XmlInclude(typeof(WinformsGenerator.DataGridRow))]
 	[XmlInclude(typeof(WinformsGenerator.ToolBarItem))]
 	[XmlInclude(typeof(WinformsGenerator.StatusBarItem))]
 	[XmlInclude(typeof(WinformsGenerator.MenuStripItem))]
 	[XmlInclude(typeof(WinformsGenerator.TreeViewItem))]
+	[XmlInclude(typeof(WinformsGenerator.ListViewItem))]
+	[XmlInclude(typeof(WinformsGenerator.ListViewSubItem))]
 	
+	[XmlInclude(typeof(WinformsGenerator.GroupBox))]
 	[XmlInclude(typeof(WinformsGenerator.Border))]
 	[XmlInclude(typeof(WinformsGenerator.HBox))]
 	[XmlInclude(typeof(WinformsGenerator.VBox))]
@@ -205,7 +210,7 @@ namespace WinformsGenerator
 			dataGridView.Columns [0].SortMode = DataGridViewColumnSortMode.NotSortable;
 			dataGridView.Columns [1].SortMode = DataGridViewColumnSortMode.NotSortable;
 
-			string[] row1 = { "Name", this.Name };
+			string[] row1 = { "Name", this.Name};
 			dataGridView.Rows.Add (row1);
 			if (!this.GetType ().Equals (typeof(WinformsGenerator.DateTimePicker))&&
 			    !this.GetType ().Equals (typeof(WinformsGenerator.MonthCalendar))&&

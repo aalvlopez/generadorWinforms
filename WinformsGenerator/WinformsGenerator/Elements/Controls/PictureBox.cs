@@ -27,7 +27,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var pict = new WinformsGenerator.PictureBox();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.PictureBox).GetProperties()) {
 				prop.SetValue(pict,prop.GetValue(this,null),null);
 			}
 			return pict;

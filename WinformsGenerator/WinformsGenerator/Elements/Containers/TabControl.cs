@@ -19,8 +19,11 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var tool = new WinformsGenerator.TabControl();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.TabControl).GetProperties()) {
 				prop.SetValue(tool,prop.GetValue(this,null),null);
+			}
+			foreach (Element e in this.elementos) {
+				tool.AddElem(e.CopyElem());
 			}
 			return tool;
 		}

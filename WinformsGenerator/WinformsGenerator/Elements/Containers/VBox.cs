@@ -21,7 +21,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var vBox = new WinformsGenerator.VBox();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.VBox).GetProperties()) {
 				prop.SetValue(vBox,prop.GetValue(this,null),null);
 			}
 			foreach (Element e in this.elementos) {

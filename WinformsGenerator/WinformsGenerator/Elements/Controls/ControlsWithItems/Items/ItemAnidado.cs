@@ -10,7 +10,7 @@ namespace WinformsGenerator
 		{
 			this.items = new List<Item>();
 		}
-		public void RemoveItem(ItemAnidado i){
+		public void RemoveItem(Item i){
 			this.items.Remove(i);
 		}
 		public abstract override Item CopyItem ();

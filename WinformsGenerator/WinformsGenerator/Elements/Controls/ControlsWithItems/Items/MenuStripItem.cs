@@ -15,8 +15,11 @@ namespace WinformsGenerator
 		public override Item CopyItem ()
 		{
 			var item = new MenuStripItem();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Item).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.MenuStripItem).GetProperties()) {
 				prop.SetValue(item,prop.GetValue(this,null),null);
+			}
+			foreach (ItemAnidado i in this.items) {
+				item.items.Add (i.CopyItem ());
 			}
 			return item;
 		}

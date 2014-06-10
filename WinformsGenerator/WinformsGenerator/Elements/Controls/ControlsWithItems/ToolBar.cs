@@ -18,7 +18,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var tool = new WinformsGenerator.ToolBar();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.ToolBar).GetProperties()) {
 				prop.SetValue(tool,prop.GetValue(this,null),null);
 			}
 			return tool;

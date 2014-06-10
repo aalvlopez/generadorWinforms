@@ -21,7 +21,7 @@ namespace WinformsGenerator
 		public override Element CopyElem ()
 		{
 			var group = new WinformsGenerator.GroupBox ();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.GroupBox).GetProperties()) {
 				prop.SetValue (group, prop.GetValue (this, null), null);
 			}
 			foreach (Element e in this.elementos) {

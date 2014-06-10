@@ -18,7 +18,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var menu = new WinformsGenerator.MenuStrip();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.MenuStrip).GetProperties()) {
 				prop.SetValue(menu,prop.GetValue(this,null),null);
 			}
 			return menu;

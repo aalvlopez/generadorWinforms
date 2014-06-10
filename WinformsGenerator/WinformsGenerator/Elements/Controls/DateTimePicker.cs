@@ -30,7 +30,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var dtPic = new WinformsGenerator.DateTimePicker();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.DateTimePicker).GetProperties()) {
 				prop.SetValue(dtPic,prop.GetValue(this,null),null);
 			}
 			return dtPic;

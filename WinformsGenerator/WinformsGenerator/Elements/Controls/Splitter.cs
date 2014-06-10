@@ -18,7 +18,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var split = new WinformsGenerator.Splitter();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Splitter).GetProperties()) {
 				prop.SetValue(split,prop.GetValue(this,null),null);
 			}
 			return split;

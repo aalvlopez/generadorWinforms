@@ -25,7 +25,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var button = new WinformsGenerator.Button();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Button).GetProperties()) {
 				prop.SetValue(button,prop.GetValue(this,null),null);
 			}
 			return button;

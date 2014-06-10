@@ -15,7 +15,7 @@ namespace WinformsGenerator
 		public override Item CopyItem ()
 		{
 			var item = new StatusBarItem();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Item).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.StatusBarItem).GetProperties()) {
 				prop.SetValue(item,prop.GetValue(this,null),null);
 			}
 			return item;

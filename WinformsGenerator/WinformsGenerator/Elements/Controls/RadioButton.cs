@@ -29,7 +29,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var radio = new WinformsGenerator.RadioButton();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.RadioButton).GetProperties()) {
 				prop.SetValue(radio,prop.GetValue(this,null),null);
 			}
 			return radio;

@@ -24,7 +24,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var label = new WinformsGenerator.Label();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Label).GetProperties()) {
 				prop.SetValue(label,prop.GetValue(this,null),null);
 			}
 			return label;

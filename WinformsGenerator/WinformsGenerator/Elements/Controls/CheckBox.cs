@@ -31,7 +31,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var check = new WinformsGenerator.CheckBox();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.CheckBox).GetProperties()) {
 				prop.SetValue(check,prop.GetValue(this,null),null);
 			}
 			return check;

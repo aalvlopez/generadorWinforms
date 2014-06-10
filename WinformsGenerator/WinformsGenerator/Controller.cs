@@ -73,7 +73,7 @@ namespace WinformsGenerator
 		public static void RemoveItem ()
 		{
 			if (Controller.window.panelTreeView.GetSelectedNode ().Parent.Tag.GetType ().IsSubclassOf (typeof(ItemAnidado))) {
-				((ItemAnidado)Controller.window.panelTreeView.GetSelectedNode().Parent.Tag).RemoveItem((ItemAnidado)Controller.window.panelTreeView.GetSelectedNode().Tag);
+				((ItemAnidado)Controller.window.panelTreeView.GetSelectedNode().Parent.Tag).RemoveItem((Item)Controller.window.panelTreeView.GetSelectedNode().Tag);
 			} else {
 				((ControlItems)Controller.window.panelTreeView.GetSelectedNode ().Parent.Tag).RemoveItem ((Item)Controller.window.panelTreeView.GetSelectedNode ().Tag);
 			}

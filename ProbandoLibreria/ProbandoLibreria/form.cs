@@ -1,66 +1,75 @@
 using System;
-using System.Text;
+using System.Collections; 
 using System.Windows.Forms;
 
-namespace ProbandoLibreria
+public class form : Form
 {
-    public class form : Form
+    public form()
     {
-        private ToolStrip toolStrip1;
-        private ToolStripTextBox toolStripTextBox1;
-
-        public form()
-        {
-            InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            toolStrip1 = new System.Windows.Forms.ToolStrip();
-            toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            toolStrip1.SuspendLayout();
-            SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            toolStripTextBox1});
-            toolStrip1.Location = new System.Drawing.Point(0, 0);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new System.Drawing.Size(292, 25);
-            toolStrip1.TabIndex = 0;
-            toolStrip1.Text = "toolStrip1";
-            // This code example demonstrates the syntax for setting
-            // various ToolStripTextBox properties.
-            // 
-            toolStripTextBox1.AcceptsReturn = true;
-            toolStripTextBox1.AcceptsTab = true;
-            toolStripTextBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "This is line one.",
-            "Second line.",
-            "Another line."});
-            toolStripTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            toolStripTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            toolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            toolStripTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            toolStripTextBox1.HideSelection = false;
-            toolStripTextBox1.MaxLength = 32000;
-            toolStripTextBox1.Name = "toolStripTextBox1";
-            toolStripTextBox1.ShortcutsEnabled = false;
-            toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
-            toolStripTextBox1.Text = "STRING1\r\nSTRING2\r\nSTRING3\r\nSTRING4";
-            toolStripTextBox1.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Form1
-            // 
-            ClientSize = new System.Drawing.Size(292, 273);
-            Controls.Add(toolStrip1);
-            Name = "Form1";
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
-
-        }
+		CreateMyListView();
     }
+
+    // Groups the items using the groups created for the clicked 
+    // column.
+    private void CreateMyListView()
+		{
+			// Create a new ListView control.
+			ListView listView1 = new ListView();
+		listView1.Dock=DockStyle.Fill;
+			// Set the view to show details.
+			listView1.View = View.Tile;
+			// Allow the user to edit item text.
+			listView1.LabelEdit = true;
+			// Allow the user to rearrange columns.
+			listView1.AllowColumnReorder = true;
+			// Display check boxes.
+//			listView1.CheckBoxes = true;
+			// Select the item and subitems when selection is made.
+			listView1.FullRowSelect = true;
+			// Display grid lines.
+			listView1.GridLines = true;
+			// Sort the items in the list in ascending order.
+			listView1.Sorting = SortOrder.Ascending;
+            			
+			// Create three items and three sets of subitems for each item.
+			ListViewItem item1 = new ListViewItem("item1");
+			// Place a check mark next to the item.
+			item1.Checked = true;
+			item1.SubItems.Add("1");
+			item1.SubItems.Add("2");
+			item1.SubItems.Add("3");
+			ListViewItem item2 = new ListViewItem("item2");
+			item2.SubItems.Add("4");
+			item2.SubItems.Add("5");
+			item2.SubItems.Add("6");
+			ListViewItem item3 = new ListViewItem("item3");
+			// Place a check mark next to the item.
+			item3.Checked = true;
+			item3.SubItems.Add("7");
+			item3.SubItems.Add("8");
+			item3.SubItems.Add("9");
+
+			// Create columns for the items and subitems.
+			// Width of -2 indicates auto-size.
+			listView1.Columns.Add("Item Column");
+			listView1.Columns.Add("Column 2", -2, HorizontalAlignment.Left);
+			listView1.Columns.Add("Column 3",-2);
+//			listView1.Columns.Add("Column 4");
+
+			//Add the items to the ListView.
+            		listView1.Items.AddRange(new ListViewItem[]{item1,item2,item3});
+
+			// Create two ImageList objects.
+			ImageList imageListSmall = new ImageList();
+			ImageList imageListLarge = new ImageList();
+
+
+			//Assign the ImageList objects to the ListView.
+			listView1.LargeImageList = imageListLarge;
+			listView1.SmallImageList = imageListSmall;
+
+			// Add the ListView to the control collection.
+			this.Controls.Add(listView1);
+		}
+
 }

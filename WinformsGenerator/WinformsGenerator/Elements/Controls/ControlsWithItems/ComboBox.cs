@@ -20,7 +20,7 @@ namespace WinformsGenerator
 		public override Element CopyElem ()
 		{
 			var combo = new WinformsGenerator.ComboBox ();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.ComboBox).GetProperties()) {
 				prop.SetValue (combo, prop.GetValue (this, null), null);
 			}
 			foreach (Item i in this.items) {

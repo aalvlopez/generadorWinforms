@@ -59,8 +59,6 @@
     <Compile Include="Elements\Controls\MonthCalendar.cs" />
     <Compile Include="Elements\Controls\Splitter.cs" />
     <Compile Include="Elements\Controls\PictureBox.cs" />
-    <Compile Include="Elements\LosComplicados\DataGridView.cs" />
-    <Compile Include="Elements\LosComplicados\ListView.cs" />
     <Compile Include="GUI\WindowMenuStrip.cs" />
     <Compile Include="GUI\ElementContextMenu.cs" />
     <Compile Include="GUI\ItemContextMenu.cs" />
@@ -79,13 +77,17 @@
     <Compile Include="Elements\Controls\ControlsWithItems\Items\StatusBarItem.cs" />
     <Compile Include="Elements\Containers\TabControl.cs" />
     <Compile Include="Elements\Containers\TabPage.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ListView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\DataGridRow.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\DataGridView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewSubItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />
     <Folder Include="Elements\" />
     <Folder Include="Elements\Containers\" />
     <Folder Include="Elements\Controls\" />
-    <Folder Include="Elements\LosComplicados\" />
     <Folder Include="Elements\Controls\ControlsWithItems\" />
   </ItemGroup>
   <ItemGroup>

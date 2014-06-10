@@ -22,7 +22,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var hBox = new WinformsGenerator.HBox();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.HBox).GetProperties()) {
 				prop.SetValue(hBox,prop.GetValue(this,null),null);
 			}
 			foreach (Element e in this.elementos) {

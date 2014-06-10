@@ -18,7 +18,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var status = new WinformsGenerator.StatusBar();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.StatusBar).GetProperties()) {
 				prop.SetValue(status,prop.GetValue(this,null),null);
 			}
 			return status;

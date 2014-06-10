@@ -18,8 +18,12 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var tree = new WinformsGenerator.TreeView();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.TreeView).GetProperties()) {
 				prop.SetValue(tree,prop.GetValue(this,null),null);
+			}
+			
+			foreach (ItemAnidado i in this.items) {
+				tree.items.Add (i.CopyItem ());
 			}
 			return tree;
 		}

@@ -32,7 +32,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var grid = new WinformsGenerator.Grid();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Grid).GetProperties()) {
 				prop.SetValue(grid,prop.GetValue(this,null),null);
 			}
 			foreach (Element e in this.elementos) {

@@ -24,7 +24,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var prog = new WinformsGenerator.ProgressBar();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.ProgressBar).GetProperties()) {
 				prop.SetValue(prog,prop.GetValue(this,null),null);
 			}
 			return prog;

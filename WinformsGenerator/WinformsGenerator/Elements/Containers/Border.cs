@@ -21,7 +21,7 @@ namespace WinformsGenerator
 		public override Element CopyElem ()
 		{
 			var border = new WinformsGenerator.Border ();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.Border).GetProperties()) {
 				prop.SetValue (border, prop.GetValue (this, null), null);
 			}
 			foreach (Element e in this.elementos) {
