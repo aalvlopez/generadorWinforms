@@ -31,16 +31,20 @@ namespace WinformsGenerator
             this.treeView1.Size = new Size(124, 317);
             this.treeView1.TabIndex = 0;
 			this.treeView1.AfterSelect+=delegate(object sender , TreeViewEventArgs e){
-				if(this.treeView1.SelectedNode.Tag.GetType().Equals(typeof(WinformsGenerator.Form))){
+				if(this.treeView1.SelectedNode.Tag.GetType().Equals(typeof(WinformsGenerator.Form))||this.treeView1.SelectedNode.Tag.GetType().IsSubclassOf(typeof(WinformsGenerator.Item))){
 					Controller.GetWindow().DisableCopy();
 					Controller.GetWindow().DisableCut();
-					Controller.GetWindow().DisableDelete();
+					if(this.treeView1.SelectedNode.Tag.GetType().Equals(typeof(WinformsGenerator.Form))){
+						Controller.GetWindow().DisableDelete();
+					}else{
+						Controller.GetWindow().EnableDelete();
+					}
 				}else{
 					Controller.GetWindow().EnableCopy();
 					Controller.GetWindow().EnableCut();
 					Controller.GetWindow().EnableDelete();
 				}
-				if(this.treeView1.SelectedNode.Tag.GetType().IsSubclassOf(typeof(WinformsGenerator.Control))){
+				if(this.treeView1.SelectedNode.Tag.GetType().IsSubclassOf(typeof(WinformsGenerator.Control))||this.treeView1.SelectedNode.Tag.GetType().IsSubclassOf(typeof(WinformsGenerator.Item))){
 					Controller.GetWindow().DisablePaste();
 				}else{
 					if(this.nodeCopied!=null){
@@ -85,6 +89,12 @@ namespace WinformsGenerator
 						this.contextMenuElement.EnableRemove();
 						this.contextMenuElement.EnableCopy();
 						this.contextMenuElement.EnableCut();
+					}
+					if(this.treeView1.SelectedNode.Tag.GetType().Equals(typeof(WinformsGenerator.TabControl))){
+						this.contextMenuElement.DisableAdd();
+						this.contextMenuElement.VisibleAddPanel();
+					}else{
+						this.contextMenuElement.OcultAddPanel();
 					}
 				}
 			};

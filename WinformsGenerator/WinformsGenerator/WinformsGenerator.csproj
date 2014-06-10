@@ -59,7 +59,6 @@
     <Compile Include="Elements\Controls\MonthCalendar.cs" />
     <Compile Include="Elements\Controls\Splitter.cs" />
     <Compile Include="Elements\Controls\PictureBox.cs" />
-    <Compile Include="Elements\LosComplicados\TabControl.cs" />
     <Compile Include="Elements\LosComplicados\DataGridView.cs" />
     <Compile Include="Elements\LosComplicados\ListView.cs" />
     <Compile Include="GUI\WindowMenuStrip.cs" />
@@ -78,15 +77,15 @@
     <Compile Include="Elements\Controls\ControlsWithItems\Items\ToolBarItem.cs" />
     <Compile Include="Elements\Controls\ControlsWithItems\StatusBar.cs" />
     <Compile Include="Elements\Controls\ControlsWithItems\Items\StatusBarItem.cs" />
+    <Compile Include="Elements\Containers\TabControl.cs" />
+    <Compile Include="Elements\Containers\TabPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />
     <Folder Include="Elements\" />
     <Folder Include="Elements\Containers\" />
     <Folder Include="Elements\Controls\" />
-    <Folder Include="img\" />
     <Folder Include="Elements\LosComplicados\" />
-    <Folder Include="Elements\LosNoTanComplicados\" />
     <Folder Include="Elements\Controls\ControlsWithItems\" />
   </ItemGroup>
   <ItemGroup>
@@ -99,18 +98,5 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.DirectoryServices" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\add.png" />
-    <None Include="img\copy.png" />
-    <None Include="img\cut.png" />
-    <None Include="img\delete.png" />
-    <None Include="img\new.png" />
-    <None Include="img\open.png" />
-    <None Include="img\paste.png" />
-    <None Include="img\play.png" />
-    <None Include="img\save.png" />
-    <None Include="img\saveAs.png" />
-    <None Include="img\stop.png" />
   </ItemGroup>
 </Project>

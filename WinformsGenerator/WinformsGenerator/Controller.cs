@@ -43,6 +43,14 @@ namespace WinformsGenerator
 			Controller.RefreshTreeView();
 		}
 
+		//Añadir tab a un tabControl
+		public static void AddPanel ()
+		{
+			((TabControl)Controller.window.panelTreeView.GetSelectedNode().Tag).AddElem(new TabPage());
+			Controller.ReDraw();
+			Controller.RefreshTreeView();
+		}
+
 		//Añade un item a un controlador que admite items
 		public static void addItem ()
 		{

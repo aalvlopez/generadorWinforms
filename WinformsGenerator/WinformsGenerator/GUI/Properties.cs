@@ -15,8 +15,8 @@ namespace WinformsGenerator
 
 		private void InitializeComponent(){
 			this.tab= new System.Windows.Forms.TabControl();
-			this.page1 = new TabPage();
-			this.page2 = new TabPage();
+			this.page1 = new System.Windows.Forms.TabPage();
+			this.page2 = new System.Windows.Forms.TabPage();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			
@@ -65,8 +65,8 @@ namespace WinformsGenerator
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.DataGridView dataGridView2;
 		public System.Windows.Forms.TabControl tab;
-		public TabPage page1;
-		public TabPage page2;
+		public System.Windows.Forms.TabPage page1;
+		public System.Windows.Forms.TabPage page2;
 	}
 }
 

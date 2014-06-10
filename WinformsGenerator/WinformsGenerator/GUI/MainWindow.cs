@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
@@ -166,7 +165,6 @@ namespace WinformsGenerator
         private System.Windows.Forms.Splitter splitterRight;
 
 		//menuStrip
-		
 		private WinformsGenerator.WindowMenuStrip menuStrip1;
 
 		//Secciones

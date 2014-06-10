@@ -223,13 +223,15 @@ namespace WinformsGenerator
 					result= this.SaveAs();
 					if(result==DialogResult.OK){
 						Controller.Test();
+						this.play.Enabled=false;
+						this.stop.Enabled=true;
 					}
 				}else{
 					Controller.SaveAsFile();
 					Controller.Test();
+					this.play.Enabled=false;
+					this.stop.Enabled=true;
 				}
-				this.play.Enabled=false;
-				this.stop.Enabled=true;
 			};
 			this.play.ShortcutKeys=Keys.F5;
 			

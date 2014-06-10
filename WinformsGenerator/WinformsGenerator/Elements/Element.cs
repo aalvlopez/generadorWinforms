@@ -15,19 +15,20 @@ namespace WinformsGenerator
 	[XmlInclude(typeof(WinformsGenerator.Label))]
 	[XmlInclude(typeof(WinformsGenerator.CheckBox))]
 	[XmlInclude(typeof(WinformsGenerator.RadioButton))]
-	[XmlInclude(typeof(WinformsGenerator.ComboBox))]
-	[XmlInclude(typeof(WinformsGenerator.ComboBoxItem))]
 	[XmlInclude(typeof(WinformsGenerator.DateTimePicker))]
 	[XmlInclude(typeof(WinformsGenerator.MonthCalendar))]
 	[XmlInclude(typeof(WinformsGenerator.PictureBox))]
 	[XmlInclude(typeof(WinformsGenerator.ProgressBar))]
 	[XmlInclude(typeof(WinformsGenerator.Splitter))]
+	
+	[XmlInclude(typeof(WinformsGenerator.ComboBox))]
 	[XmlInclude(typeof(WinformsGenerator.ToolBar))]
 	[XmlInclude(typeof(WinformsGenerator.StatusBar))]
 	[XmlInclude(typeof(WinformsGenerator.MenuStrip))]
 	[XmlInclude(typeof(WinformsGenerator.TreeView))]
 	[XmlInclude(typeof(WinformsGenerator.GroupBox))]
-
+	
+	[XmlInclude(typeof(WinformsGenerator.ComboBoxItem))]
 	[XmlInclude(typeof(WinformsGenerator.ToolBarItem))]
 	[XmlInclude(typeof(WinformsGenerator.StatusBarItem))]
 	[XmlInclude(typeof(WinformsGenerator.MenuStripItem))]
@@ -37,6 +38,9 @@ namespace WinformsGenerator
 	[XmlInclude(typeof(WinformsGenerator.HBox))]
 	[XmlInclude(typeof(WinformsGenerator.VBox))]
 	[XmlInclude(typeof(WinformsGenerator.Grid))]
+	[XmlInclude(typeof(WinformsGenerator.TabControl))]
+	[XmlInclude(typeof(WinformsGenerator.TabPage))]
+
 	public abstract class Element
 	{ 
 		public static ColorDialog c = new ColorDialog();

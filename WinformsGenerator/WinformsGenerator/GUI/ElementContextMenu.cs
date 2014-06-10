@@ -10,6 +10,7 @@ namespace WinformsGenerator
 		public ElementContextMenu ()
 		{
 			this.addMenuItem = new ToolStripMenuItem ();
+			this.addPanel = new ToolStripMenuItem ();
 			this.addItemMenuItem = new ToolStripMenuItem ();
 			this.removeMenuItem = new ToolStripMenuItem ();
 			this.copyMenuItem = new ToolStripMenuItem ();
@@ -25,6 +26,7 @@ namespace WinformsGenerator
 			// 
 			this.Items.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.addMenuItem,
+			this.addPanel,
             this.addItemMenuItem,
             this.removeMenuItem,
 			this.copyMenuItem,
@@ -43,6 +45,17 @@ namespace WinformsGenerator
             this.addMenuItem.Name = "addMenuItem";
             this.addMenuItem.Size = new System.Drawing.Size(110, 22);
             this.addMenuItem.Text = "Add";
+
+			// 
+            // addPanel
+            // 
+            this.addPanel.Name = "addMenuItem";
+            this.addPanel.Size = new System.Drawing.Size(110, 22);
+            this.addPanel.Text = "Add a Tab";
+			this.addPanel.Visible = false;
+			this.addPanel.Click+=delegate(object sender, EventArgs e) {
+				Controller.AddPanel();
+			};
 
 			// 
             // addItemMenuItem
@@ -116,7 +129,7 @@ namespace WinformsGenerator
 		    foreach (Type type in asm.GetTypes())
 		    {
 		        if (type.Namespace == "WinformsGenerator"){
-					if(type.IsSubclassOf(typeof(WinformsGenerator.Container))&&type.Name!="Form"){
+					if(type.IsSubclassOf(typeof(WinformsGenerator.Container))&&type.Name!="Form"&&type.Name!="TabPage"){
 						ToolStripMenuItem item = new ToolStripMenuItem();
 						item.Name = type.Name;
             			item.Size = new System.Drawing.Size(110, 22);
@@ -210,9 +223,18 @@ namespace WinformsGenerator
 		{
 			this.removeMenuItem.Enabled=false;
 		}
+		public void VisibleAddPanel ()
+		{
+			this.addPanel.Visible=true;
+		}
+		public void OcultAddPanel ()
+		{
+			this.addPanel.Visible=false;
+		}
 
 
 		private System.Windows.Forms.ToolStripMenuItem addMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem addPanel;
 		private System.Windows.Forms.ToolStripMenuItem addItemMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem removeMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem copyMenuItem;
