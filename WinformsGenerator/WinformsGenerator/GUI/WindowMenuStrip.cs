@@ -52,8 +52,8 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\new.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
+				imgFile = Path.Combine (outPutDirectory, "img\\new.png");
+				if (File.Exists (imgFile.TrimStart ("file:\\".ToCharArray ()))) {
 					this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 				}
 			}
