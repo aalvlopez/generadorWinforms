@@ -53,8 +53,8 @@ namespace WinformsGenerator
 				this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
 				imgFile = Path.Combine (outPutDirectory, "img\\new.png");
-				if (File.Exists (imgFile.TrimStart ("file:\\".ToCharArray ()))) {
-					this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				if (File.Exists (imgFile)) {
+					this.newForm.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.newForm.Click+=delegate(object sender,EventArgs e) {
