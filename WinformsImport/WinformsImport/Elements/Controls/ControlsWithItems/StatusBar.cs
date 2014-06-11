@@ -4,25 +4,11 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace WinformsGenerator
+namespace WinformsImport
 {
 	public class StatusBar:ControlItems
 	{
-		private static int numElem=0;
-		public StatusBar ():base(){
-			this.Dock=DockStyle.Bottom;
-			this.Name="StatusBar"+StatusBar.numElem.ToString();
-			System.Windows.Forms.StatusBar status = new System.Windows.Forms.StatusBar();
-			this.Size=status.Size;
-		}
-
-		public override Element CopyElem (){
-			var status = new WinformsGenerator.StatusBar();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.StatusBar).GetProperties()) {
-				prop.SetValue(status,prop.GetValue(this,null),null);
-			}
-			return status;
-		}
+		public StatusBar ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{
@@ -46,18 +32,6 @@ namespace WinformsGenerator
 			status.ShowPanels=true;
 
 			return status;
-		}
-
-		public override Element NewName ()
-		{
-			var status = this.CopyElem();
-			status.Name="StatusBar"+StatusBar.numElem.ToString();
-			StatusBar.numElem++;
-			return status;
-		}
-		public override void AddItem ()
-		{
-			this.items.Add(new WinformsGenerator.StatusBarItem());
 		}
 	}
 }

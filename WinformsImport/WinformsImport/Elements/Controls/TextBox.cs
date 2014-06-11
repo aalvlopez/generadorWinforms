@@ -11,11 +11,7 @@ namespace WinformsImport
 			set;
 		}
 
-		public TextBox ():base(){
-			this.TextAlign=HorizontalAlignment.Center;
-			System.Windows.Forms.TextBox tb = new System.Windows.Forms.TextBox();
-			this.Size=tb.Size;
-		}
+		public TextBox ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{

@@ -12,7 +12,6 @@ namespace WinformsGenerator
 		{
 			String outPutDirectory = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().CodeBase);
 			this.newForm = new ToolStripMenuItem ();
-			this.addForm = new ToolStripMenuItem ();
 			this.copy = new ToolStripMenuItem ();
 			this.cut = new ToolStripMenuItem ();
 			this.paste = new ToolStripMenuItem ();
@@ -27,7 +26,6 @@ namespace WinformsGenerator
 			this.Text = "menuStrip1";
 			this.Items.AddRange (new ToolStripMenuItem[] {
           	this.newForm,
-			this.addForm,
 			this.open,
 			this.save,
 			this.saveAs,
@@ -48,7 +46,7 @@ namespace WinformsGenerator
 			//
 			this.newForm.Name = "newForm";
 			this.newForm.Size = new Size (128, 128);
-			
+			this.newForm.ToolTipText="New Form";
 			var imgFile = Path.Combine (outPutDirectory, "img/new.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -69,6 +67,7 @@ namespace WinformsGenerator
 			//
 			this.open.Name = "open";
 			this.open.Size = new Size (128, 128);
+			this.open.ToolTipText="Open file";
 			
             imgFile = Path.Combine(outPutDirectory, "img/open.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
@@ -97,6 +96,8 @@ namespace WinformsGenerator
 			//
 			this.save.Name = "save";
 			this.save.Size = new Size (128, 128);
+			this.save.ToolTipText="Save";
+
             imgFile = Path.Combine(outPutDirectory, "img/save.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.save.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -116,6 +117,8 @@ namespace WinformsGenerator
 			//
 			this.saveAs.Name = "saveAs";
 			this.saveAs.Size = new Size (128, 128);
+			this.saveAs.ToolTipText="Save As";
+
             imgFile = Path.Combine(outPutDirectory, "img/saveAs.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.saveAs.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -134,6 +137,8 @@ namespace WinformsGenerator
 			//
 			this.copy.Name = "copy";
 			this.copy.Size = new Size (128, 128);
+			this.copy.ToolTipText="Copy";
+
             imgFile = Path.Combine(outPutDirectory, "img/copy.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.copy.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -152,6 +157,8 @@ namespace WinformsGenerator
 			//
 			this.cut.Name = "cut";
 			this.cut.Size = new Size (128, 128);
+			this.cut.ToolTipText="Cut";
+
             imgFile = Path.Combine(outPutDirectory, "img/cut.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.cut.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -171,6 +178,8 @@ namespace WinformsGenerator
 			//
 			this.paste.Name = "paste";
 			this.paste.Size = new Size (128, 128);
+			this.paste.ToolTipText="Paste";
+
             imgFile = Path.Combine(outPutDirectory, "img/paste.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.paste.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -190,6 +199,8 @@ namespace WinformsGenerator
 			//
 			this.delete.Name = "delete";
 			this.delete.Size = new Size (128, 128);
+			this.delete.ToolTipText="Delete";
+
             imgFile = Path.Combine(outPutDirectory, "img/delete.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.delete.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -208,6 +219,8 @@ namespace WinformsGenerator
 			//
 			this.play.Name = "play";
 			this.play.Size = new Size (128, 128);
+			this.play.ToolTipText="Play";
+
             imgFile = Path.Combine(outPutDirectory, "img/play.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.play.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -240,6 +253,8 @@ namespace WinformsGenerator
 			//
 			this.stop.Name = "stop";
 			this.stop.Size = new Size (128, 128);
+			this.stop.ToolTipText="Stop";
+
             imgFile = Path.Combine(outPutDirectory, "img/stop.png");
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.stop.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
@@ -256,7 +271,7 @@ namespace WinformsGenerator
 				this.stop.Enabled=false;
 			};
 			this.stop.ShortcutKeys=Keys.Shift | Keys.F5;
-
+			this.ShowItemToolTips=true;
 
 		}
 
@@ -329,7 +344,6 @@ namespace WinformsGenerator
 
 		//Menu
 		private System.Windows.Forms.ToolStripMenuItem newForm;
-		private System.Windows.Forms.ToolStripMenuItem addForm;
 		private System.Windows.Forms.ToolStripMenuItem copy;
 		private System.Windows.Forms.ToolStripMenuItem cut;
 		private System.Windows.Forms.ToolStripMenuItem paste;

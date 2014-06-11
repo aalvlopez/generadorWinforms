@@ -51,6 +51,34 @@
     <Compile Include="Elements\Controls\TextBox.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="ImportWinform.cs" />
+    <Compile Include="Elements\Containers\GroupBox.cs" />
+    <Compile Include="Elements\Containers\TabControl.cs" />
+    <Compile Include="Elements\Containers\TabPage.cs" />
+    <Compile Include="Elements\Controls\CheckBox.cs" />
+    <Compile Include="Elements\Controls\DateTimePicker.cs" />
+    <Compile Include="Elements\Controls\MonthCalendar.cs" />
+    <Compile Include="Elements\Controls\PictureBox.cs" />
+    <Compile Include="Elements\Controls\ProgressBar.cs" />
+    <Compile Include="Elements\Controls\RadioButton.cs" />
+    <Compile Include="Elements\Controls\Splitter.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ComboBox.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ControlItems.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\DataGridView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ListView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\MenuStrip.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\StatusBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ToolBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\TreeView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ComboBoxItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\DataGridRow.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\Item.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ItemAnidado.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewSubItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\MenuStripItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\StatusBarItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ToolBarItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\TreeViewItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

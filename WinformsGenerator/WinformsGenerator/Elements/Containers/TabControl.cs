@@ -11,7 +11,7 @@ namespace WinformsGenerator
 	{
 		private static int numElem=0;
 		public TabControl ():base(){
-			this.Dock=DockStyle.Fill;
+			this.Dock = DockStyle.None;
 			this.Name="TabControl"+TabControl.numElem.ToString();
 			System.Windows.Forms.TabControl tool = new System.Windows.Forms.TabControl();
 			this.Size=tool.Size;

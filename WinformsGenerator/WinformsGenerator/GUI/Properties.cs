@@ -40,12 +40,12 @@ namespace WinformsGenerator
 			// 
           	// Tab
 			//
-			this.page1.Text = "Propiedades";
+			this.page1.Text = "Propietries";
 			this.page1.Dock = DockStyle.Fill;
         	this.page1.TabIndex = 0;
 			this.page1.Controls.Add(this.dataGridView1);
 	
-			this.page2.Text = "Eventos";
+			this.page2.Text = "Events";
 			this.page2.Dock = DockStyle.Fill;
         	this.page2.TabIndex = 1;
 			this.page2.Controls.Add(this.dataGridView2);

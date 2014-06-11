@@ -11,12 +11,7 @@ namespace WinformsImport
 			get;
 			set;
 		}
-		public Label ():base()
-		{
-			this.TextAlign=ContentAlignment.MiddleRight;
-			System.Windows.Forms.Label l = new System.Windows.Forms.Label();
-			this.Size=l.Size;
-		}
+		public Label ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{

@@ -4,29 +4,12 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace WinformsGenerator
+namespace WinformsImport
 {
 	public class TreeView:ControlItems
 	{
 		private static int numElem=0;
-		public TreeView ():base(){
-			this.Dock = DockStyle.None;
-			this.Name="ToolBar"+TreeView.numElem.ToString();
-			System.Windows.Forms.TreeView tree = new System.Windows.Forms.TreeView();
-			this.Size=tree.Size;
-		}
-
-		public override Element CopyElem (){
-			var tree = new WinformsGenerator.TreeView();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.TreeView).GetProperties()) {
-				prop.SetValue(tree,prop.GetValue(this,null),null);
-			}
-			
-			foreach (ItemAnidado i in this.items) {
-				tree.items.Add (i.CopyItem ());
-			}
-			return tree;
-		}
+		public TreeView ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{
@@ -56,17 +39,6 @@ namespace WinformsGenerator
 			}
 		}
 
-		public override Element NewName ()
-		{
-			var tree = this.CopyElem();
-			tree.Name="TreeView"+TreeView.numElem.ToString();
-			TreeView.numElem++;
-			return tree;
-		}
-		public override void AddItem ()
-		{
-			this.items.Add(new WinformsGenerator.TreeViewItem());
-		}
 	}
 }
 

@@ -13,6 +13,7 @@ namespace WinformsGenerator
 			this.Name="ComboBox"+ComboBox.numElem.ToString();
 			System.Windows.Forms.ComboBox combo = new System.Windows.Forms.ComboBox();
 			this.Size=combo.Size;
+			this.Dock = DockStyle.None;
 		}
 
 

@@ -6,10 +6,7 @@ namespace WinformsImport
 {
 	public class Border:Container
 	{
-		public Border ():base(){
-			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();
-			this.Size=panel.Size;
-		}
+		public Border ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement (){
 			System.Windows.Forms.Panel panel = new System.Windows.Forms.Panel();

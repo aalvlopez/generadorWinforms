@@ -65,17 +65,17 @@
       <MouseWheel />
       <Resize />
       <elementos>
-        <Element xsi:type="MonthCalendar">
-          <Dock>Top</Dock>
-          <Name>MonthCalendar0</Name>
+        <Element xsi:type="Border">
+          <Dock>Fill</Dock>
+          <Name>Border0</Name>
           <Text>prueba</Text>
           <Location>
             <X>0</X>
             <Y>0</Y>
           </Location>
           <Size>
-            <Width>100</Width>
-            <Height>134</Height>
+            <Width>200</Width>
+            <Height>100</Height>
           </Size>
           <Anchor>None</Anchor>
           <BackColor>White</BackColor>
@@ -97,10 +97,45 @@
           <MouseUp />
           <MouseWheel />
           <Resize />
-          <CalendarDimensions>
-            <Width>4</Width>
-            <Height>3</Height>
-          </CalendarDimensions>
+          <elementos>
+            <Element xsi:type="MonthCalendar">
+              <Dock>None</Dock>
+              <Name>MonthCalendar0</Name>
+              <Text>prueba</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>50</Width>
+                <Height>134</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>White</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+              <CalendarDimensions>
+                <Width>4</Width>
+                <Height>3</Height>
+              </CalendarDimensions>
+            </Element>
+          </elementos>
         </Element>
         <Element xsi:type="Splitter">
           <Dock>Left</Dock>
@@ -228,7 +263,7 @@
             <Y>0</Y>
           </Location>
           <Size>
-            <Width>240</Width>
+            <Width>250</Width>
             <Height>150</Height>
           </Size>
           <Anchor>None</Anchor>

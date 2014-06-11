@@ -14,7 +14,7 @@ namespace WinformsGenerator
 			this.Name="GroupBox"+GroupBox.numElem.ToString();
 			System.Windows.Forms.GroupBox group = new System.Windows.Forms.GroupBox();
 			this.Size=group.Size;
-			this.Dock = DockStyle.Fill;
+			this.Dock = DockStyle.None;
 		}
 
 

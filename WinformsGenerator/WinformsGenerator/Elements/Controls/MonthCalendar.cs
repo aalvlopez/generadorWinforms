@@ -67,7 +67,7 @@ namespace WinformsGenerator
 				dataGridView.Rows.Add (row2);
 			}
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
-int y = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
+				int y = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
 				Boolean isNum ;
 				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[0].Value){
 				case "Columns":

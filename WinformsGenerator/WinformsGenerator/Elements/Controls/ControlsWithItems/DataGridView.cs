@@ -19,7 +19,7 @@ namespace WinformsGenerator
 			set;
 		}
 		public DataGridView ():base(){
-			this.Dock=DockStyle.Top;
+			this.Dock = DockStyle.None;
 			this.Name="DataGridView"+DataGridView.numElem.ToString();
 			System.Windows.Forms.DataGridView dataG = new System.Windows.Forms.DataGridView();
 			this.Size=dataG.Size;
@@ -63,9 +63,7 @@ namespace WinformsGenerator
 					string[] stringSeparators = new string[] {","};
 					string[] result;
 					result = ((DataGridRow)item).Values.Split (stringSeparators, StringSplitOptions.None);
-					Console.WriteLine (result.Length.ToString ());
 					if (result.Length <= this.NumColumns) {
-						Console.WriteLine ("bien");
 						dataG.Rows.Add (result);
 					} else {
 						List<String> subresult = new List<string> ();

@@ -9,13 +9,42 @@ namespace WinformsImport
 
 	
 	[XmlInclude(typeof(WinformsImport.Form))]
+
 	[XmlInclude(typeof(WinformsImport.Button))]
 	[XmlInclude(typeof(WinformsImport.TextBox))]
 	[XmlInclude(typeof(WinformsImport.Label))]
+	[XmlInclude(typeof(WinformsImport.CheckBox))]
+	[XmlInclude(typeof(WinformsImport.RadioButton))]
+	[XmlInclude(typeof(WinformsImport.DateTimePicker))]
+	[XmlInclude(typeof(WinformsImport.MonthCalendar))]
+	[XmlInclude(typeof(WinformsImport.PictureBox))]
+	[XmlInclude(typeof(WinformsImport.ProgressBar))]
+	[XmlInclude(typeof(WinformsImport.Splitter))]
+	
+	[XmlInclude(typeof(WinformsImport.ComboBox))]
+	[XmlInclude(typeof(WinformsImport.ToolBar))]
+	[XmlInclude(typeof(WinformsImport.StatusBar))]
+	[XmlInclude(typeof(WinformsImport.MenuStrip))]
+	[XmlInclude(typeof(WinformsImport.TreeView))]
+	[XmlInclude(typeof(WinformsImport.DataGridView))]
+	[XmlInclude(typeof(WinformsImport.ListView))]
+	
+	[XmlInclude(typeof(WinformsImport.ComboBoxItem))]
+	[XmlInclude(typeof(WinformsImport.DataGridRow))]
+	[XmlInclude(typeof(WinformsImport.ToolBarItem))]
+	[XmlInclude(typeof(WinformsImport.StatusBarItem))]
+	[XmlInclude(typeof(WinformsImport.MenuStripItem))]
+	[XmlInclude(typeof(WinformsImport.TreeViewItem))]
+	[XmlInclude(typeof(WinformsImport.ListViewItem))]
+	[XmlInclude(typeof(WinformsImport.ListViewSubItem))]
+	
+	[XmlInclude(typeof(WinformsImport.GroupBox))]
 	[XmlInclude(typeof(WinformsImport.Border))]
 	[XmlInclude(typeof(WinformsImport.HBox))]
 	[XmlInclude(typeof(WinformsImport.VBox))]
 	[XmlInclude(typeof(WinformsImport.Grid))]
+	[XmlInclude(typeof(WinformsImport.TabControl))]
+	[XmlInclude(typeof(WinformsImport.TabPage))]
 	public abstract class Element
 	{ 
 		public DockStyle Dock {
@@ -133,17 +162,7 @@ namespace WinformsImport
 			set;
 		}
 
-		public Element ()
-		{
-			
-			this.Text="prueba";
-			this.Dock=DockStyle.None;
-			this.Name=this.GetType().ToString();
-			this.Location=new Point(0,0);
-			this.Anchor=AnchorStyles.None;
-			this.BackColor=Color.Gray;
-		}
-
+		public Element (){}
 		
 		public virtual void SetEvents (System.Windows.Forms.Control control)
 		{

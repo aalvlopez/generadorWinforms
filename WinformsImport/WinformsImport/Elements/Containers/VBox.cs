@@ -5,11 +5,7 @@ namespace WinformsImport
 {
 	public class VBox:Grid
 	{
-		public VBox ():base()
-		{
-			this.NumRows=0;
-			this.NumColumns=1;
-		}
+		public VBox ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{

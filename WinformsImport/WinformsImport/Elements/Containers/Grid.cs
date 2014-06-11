@@ -16,12 +16,7 @@ namespace WinformsImport
 			set;
 		}
 
-		public Grid ():base(){
-			this.NumColumns=0;
-			this.NumRows=0;
-			System.Windows.Forms.TableLayoutPanel table = new System.Windows.Forms.TableLayoutPanel();
-			this.Size=table.Size;
-		}
+		public Grid ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{

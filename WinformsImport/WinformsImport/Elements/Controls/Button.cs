@@ -11,11 +11,7 @@ namespace WinformsImport
 			get;
 			set;
 		}
-		public Button ():base(){
-			System.Windows.Forms.Button btn = new System.Windows.Forms.Button();
-			this.Size=btn.Size;
-			this.TextAlign = btn.TextAlign;
-		}
+		public Button ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{

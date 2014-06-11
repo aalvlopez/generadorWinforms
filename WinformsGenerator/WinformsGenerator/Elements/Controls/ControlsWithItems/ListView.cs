@@ -32,7 +32,7 @@ namespace WinformsGenerator
 		}
 
 		public ListView ():base(){
-			this.Dock=DockStyle.Top;
+			this.Dock = DockStyle.None;
 			this.Name="ListView"+ListView.numElem.ToString();
 			System.Windows.Forms.ListView listV = new System.Windows.Forms.ListView();
 			this.Size=listV.Size;

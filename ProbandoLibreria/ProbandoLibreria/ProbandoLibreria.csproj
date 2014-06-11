@@ -45,6 +45,5 @@
   <ItemGroup>
     <Compile Include="Probando.cs" />
     <Compile Include="Prueba.cs" />
-    <Compile Include="form.cs" />
   </ItemGroup>
 </Project>
