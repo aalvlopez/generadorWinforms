@@ -267,7 +267,7 @@ namespace WinformsGenerator
 						}
 					}
 				}
-				foreach(DockStyle i in xx){
+				foreach(AnchorStyles i in xx){
 						combo2.Items.Add(i.ToString());
 					}
 				combo2.Value = this.Anchor.ToString();
