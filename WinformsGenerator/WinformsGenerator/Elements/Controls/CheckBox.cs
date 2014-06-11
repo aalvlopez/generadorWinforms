@@ -72,8 +72,11 @@ namespace WinformsGenerator
 
 
 			var combo=new DataGridViewComboBoxCell();
-			combo.DataSource=Enum.GetValues(typeof(ContentAlignment));
+			foreach(ContentAlignment i in Enum.GetValues(typeof(ContentAlignment))){
+				combo.Items.Add(i.ToString());
+			}
 			combo.Value = this.TextAlign.ToString();
+
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=combo;
 
 			string[]row1 ={"Checked"};

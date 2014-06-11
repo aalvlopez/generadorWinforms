@@ -41,7 +41,9 @@ namespace WinformsGenerator
 			string[] row0 = { "BorderStyle"};
 			dataGridView.Rows.Add (row0);
 			var combo = new DataGridViewComboBoxCell ();
-			combo.DataSource = Enum.GetValues (typeof(StatusBarPanelBorderStyle));
+			foreach(StatusBarPanelBorderStyle i in Enum.GetValues(typeof(StatusBarPanelBorderStyle))){
+				combo.Items.Add(i.ToString());
+			}
 			combo.Value = this.BorderStyle.ToString();
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [1] = combo;
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {

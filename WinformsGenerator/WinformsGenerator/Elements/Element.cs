@@ -225,7 +225,6 @@ namespace WinformsGenerator
 				dataGridView.Rows.Add (row0);
 				var combo = new DataGridViewComboBoxCell ();
 				if(!this.GetType().Equals(typeof(WinformsGenerator.Splitter))){
-					//combo.DataSource = Enum.GetValues (typeof(DockStyle));
 					foreach(DockStyle i in Enum.GetValues(typeof(DockStyle))){
 						combo.Items.Add(i.ToString());
 					}
@@ -233,7 +232,9 @@ namespace WinformsGenerator
 					DockStyle[] x =(DockStyle[])Enum.GetValues(typeof(DockStyle));
 					var l = new List<DockStyle>(x);
 					l.Remove(DockStyle.None);
-					combo.DataSource=l.ToArray();
+					foreach(DockStyle i in l){
+						combo.Items.Add(i.ToString());
+					}
 				}
 				combo.Value = this.Dock.ToString();
 				dataGridView.Rows [dataGridView.Rows.Count-1].Cells [1] = combo;
@@ -266,7 +267,9 @@ namespace WinformsGenerator
 						}
 					}
 				}
-				combo2.DataSource = xx;
+				foreach(DockStyle i in xx){
+						combo2.Items.Add(i.ToString());
+					}
 				combo2.Value = this.Anchor.ToString();
 				dataGridView.Rows [dataGridView.RowCount - 1].Cells [1] = combo2;
 			}
@@ -297,7 +300,7 @@ namespace WinformsGenerator
 				int rowEdited = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
 				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[0].Value){
 				case "Dock":
-					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),(String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value);
 					break;
 				case "Name":
 					this.Name=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();

@@ -70,7 +70,9 @@ namespace WinformsGenerator
 
 
 			var combo=new DataGridViewComboBoxCell();
-			combo.DataSource=Enum.GetValues(typeof(DateTimePickerFormat));
+			foreach(DateTimePickerFormat i in Enum.GetValues(typeof(DateTimePickerFormat))){
+				combo.Items.Add(i.ToString());
+			}
 			combo.Value = this.Format.ToString();
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=combo;
 

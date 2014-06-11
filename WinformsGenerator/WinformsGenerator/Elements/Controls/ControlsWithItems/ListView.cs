@@ -110,7 +110,10 @@ namespace WinformsGenerator
 			string[] row0 = { "View"};
 			dataGridView.Rows.Add (row0);
 			var combo = new DataGridViewComboBoxCell ();
-			combo.DataSource = Enum.GetValues (typeof(View));
+			foreach(View i in Enum.GetValues(typeof(View))){
+				combo.Items.Add(i.ToString());
+			}
+
 			combo.Value = this.View.ToString();
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [1] = combo;
 

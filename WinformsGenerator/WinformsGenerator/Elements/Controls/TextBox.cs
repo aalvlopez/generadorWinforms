@@ -52,7 +52,9 @@ namespace WinformsGenerator
 			string[] row = { "TextAlign"};
 			dataGridView.Rows.Add (row);
 			var combo=new DataGridViewComboBoxCell();
-			combo.DataSource=Enum.GetValues(typeof(HorizontalAlignment));
+			foreach(HorizontalAlignment i in Enum.GetValues(typeof(HorizontalAlignment))){
+				combo.Items.Add(i.ToString());
+			}
 			combo.Value = this.TextAlign.ToString();
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=combo;
 
