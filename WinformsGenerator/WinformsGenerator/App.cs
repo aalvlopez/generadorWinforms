@@ -10,7 +10,7 @@ namespace WinformsGenerator
 	 
 	public class App
 	{
-
+		[STAThread]
 		public static void Main ()
 		{
 
