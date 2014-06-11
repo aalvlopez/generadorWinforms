@@ -1,25 +1,29 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/GUI/MainWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/Controller.cs">
     <Files>
-      <File FileName="WinformsGenerator/Controller.cs" Line="6" Column="34" />
-      <File FileName="WinformsGenerator/GUI/MainWindow.cs" Line="172" Column="27" />
-      <File FileName="WinformsGenerator/GUI/TreeViewComponents.cs" Line="1" Column="1" />
-      <File FileName="WinformsGenerator/Elements/Element.cs" Line="47" Column="48" />
-      <File FileName="WinformsGenerator/App.cs" Line="17" Column="1" />
-      <File FileName="WinformsGenerator/Elements/Form.cs" Line="24" Column="4" />
+      <File FileName="WinformsGenerator/App.cs" Line="17" Column="46" />
+      <File FileName="WinformsGenerator/WinformsGenerator.csproj" Line="31" Column="26" />
+      <File FileName="WinformsGenerator/Elements/Controls/ControlsWithItems/DataGridView.cs" Line="66" Column="45" />
+      <File FileName="WinformsGenerator/Elements/Controls/ControlsWithItems/Items/ItemAnidado.cs" Line="7" Column="3" />
+      <File FileName="WinformsGenerator/Elements/Controls/MonthCalendar.cs" Line="96" Column="6" />
+      <File FileName="WinformsGenerator/Elements/Element.cs" Line="39" Column="57" />
+      <File FileName="WinformsGenerator/Controller.cs" Line="29" Column="54" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="WinformsGenerator" expanded="True">
-            <Node name="References" expanded="True" />
             <Node name="Elements" expanded="True">
               <Node name="Containers" expanded="True" />
+              <Node name="Controls" expanded="True">
+                <Node name="ControlsWithItems" expanded="True">
+                  <Node name="Items" expanded="True" />
+                </Node>
+              </Node>
             </Node>
-            <Node name="GUI" expanded="True">
-              <Node name="MainWindow.cs" selected="True" />
-            </Node>
+            <Node name="GUI" expanded="True" />
+            <Node name="Controller.cs" selected="True" />
           </Node>
         </State>
       </Pad>

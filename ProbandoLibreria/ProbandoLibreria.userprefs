@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProbandoLibreria/form.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProbandoLibreria/Prueba.cs">
     <Files>
-      <File FileName="ProbandoLibreria/Probando.cs" Line="11" Column="29" />
-      <File FileName="ProbandoLibreria/Prueba.cs" Line="17" Column="3" />
-      <File FileName="ProbandoLibreria/form.cs" Line="37" Column="54" />
+      <File FileName="ProbandoLibreria/Probando.cs" Line="13" Column="1" />
+      <File FileName="ProbandoLibreria/Prueba.cs" Line="8" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

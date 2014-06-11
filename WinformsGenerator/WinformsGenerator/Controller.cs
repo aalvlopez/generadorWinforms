@@ -17,10 +17,12 @@ namespace WinformsGenerator
 
 
 		//Inicia el controlador
-		public static void init ()
+		public static MainWindow init ()
 		{
 			Controller.formulario= new WinformsGenerator.Form();
 			Controller.window = new MainWindow();
+			Controller.RefreshTreeView();
+			return Controller.window;
 		}
 
 		//Genera el DataGrid al selectionar un elemento

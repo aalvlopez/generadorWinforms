@@ -13,12 +13,8 @@ namespace WinformsGenerator
 
 		public static void Main ()
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Controller.init();
-            Application.SetCompatibleTextRenderingDefault(false);
-			Controller.RefreshTreeView();
-            Application.Run(Controller.GetWindow());
+
+            Application.Run(Controller.init());
 		}
 
 		public static void OnClickApp ()
