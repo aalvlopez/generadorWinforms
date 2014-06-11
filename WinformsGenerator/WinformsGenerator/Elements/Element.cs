@@ -225,7 +225,10 @@ namespace WinformsGenerator
 				dataGridView.Rows.Add (row0);
 				var combo = new DataGridViewComboBoxCell ();
 				if(!this.GetType().Equals(typeof(WinformsGenerator.Splitter))){
-					combo.DataSource = Enum.GetValues (typeof(DockStyle));
+					//combo.DataSource = Enum.GetValues (typeof(DockStyle));
+					foreach(DockStyle i in Enum.GetValues(typeof(DockStyle))){
+						combo.Items.Add(i.ToString());
+					}
 				}else{
 					DockStyle[] x =(DockStyle[])Enum.GetValues(typeof(DockStyle));
 					var l = new List<DockStyle>(x);
