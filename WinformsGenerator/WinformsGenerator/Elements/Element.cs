@@ -235,7 +235,7 @@ namespace WinformsGenerator
 					l.Remove(DockStyle.None);
 					combo.DataSource=l.ToArray();
 				}
-				combo.Value = this.Dock;
+				combo.Value = this.Dock.ToString();
 				dataGridView.Rows [dataGridView.Rows.Count-1].Cells [1] = combo;
 			}
 
