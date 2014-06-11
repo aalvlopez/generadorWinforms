@@ -111,7 +111,7 @@ namespace WinformsGenerator
 			dataGridView.Rows.Add (row0);
 			var combo = new DataGridViewComboBoxCell ();
 			combo.DataSource = Enum.GetValues (typeof(View));
-			combo.Value = this.View;
+			combo.Value = this.View.ToString();
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [1] = combo;
 
 			string[] row2 = { "Columns",this.NumColumns.ToString ()};

@@ -42,7 +42,7 @@ namespace WinformsGenerator
 			dataGridView.Rows.Add (row0);
 			var combo = new DataGridViewComboBoxCell ();
 			combo.DataSource = Enum.GetValues (typeof(StatusBarPanelBorderStyle));
-			combo.Value = this.BorderStyle;
+			combo.Value = this.BorderStyle.ToString();
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [1] = combo;
 			dataGridView.CellEndEdit+=delegate(object sender, DataGridViewCellEventArgs e) {
 

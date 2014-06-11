@@ -267,7 +267,7 @@ namespace WinformsGenerator
 					}
 				}
 				combo2.DataSource = xx;
-				combo2.Value = this.Anchor;
+				combo2.Value = this.Anchor.ToString();
 				dataGridView.Rows [dataGridView.RowCount - 1].Cells [1] = combo2;
 			}
 

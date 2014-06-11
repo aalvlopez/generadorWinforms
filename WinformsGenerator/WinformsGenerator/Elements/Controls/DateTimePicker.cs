@@ -71,7 +71,7 @@ namespace WinformsGenerator
 
 			var combo=new DataGridViewComboBoxCell();
 			combo.DataSource=Enum.GetValues(typeof(DateTimePickerFormat));
-			combo.Value = this.Format;
+			combo.Value = this.Format.ToString();
 			dataGridView.Rows [dataGridView.Rows.Count-1].Cells [dataGridView.Columns.Count-1]=combo;
 
 			string[] row1 = { "Year",this.Value.Year.ToString()};
