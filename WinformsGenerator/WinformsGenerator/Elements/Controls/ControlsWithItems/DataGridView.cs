@@ -134,8 +134,7 @@ namespace WinformsGenerator
 				
 				Controller.SelectElement(this);
 				Controller.RefreshTreeView();
-				Controller.ReDraw();
-			};
+				Controller.ReDraw();};
 
 			return dataGridView;
 		}

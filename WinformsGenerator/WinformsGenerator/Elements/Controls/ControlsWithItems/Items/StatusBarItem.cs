@@ -61,7 +61,9 @@ namespace WinformsGenerator
 					}
 					break;
 				case "BorderStyle":
-					this.BorderStyle=(StatusBarPanelBorderStyle) Enum.Parse(typeof(StatusBarPanelBorderStyle),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					if(((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString()!=""){
+						this.BorderStyle=(StatusBarPanelBorderStyle) Enum.Parse(typeof(StatusBarPanelBorderStyle),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					}
 					break;
 				default:
 					break;

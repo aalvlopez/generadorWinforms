@@ -62,7 +62,9 @@ namespace WinformsGenerator
 				int y = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
 				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[0].Value){
 				case "TextAlign":
-					this.TextAlign=(HorizontalAlignment) Enum.Parse(typeof(HorizontalAlignment),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					if(((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString()!=""){
+						this.TextAlign=(HorizontalAlignment) Enum.Parse(typeof(HorizontalAlignment),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					}
 					break;
 				
 				default:

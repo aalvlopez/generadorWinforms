@@ -170,6 +170,7 @@ namespace WinformsGenerator
 			Controller.testForm.FormClosed+=delegate(object sender , FormClosedEventArgs e){
 				Controller.window.DisableStop();
 				Controller.window.EnablePlay();
+				Controller.ReSelectElement();
 			};
 			Controller.testForm.Show();
 		}
@@ -194,8 +195,8 @@ namespace WinformsGenerator
 		public static void ClickItem(Element e){
 			foreach(TreeNode t in Controller.window.panelTreeView.treeView1.Nodes){
 				if((Element)t.Tag == e){
-					Controller.window.panelTreeView.treeView1.SelectedNode=t;
 					Controller.SelectElement((Element)t.Tag);
+					Controller.window.panelTreeView.treeView1.SelectedNode=t;
 				}else{
 					if(t.Nodes.Count>0){
 						if(Controller.findTag(t,e)){
@@ -209,8 +210,8 @@ namespace WinformsGenerator
 		{
 			foreach(TreeNode t in node.Nodes){
 				if((Element)t.Tag==(e)){
-					Controller.window.panelTreeView.treeView1.SelectedNode=t;
 					Controller.SelectElement((Element)t.Tag);
+					Controller.window.panelTreeView.treeView1.SelectedNode=t;
 					return true;
 				}else{
 					if( Controller.findTag(t,e)){
@@ -223,7 +224,8 @@ namespace WinformsGenerator
 
 		//reselecciona un elemento
 		public static void ReSelectElement(){
-			ClickItem((Element)Controller.window.panelTreeView.treeView1.SelectedNode.Tag);
+
+			SelectElement((Element)Controller.window.panelTreeView.treeView1.SelectedNode.Tag);
 		}
 
 	}

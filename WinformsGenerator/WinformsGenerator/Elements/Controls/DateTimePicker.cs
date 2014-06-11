@@ -95,7 +95,9 @@ namespace WinformsGenerator
 				Boolean isNum;
 				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[0].Value){
 				case "Format":
-					this.Format=(DateTimePickerFormat) Enum.Parse(typeof(DateTimePickerFormat),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					if(((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString()!=""){
+						this.Format=(DateTimePickerFormat) Enum.Parse(typeof(DateTimePickerFormat),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					}
 					break;
 				case "Year":
 					int year;

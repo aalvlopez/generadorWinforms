@@ -156,7 +156,9 @@ namespace WinformsGenerator
 					this.GridLines=(Boolean)((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value;
 					break;
 				case "View":
-					this.View=(View) Enum.Parse(typeof(View),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					if(((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString()!=""){
+						this.View=(View) Enum.Parse(typeof(View),((System.Windows.Forms.DataGridView)sender).Rows[y].Cells[1].Value.ToString());
+					}
 					break;
 				default:
 					List<string> newcolumns2 = new List<string>();
@@ -166,9 +168,9 @@ namespace WinformsGenerator
 					this.Columns = newcolumns2;
 					break;
 				}
-				
-				Controller.SelectElement(this);
+
 				Controller.RefreshTreeView();
+				Controller.SelectElement(this);
 				Controller.ReDraw();
 			};
 

@@ -300,7 +300,12 @@ namespace WinformsGenerator
 				int rowEdited = ((DataGridViewCell)((System.Windows.Forms.DataGridView)sender).SelectedCells[0]).RowIndex;
 				switch((String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[0].Value){
 				case "Dock":
-					this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),(String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value);
+					Console.WriteLine("--");
+					Console.WriteLine(((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+					Console.WriteLine("--");
+					if(((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString()!=""){
+						this.Dock=(DockStyle) Enum.Parse(typeof(DockStyle),(String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value);
+					}
 					break;
 				case "Name":
 					this.Name=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
@@ -334,7 +339,9 @@ namespace WinformsGenerator
 					}
 					break;
 				case "Anchor":
-					this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString());
+					if(((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString()!=""){
+						this.Anchor=(AnchorStyles) Enum.Parse(typeof(AnchorStyles),(String)((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value);
+					}
 					break;
 				case "Text":
 					this.Text=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
