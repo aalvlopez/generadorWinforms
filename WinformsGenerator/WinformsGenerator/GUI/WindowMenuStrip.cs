@@ -51,9 +51,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\new.png");
-				if (File.Exists ("img\\new.png")) {
-					this.newForm.Image = Image.FromFile ("img\\new.png");
+				imgFile = "img\\new.png";
+				if (File.Exists (imgFile)) {
+					this.newForm.Image = Image.FromFile (imgFile);
 				}
 			}
 			Console.WriteLine(imgFile);
@@ -74,9 +74,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.open.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\open.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.open.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile ="img\\open.png";
+				if (File.Exists (imgFile)) {
+					this.open.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.open.Click+=delegate(object sender, EventArgs e) {
@@ -103,9 +103,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.save.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\save.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.save.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile ="img\\save.png";
+				if (File.Exists (imgFile)) {
+					this.save.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.save.Enabled=false;
@@ -124,9 +124,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.saveAs.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\saveAs.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.saveAs.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile ="img\\saveAs.png";
+				if (File.Exists (imgFile)) {
+					this.saveAs.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.saveAs.Click+=delegate(object sender, EventArgs e) {
@@ -144,9 +144,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.copy.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\copy.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.copy.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile ="img\\copy.png";
+				if (File.Exists (imgFile)) {
+					this.copy.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.copy.Click+=delegate(object sender,EventArgs e){
@@ -164,9 +164,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.cut.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\cut.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.cut.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile ="img\\cut.png";
+				if (File.Exists (imgFile)) {
+					this.cut.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.cut.Click+=delegate(object sender, EventArgs e){
@@ -185,9 +185,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.paste.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\paste.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.paste.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile = "img\\paste.png";
+				if (File.Exists (imgFile)) {
+					this.paste.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.paste.Enabled=false;
@@ -206,9 +206,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.delete.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\delete.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.delete.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile = "img\\delete.png";
+				if (File.Exists (imgFile)) {
+					this.delete.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.delete.Click+=delegate(object sender, EventArgs e) {
@@ -226,9 +226,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.play.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\play.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.play.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile = "img\\play.png";
+				if (File.Exists (imgFile)) {
+					this.play.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.play.Click+=delegate(object sender, EventArgs e) {
@@ -260,9 +260,9 @@ namespace WinformsGenerator
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.stop.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
-				imgFile = Path.Combine (outPutDirectory, "img\\stop.png");
-				if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-					this.stop.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
+				imgFile = "img\\stop.png";
+				if (File.Exists (imgFile)) {
+					this.stop.Image = Image.FromFile (imgFile);
 				}
 			}
 			this.stop.Enabled=false;
