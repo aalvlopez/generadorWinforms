@@ -48,15 +48,15 @@ namespace WinformsGenerator
 			this.newForm.Size = new Size (128, 128);
 			this.newForm.ToolTipText="New Form";
 			var imgFile = Path.Combine (outPutDirectory, "img/new.png");
-			Console.WriteLine(imgFile);
 			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
 				this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
 			} else {
 				imgFile = Path.Combine (outPutDirectory, "img\\new.png");
-				if (File.Exists (imgFile)) {
-					this.newForm.Image = Image.FromFile (imgFile);
+				if (File.Exists ("img\\new.png")) {
+					this.newForm.Image = Image.FromFile ("img\\new.png");
 				}
 			}
+			Console.WriteLine(imgFile);
 			this.newForm.Click+=delegate(object sender,EventArgs e) {
 				Controller.NuevoForm();
 				Controller.SetSaveFile(null);
