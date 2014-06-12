@@ -8,7 +8,6 @@ namespace WinformsImport
 {
 	public class ToolBar:ControlItems
 	{
-		private static int numElem=0;
 		public ToolBar ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()

@@ -9,7 +9,7 @@ namespace WinformsGenerator
 	public class TextBox:Control
 	{
 		private static int numElem=0;
-		HorizontalAlignment TextAlign {
+		public HorizontalAlignment TextAlign {
 			get;
 			set;
 		}

@@ -9,7 +9,7 @@ namespace WinformsGenerator
 	public class Label:Control
 	{
 		private static int numElem=0;
-		ContentAlignment TextAlign {
+		public ContentAlignment TextAlign {
 			get;
 			set;
 		}

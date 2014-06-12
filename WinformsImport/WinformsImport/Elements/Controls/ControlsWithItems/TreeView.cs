@@ -8,7 +8,6 @@ namespace WinformsImport
 {
 	public class TreeView:ControlItems
 	{
-		private static int numElem=0;
 		public TreeView ():base(){}
 
 		public override System.Windows.Forms.Control DrawElement ()

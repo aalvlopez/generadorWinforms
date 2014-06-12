@@ -13,7 +13,7 @@ namespace WinformsGenerator
 			get;
 			set;
 		}
-		ContentAlignment TextAlign {
+		public ContentAlignment TextAlign {
 			get;
 			set;
 		}

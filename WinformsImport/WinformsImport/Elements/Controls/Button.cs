@@ -7,7 +7,7 @@ namespace WinformsImport
 {
 	public class Button:Control
 	{
-		ContentAlignment TextAlign {
+		public ContentAlignment TextAlign {
 			get;
 			set;
 		}

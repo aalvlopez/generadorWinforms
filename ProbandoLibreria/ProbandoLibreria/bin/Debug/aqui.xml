@@ -440,6 +440,7 @@
                   <MouseUp />
                   <MouseWheel />
                   <Resize />
+                  <TextAlign>BottomLeft</TextAlign>
                 </Element>
                 <Element xsi:type="ProgressBar">
                   <Dock>Bottom</Dock>
@@ -597,7 +598,7 @@
               <Resize />
               <elementos>
                 <Element xsi:type="ListView">
-                  <Dock>Fill</Dock>
+                  <Dock>None</Dock>
                   <Name>ListView0</Name>
                   <Text>prueba</Text>
                   <Location>
@@ -646,10 +647,14 @@
                     </Item>
                   </items>
                   <NumColumns>3</NumColumns>
-                  <Columns />
+                  <Columns>
+                    <string>Column0</string>
+                    <string>Column1</string>
+                    <string>Column2</string>
+                  </Columns>
                   <CheckBoxes>true</CheckBoxes>
                   <GridLines>true</GridLines>
-                  <View>Details</View>
+                  <View>SmallIcon</View>
                 </Element>
               </elementos>
             </Element>

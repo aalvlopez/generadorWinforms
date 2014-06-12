@@ -13,12 +13,15 @@ namespace WinformsImport
 			get;
 			set;
 		}
-		ContentAlignment TextAlign {
+		public ContentAlignment TextAlign {
 			get;
 			set;
 		}
 
-		public CheckBox ():base(){}
+		public CheckBox ():base(){
+			this.Checked=false;
+			this.TextAlign=ContentAlignment.MiddleCenter;
+		}
 
 		public override System.Windows.Forms.Control DrawElement ()
 		{

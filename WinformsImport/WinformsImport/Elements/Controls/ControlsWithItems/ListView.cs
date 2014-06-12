@@ -9,7 +9,6 @@ namespace WinformsImport
 {
 	public class ListView:ControlItems
 	{
-		private static int numElem=0;
 		public int NumColumns {
 			get;
 			set;

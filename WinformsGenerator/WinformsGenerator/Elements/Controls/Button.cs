@@ -10,7 +10,7 @@ namespace WinformsGenerator
 	public class Button:Control
 	{
 		private static int numElem=0;
-		ContentAlignment TextAlign {
+		public ContentAlignment TextAlign {
 			get;
 			set;
 		}

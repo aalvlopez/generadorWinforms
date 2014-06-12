@@ -6,7 +6,7 @@ namespace WinformsImport
 {
 	public class TextBox:Control
 	{
-		HorizontalAlignment TextAlign {
+		public HorizontalAlignment TextAlign {
 			get;
 			set;
 		}

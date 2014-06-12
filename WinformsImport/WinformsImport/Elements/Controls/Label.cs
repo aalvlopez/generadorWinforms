@@ -7,7 +7,7 @@ namespace WinformsImport
 	public class Label:Control
 	{
 		
-		ContentAlignment TextAlign {
+		public ContentAlignment TextAlign {
 			get;
 			set;
 		}
