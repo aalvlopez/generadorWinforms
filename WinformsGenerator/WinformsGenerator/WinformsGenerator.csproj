@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -36,7 +36,7 @@
     <Compile Include="GUI\MainWindow.cs" />
     <Compile Include="GUI\WorkSpace.cs" />
     <Compile Include="GUI\TreeViewComponents.cs">
-      <DeployService-Deploy>true</DeployService-Deploy>
+      <DeployService-Deploy>True</DeployService-Deploy>
     </Compile>
     <Compile Include="GUI\Properties.cs" />
     <Compile Include="Elements\Element.cs" />
@@ -100,5 +100,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System" />
   </ItemGroup>
 </Project>
