@@ -1,38 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator/Controller.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestsWinformsGenerator\Test.cs">
     <Files>
-      <File FileName="WinformsGenerator/App.cs" Line="17" Column="46" />
-      <File FileName="WinformsGenerator/WinformsGenerator.csproj" Line="31" Column="26" />
-      <File FileName="WinformsGenerator/Elements/Controls/ControlsWithItems/DataGridView.cs" Line="66" Column="45" />
-      <File FileName="WinformsGenerator/Elements/Controls/ControlsWithItems/Items/ItemAnidado.cs" Line="7" Column="3" />
-      <File FileName="WinformsGenerator/Elements/Controls/MonthCalendar.cs" Line="96" Column="6" />
-      <File FileName="WinformsGenerator/Elements/Element.cs" Line="39" Column="57" />
-      <File FileName="WinformsGenerator/Controller.cs" Line="29" Column="54" />
+      <File FileName="TestsWinformsGenerator\Test.cs" Line="58" Column="1" />
+      <File FileName="WinformsGenerator\Controller.cs" Line="169" Column="51" />
+      <File FileName="WinformsGenerator\Elements\Controls\Button.cs" Line="47" Column="34" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="WinformsGenerator" expanded="True">
-            <Node name="Elements" expanded="True">
-              <Node name="Containers" expanded="True" />
-              <Node name="Controls" expanded="True">
-                <Node name="ControlsWithItems" expanded="True">
-                  <Node name="Items" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="GUI" expanded="True" />
-            <Node name="Controller.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State expanded="True" selected="True">
-          <Node name="WinformsGenerator" expanded="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

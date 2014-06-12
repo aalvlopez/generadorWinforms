@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformsGenerator", "WinformsGenerator\WinformsGenerator.csproj", "{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsWinformsGenerator", "TestsWinformsGenerator\TestsWinformsGenerator.csproj", "{F642FA78-B363-4C6A-B0A5-77F8E3B9CE0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}.Debug|x86.Build.0 = Debug|x86
 		{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}.Release|x86.ActiveCfg = Release|x86
 		{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}.Release|x86.Build.0 = Release|x86
+		{F642FA78-B363-4C6A-B0A5-77F8E3B9CE0C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F642FA78-B363-4C6A-B0A5-77F8E3B9CE0C}.Debug|x86.Build.0 = Debug|Any CPU
+		{F642FA78-B363-4C6A-B0A5-77F8E3B9CE0C}.Release|x86.ActiveCfg = Release|Any CPU
+		{F642FA78-B363-4C6A-B0A5-77F8E3B9CE0C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = WinformsGenerator\WinformsGenerator.csproj
