@@ -13,3 +13,10 @@ C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinfor
 C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\obj\Debug\TestsWinformsGenerator.csprojResolveAssemblyReference.cache
 C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\obj\Debug\TestsWinformsGenerator.dll
 C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\obj\Debug\TestsWinformsGenerator.pdb
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\bin\Debug\TestsWinformsGenerator.dll
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\bin\Debug\TestsWinformsGenerator.pdb
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\bin\Debug\WinformsGenerator.exe
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\bin\Debug\WinformsGenerator.pdb
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\obj\Debug\TestsWinformsGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\obj\Debug\TestsWinformsGenerator.dll
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\TestsWinformsGenerator\obj\Debug\TestsWinformsGenerator.pdb

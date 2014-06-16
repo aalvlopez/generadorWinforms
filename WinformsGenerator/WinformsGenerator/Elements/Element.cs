@@ -214,7 +214,10 @@ namespace WinformsGenerator
 			dataGridView.Rows.Add (row1);
 			if (!this.GetType ().Equals (typeof(WinformsGenerator.DateTimePicker))&&
 			    !this.GetType ().Equals (typeof(WinformsGenerator.MonthCalendar))&&
-			    !this.GetType ().Equals (typeof(WinformsGenerator.Splitter))&&
+				!this.GetType ().Equals (typeof(WinformsGenerator.Splitter))&&
+				!this.GetType ().Equals (typeof(WinformsGenerator.DataGridView))&&
+				!this.GetType ().Equals (typeof(WinformsGenerator.ListView))&&
+				!this.GetType ().Equals (typeof(WinformsGenerator.MenuStrip))&&
 			    !this.GetType ().Equals (typeof(WinformsGenerator.ProgressBar))) {
 				string[] row7 = {"Text",this.Text };
 				dataGridView.Rows.Add (row7);

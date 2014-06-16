@@ -45,7 +45,7 @@ namespace WinformsGenerator
 
 		public override Element CopyElem (){
 			var listV = new WinformsGenerator.ListView();
-			foreach (PropertyInfo prop in typeof(WinformsGenerator.Element).GetProperties()) {
+			foreach (PropertyInfo prop in typeof(WinformsGenerator.ListView).GetProperties()) {
 				prop.SetValue(listV,prop.GetValue(this,null),null);
 			}
 			foreach (Item i in this.items) {

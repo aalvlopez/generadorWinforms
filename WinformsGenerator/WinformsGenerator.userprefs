@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator\Elements\Element.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestsWinformsGenerator\ControlsTests\ControlsWithItemsTests\MenuStripTest.cs">
     <Files>
-      <File FileName="TestsWinformsGenerator\Test.cs" Line="58" Column="1" />
-      <File FileName="WinformsGenerator\Controller.cs" Line="1" Column="1" />
-      <File FileName="WinformsGenerator\Elements\Controls\Button.cs" Line="1" Column="1" />
-      <File FileName="WinformsGenerator\Elements\Element.cs" Line="124" Column="24" />
+      <File FileName="TestsWinformsGenerator\ControlsTests\ControlsWithItemsTests\ComboBoxTest.cs" Line="1" Column="1" />
+      <File FileName="TestsWinformsGenerator\ControlsTests\ControlsWithItemsTests\ListViewTest.cs" Line="1" Column="1" />
+      <File FileName="WinformsGenerator\Elements\Element.cs" Line="1" Column="1" />
+      <File FileName="WinformsGenerator\Elements\Controls\ControlsWithItems\MenuStrip.cs" Line="1" Column="1" />
+      <File FileName="TestsWinformsGenerator\ControlsTests\ControlsWithItemsTests\MenuStripTest.cs" Line="13" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -36,7 +36,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Test.cs" />
-    <Compile Include="ButtonTest.cs" />
+    <Compile Include="ControlsTests\ButtonTest.cs" />
+    <Compile Include="ControlsTests\CheckoxTest.cs" />
+    <Compile Include="ControlsTests\LabelTest.cs" />
+    <Compile Include="ControlsTests\SplitterTest.cs" />
+    <Compile Include="ControlsTests\TextBoxTest.cs" />
+    <Compile Include="ControlsTests\RadioButtonTest.cs" />
+    <Compile Include="ControlsTests\ProgressBarTest.cs" />
+    <Compile Include="ControlsTests\PictureoxTest.cs" />
+    <Compile Include="ControlsTests\MonthCalendarTest.cs" />
+    <Compile Include="ControlsTests\DateTimePickerTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\ComboBoxTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\DataGridViewTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\ListViewTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\MenuStripTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -44,5 +57,9 @@
       <Project>{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}</Project>
       <Name>WinformsGenerator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ControlsTests\" />
+    <Folder Include="ControlsTests\ControlsWithItemsTests\" />
   </ItemGroup>
 </Project>
