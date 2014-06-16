@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4E2E9BB6-3DB6-45A5-9C93-EBD6BAFD254D}</ProjectGuid>
     <OutputType>Exe</OutputType>
@@ -41,6 +41,7 @@
     <Reference Include="WinformsImport">
       <HintPath>..\..\WinformsImport\WinformsImport\bin\Debug\WinformsImport.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Probando.cs" />

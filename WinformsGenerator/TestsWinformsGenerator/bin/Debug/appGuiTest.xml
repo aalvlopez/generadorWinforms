@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Form">
+  <Dock>None</Dock>
+  <Name>Form0</Name>
+  <Text>prueba</Text>
+  <Location>
+    <X>0</X>
+    <Y>0</Y>
+  </Location>
+  <Size>
+    <Width>200</Width>
+    <Height>100</Height>
+  </Size>
+  <Anchor>None</Anchor>
+  <BackColor>White</BackColor>
+  <Click />
+  <DoubleClick />
+  <Enter />
+  <GotFocus />
+  <LostFocus />
+  <Leave />
+  <KeyDown />
+  <KeyPress />
+  <KeyUp />
+  <MouseClick />
+  <MouseDoubleClick />
+  <MouseDown />
+  <MouseEnter />
+  <MouseLeave />
+  <MouseHover />
+  <MouseUp />
+  <MouseWheel />
+  <Resize />
+  <elementos>
+    <Element xsi:type="VBox">
+      <Dock>Fill</Dock>
+      <Name>VBox0</Name>
+      <Text>prueba</Text>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <Width>200</Width>
+        <Height>100</Height>
+      </Size>
+      <Anchor>None</Anchor>
+      <BackColor>White</BackColor>
+      <Click />
+      <DoubleClick />
+      <Enter />
+      <GotFocus />
+      <LostFocus />
+      <Leave />
+      <KeyDown />
+      <KeyPress />
+      <KeyUp />
+      <MouseClick />
+      <MouseDoubleClick />
+      <MouseDown />
+      <MouseEnter />
+      <MouseLeave />
+      <MouseHover />
+      <MouseUp />
+      <MouseWheel />
+      <Resize />
+      <elementos>
+        <Element xsi:type="HBox">
+          <Dock>Top</Dock>
+          <Name>HBox0</Name>
+          <Text>prueba</Text>
+          <Location>
+            <X>0</X>
+            <Y>0</Y>
+          </Location>
+          <Size>
+            <Width>200</Width>
+            <Height>100</Height>
+          </Size>
+          <Anchor>None</Anchor>
+          <BackColor>White</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <elementos>
+            <Element xsi:type="Label">
+              <Dock>Left</Dock>
+              <Name>Label0</Name>
+              <Text>Nombre:</Text>
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>23</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>White</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+              <TextAlign>MiddleRight</TextAlign>
+            </Element>
+            <Element xsi:type="TextBox">
+              <Dock>Top</Dock>
+              <Name>TextBox0</Name>
+              <Text />
+              <Location>
+                <X>0</X>
+                <Y>0</Y>
+              </Location>
+              <Size>
+                <Width>100</Width>
+                <Height>20</Height>
+              </Size>
+              <Anchor>None</Anchor>
+              <BackColor>White</BackColor>
+              <Click />
+              <DoubleClick />
+              <Enter />
+              <GotFocus />
+              <LostFocus />
+              <Leave />
+              <KeyDown />
+              <KeyPress />
+              <KeyUp />
+              <MouseClick />
+              <MouseDoubleClick />
+              <MouseDown />
+              <MouseEnter />
+              <MouseLeave />
+              <MouseHover />
+              <MouseUp />
+              <MouseWheel />
+              <Resize />
+              <TextAlign>Center</TextAlign>
+            </Element>
+          </elementos>
+          <NumColumns>2</NumColumns>
+          <NumRows>1</NumRows>
+        </Element>
+      </elementos>
+      <NumColumns>1</NumColumns>
+      <NumRows>1</NumRows>
+    </Element>
+  </elementos>
+</Element>

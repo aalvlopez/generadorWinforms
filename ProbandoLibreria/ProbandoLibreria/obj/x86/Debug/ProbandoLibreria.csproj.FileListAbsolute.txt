@@ -1,0 +1,6 @@
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\ProbandoLibreria\ProbandoLibreria\obj\x86\Debug\ProbandoLibreria.csprojResolveAssemblyReference.cache
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\ProbandoLibreria\ProbandoLibreria\bin\Debug\ProbandoLibreria.exe
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\ProbandoLibreria\ProbandoLibreria\bin\Debug\ProbandoLibreria.pdb
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\ProbandoLibreria\ProbandoLibreria\bin\Debug\WinformsImport.dll
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\ProbandoLibreria\ProbandoLibreria\obj\x86\Debug\ProbandoLibreria.exe
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\ProbandoLibreria\ProbandoLibreria\obj\x86\Debug\ProbandoLibreria.pdb
