@@ -50,6 +50,13 @@
     <Compile Include="ControlsTests\ControlsWithItemsTests\DataGridViewTest.cs" />
     <Compile Include="ControlsTests\ControlsWithItemsTests\ListViewTest.cs" />
     <Compile Include="ControlsTests\ControlsWithItemsTests\MenuStripTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\StatusBarTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\ToolBarTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\TreeViewTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\ComboBoxItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\ToolBarItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\StatusBarItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\DataGridRowtest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -61,5 +68,6 @@
   <ItemGroup>
     <Folder Include="ControlsTests\" />
     <Folder Include="ControlsTests\ControlsWithItemsTests\" />
+    <Folder Include="ControlsTests\ControlsWithItemsTests\Items\" />
   </ItemGroup>
 </Project>
