@@ -61,6 +61,13 @@
     <Compile Include="ControlsTests\ControlsWithItemsTests\Items\MenuStripItemTest.cs" />
     <Compile Include="ControlsTests\ControlsWithItemsTests\Items\TreeViewItemTest.cs" />
     <Compile Include="ControlsTests\ControlsWithItemsTests\Items\ListViewSubItemTest.cs" />
+    <Compile Include="ContainersTests\BorderTest.cs" />
+    <Compile Include="ContainersTests\GridTest.cs" />
+    <Compile Include="ContainersTests\HboxTest.cs" />
+    <Compile Include="ContainersTests\VBoxTest.cs" />
+    <Compile Include="ContainersTests\TabControlTest.cs" />
+    <Compile Include="ContainersTests\TabPageTest.cs" />
+    <Compile Include="ContainersTests\GroupBoxTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
