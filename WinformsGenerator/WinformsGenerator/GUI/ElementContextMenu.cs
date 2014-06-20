@@ -65,7 +65,7 @@ namespace WinformsGenerator
             this.addItemMenuItem.Text = "Add Item";
 			this.addItemMenuItem.Enabled=false;
 			this.addItemMenuItem.Click+=delegate(object sender, EventArgs e) {
-				Controller.addItem();
+				Controller.AddItem();
 				Controller.RefreshTreeView();
 			};
 
@@ -136,7 +136,7 @@ namespace WinformsGenerator
 						item.Text = type.Name;
 						Element elem = (Element)Activator.CreateInstance(type);
 						item.Click+=delegate(object sender,EventArgs e){
-							Controller.addElemnt(elem.NewName());
+							Controller.AddElemnt(elem.NewElem());
 						};
 						l.Add(item);
 					}
@@ -162,7 +162,7 @@ namespace WinformsGenerator
 						item.Text = type.Name;
 						Element elem = (Element)Activator.CreateInstance(type);
 						item.Click+=delegate(object sender,EventArgs e){
-							Controller.addElemnt(elem.NewName());
+							Controller.AddElemnt(elem.NewElem());
 						};
 						l.Add(item);
 					}

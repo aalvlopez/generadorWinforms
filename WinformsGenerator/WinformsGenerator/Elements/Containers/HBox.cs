@@ -51,7 +51,7 @@ namespace WinformsGenerator
 			return base.GenerateDataGrid();
 
 		}
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var hBox = this.CopyElem();
 			hBox.Name="HBox"+HBox.numElem.ToString();

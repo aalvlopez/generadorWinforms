@@ -30,7 +30,7 @@ namespace WinformsGenerator
             this.addItemMenuItem.Text = "Add Item";
 			this.addItemMenuItem.Enabled=false;
 			this.addItemMenuItem.Click+=delegate(object sender, EventArgs e) {
-				Controller.addItem();
+				Controller.AddItem();
 				Controller.RefreshTreeView();
 			};
 

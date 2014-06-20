@@ -138,7 +138,7 @@ namespace WinformsGenerator
 
 			return dataGridView;
 		}
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var grid = this.CopyElem();
 			grid.Name="Grid"+Grid.numElem.ToString();

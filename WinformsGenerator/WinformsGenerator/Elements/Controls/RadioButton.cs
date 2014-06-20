@@ -54,7 +54,7 @@ namespace WinformsGenerator
 			return radio;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var radio = this.CopyElem();
 			radio.Name="RadioButton"+RadioButton.numElem.ToString();

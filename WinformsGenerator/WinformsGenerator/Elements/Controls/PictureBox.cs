@@ -52,7 +52,7 @@ namespace WinformsGenerator
 			return pict;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var pict = this.CopyElem();
 			pict.Name="PictureBox"+PictureBox.numElem.ToString();

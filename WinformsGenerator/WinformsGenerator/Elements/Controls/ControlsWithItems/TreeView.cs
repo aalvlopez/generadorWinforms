@@ -56,7 +56,7 @@ namespace WinformsGenerator
 			}
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var tree = this.CopyElem();
 			tree.Name="TreeView"+TreeView.numElem.ToString();

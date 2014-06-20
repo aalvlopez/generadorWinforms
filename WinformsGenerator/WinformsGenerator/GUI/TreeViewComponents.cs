@@ -156,7 +156,7 @@ namespace WinformsGenerator
 
 		public void Paste ()
 		{
-			Controller.addElemnt (((Element)this.nodeCopied.Tag).CopyElem ());
+			Controller.AddElemnt (((Element)this.nodeCopied.Tag).CopyElem ());
 			this.nodeCopied.Tag=((Element)this.nodeCopied.Tag).CopyElem();
 			Controller.ReDraw();
 			Controller.RefreshTreeView();

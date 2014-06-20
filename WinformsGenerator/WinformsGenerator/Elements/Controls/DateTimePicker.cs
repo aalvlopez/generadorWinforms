@@ -54,7 +54,7 @@ namespace WinformsGenerator
 			return dtPic;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var dtPic = this.CopyElem();
 			dtPic.Name="DateTimePicker"+DateTimePicker.numElem.ToString();

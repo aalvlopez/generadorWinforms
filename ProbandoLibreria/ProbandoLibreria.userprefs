@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProbandoLibreria\Probando.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProbandoLibreria\Prueba.cs">
     <Files>
-      <File FileName="ProbandoLibreria\Probando.cs" Line="13" Column="75" />
+      <File FileName="ProbandoLibreria\Probando.cs" Line="18" Column="1" />
       <File FileName="ProbandoLibreria\Prueba.cs" Line="8" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -40,7 +40,7 @@ namespace WinformsGenerator
 			return split;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var split = this.CopyElem();
 			split.Name="Splitter"+Splitter.numElem.ToString();

@@ -50,7 +50,7 @@ namespace WinformsGenerator
 		{
 			return base.GenerateDataGrid();
 		}
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var vBox = this.CopyElem();
 			vBox.Name="VBox"+VBox.numElem.ToString();

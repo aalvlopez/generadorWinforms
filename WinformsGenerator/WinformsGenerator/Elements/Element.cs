@@ -409,7 +409,7 @@ namespace WinformsGenerator
 
 		public abstract System.Windows.Forms.Control DrawElement();
 		public abstract void GetTreeNode(TreeNode node,ContextMenuStrip menu,ContextMenuStrip menuItem);
-		public abstract Element NewName();
+		public abstract Element NewElem();
 		public abstract Element CopyElem();
 	}
 }

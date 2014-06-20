@@ -56,7 +56,7 @@ namespace WinformsGenerator
 		public override System.Windows.Forms.DataGridView GenerateDataGrid (){
 			return base.GenerateDataGrid ();
 		}
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var border = this.CopyElem ();
 			border.Name = "GroupBox" + GroupBox.numElem.ToString ();

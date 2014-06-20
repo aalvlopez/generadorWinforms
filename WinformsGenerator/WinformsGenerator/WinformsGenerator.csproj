@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -34,11 +34,11 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="GUI\MainWindow.cs" />
+    <Compile Include="GUI\Properties.cs" />
     <Compile Include="GUI\WorkSpace.cs" />
     <Compile Include="GUI\TreeViewComponents.cs">
       <DeployService-Deploy>True</DeployService-Deploy>
     </Compile>
-    <Compile Include="GUI\Properties.cs" />
     <Compile Include="Elements\Element.cs" />
     <Compile Include="Elements\Containers\VBox.cs" />
     <Compile Include="Elements\Containers\HBox.cs" />

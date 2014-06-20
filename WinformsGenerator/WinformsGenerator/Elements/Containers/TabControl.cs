@@ -46,7 +46,7 @@ namespace WinformsGenerator
 			return tool;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var tool = this.CopyElem();
 			tool.Name="TabControl"+TabControl.numElem.ToString();

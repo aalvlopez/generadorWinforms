@@ -49,7 +49,7 @@ namespace WinformsGenerator
 			return prog;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var prog = this.CopyElem();
 			prog.Name="ProgressBar"+ProgressBar.numElem.ToString();

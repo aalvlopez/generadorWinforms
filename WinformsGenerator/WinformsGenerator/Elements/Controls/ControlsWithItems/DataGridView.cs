@@ -81,7 +81,7 @@ namespace WinformsGenerator
 			return dataG;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var dataG = this.CopyElem();
 			dataG.Name="DataGridView"+DataGridView.numElem.ToString();

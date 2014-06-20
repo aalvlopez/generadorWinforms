@@ -16,7 +16,7 @@ namespace WinformsGenerator
 		}
 		public abstract void AddItem();
 		public override abstract System.Windows.Forms.Control DrawElement ();
-		public override abstract Element NewName ();
+		public override abstract Element NewElem ();
 		public override abstract Element CopyElem ();
 	}
 }

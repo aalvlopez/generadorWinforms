@@ -47,7 +47,7 @@ namespace WinformsGenerator
 			return month;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var month = this.CopyElem();
 			month.Name="MonthCalendar"+MonthCalendar.numElem.ToString();

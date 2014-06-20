@@ -56,7 +56,7 @@ namespace WinformsGenerator
 			return check;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var check = this.CopyElem();
 			check.Name="CheckBox"+CheckBox.numElem.ToString();

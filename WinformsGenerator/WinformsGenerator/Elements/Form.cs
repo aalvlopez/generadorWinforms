@@ -58,7 +58,7 @@ namespace WinformsGenerator
 			return null;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			this.Name="Form"+Form.numElem.ToString();
 			Form.numElem++;

@@ -38,7 +38,7 @@ namespace WinformsGenerator
 		}
 
 		//Añade un elemento a un container
-		public static void addElemnt (Element elemento)
+		public static void AddElemnt (Element elemento)
 		{
 			((Container)Controller.window.panelTreeView.GetSelectedNode().Tag).AddElem(elemento);
 			Controller.ReDraw();
@@ -54,7 +54,7 @@ namespace WinformsGenerator
 		}
 
 		//Añade un item a un controlador que admite items
-		public static void addItem ()
+		public static void AddItem ()
 		{
 			if (Controller.window.panelTreeView.GetSelectedNode ().Tag.GetType ().IsSubclassOf(typeof(WinformsGenerator.ControlItems))) {
 				((ControlItems)Controller.window.panelTreeView.GetSelectedNode ().Tag).AddItem ();
@@ -114,7 +114,7 @@ namespace WinformsGenerator
 		}
 
 		//Crea nuevo formulario
-		public static void NuevoForm ()
+		public static void NewForm ()
 		{
 			Controller.formulario = new WinformsGenerator.Form();
 			Controller.ReDraw();

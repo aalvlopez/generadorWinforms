@@ -49,7 +49,7 @@ namespace WinformsGenerator
 			return combo;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var combo = this.CopyElem();
 			combo.Name="ComboBox"+ComboBox.numElem.ToString();

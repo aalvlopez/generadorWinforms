@@ -80,7 +80,7 @@ namespace WinformsGenerator
 			return dataGridView;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var textbox = this.CopyElem();
 			textbox.Name="TextBox"+TextBox.numElem.ToString();

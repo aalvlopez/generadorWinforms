@@ -48,7 +48,7 @@ namespace WinformsGenerator
 			return status;
 		}
 
-		public override Element NewName ()
+		public override Element NewElem ()
 		{
 			var status = this.CopyElem();
 			status.Name="StatusBar"+StatusBar.numElem.ToString();

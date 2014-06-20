@@ -58,7 +58,7 @@ namespace WinformsGenerator
 			}
 			Console.WriteLine(imgFile);
 			this.newForm.Click+=delegate(object sender,EventArgs e) {
-				Controller.NuevoForm();
+				Controller.NewForm();
 				Controller.SetSaveFile(null);
 				this.save.Enabled=false;
 			};
