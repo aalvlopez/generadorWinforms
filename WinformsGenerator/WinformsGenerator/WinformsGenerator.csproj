@@ -6,7 +6,7 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>WinformsGenerator</RootNamespace>
     <AssemblyName>WinformsGenerator</AssemblyName>
   </PropertyGroup>

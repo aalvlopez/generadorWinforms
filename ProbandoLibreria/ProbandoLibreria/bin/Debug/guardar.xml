@@ -13,6 +13,24 @@
   </Size>
   <Anchor>None</Anchor>
   <BackColor>White</BackColor>
+  <Click />
+  <DoubleClick />
+  <Enter />
+  <GotFocus />
+  <LostFocus />
+  <Leave />
+  <KeyDown />
+  <KeyPress />
+  <KeyUp />
+  <MouseClick />
+  <MouseDoubleClick />
+  <MouseDown />
+  <MouseEnter />
+  <MouseLeave />
+  <MouseHover />
+  <MouseUp />
+  <MouseWheel />
+  <Resize />
   <elementos>
     <Element xsi:type="Border">
       <Dock>Fill</Dock>
@@ -28,6 +46,24 @@
       </Size>
       <Anchor>None</Anchor>
       <BackColor>White</BackColor>
+      <Click />
+      <DoubleClick />
+      <Enter />
+      <GotFocus />
+      <LostFocus />
+      <Leave />
+      <KeyDown />
+      <KeyPress />
+      <KeyUp />
+      <MouseClick />
+      <MouseDoubleClick />
+      <MouseDown />
+      <MouseEnter />
+      <MouseLeave />
+      <MouseHover />
+      <MouseUp />
+      <MouseWheel />
+      <Resize />
       <elementos>
         <Element xsi:type="Button">
           <Dock>Bottom</Dock>
@@ -43,6 +79,25 @@
           </Size>
           <Anchor>None</Anchor>
           <BackColor>Gray</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <TextAlign>MiddleCenter</TextAlign>
         </Element>
         <Element xsi:type="Button">
           <Dock>Left</Dock>
@@ -58,6 +113,25 @@
           </Size>
           <Anchor>None</Anchor>
           <BackColor>Gray</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <TextAlign>MiddleCenter</TextAlign>
         </Element>
         <Element xsi:type="Button">
           <Dock>Top</Dock>
@@ -73,6 +147,25 @@
           </Size>
           <Anchor>None</Anchor>
           <BackColor>Gray</BackColor>
+          <Click />
+          <DoubleClick />
+          <Enter />
+          <GotFocus />
+          <LostFocus />
+          <Leave />
+          <KeyDown />
+          <KeyPress />
+          <KeyUp />
+          <MouseClick />
+          <MouseDoubleClick />
+          <MouseDown />
+          <MouseEnter />
+          <MouseLeave />
+          <MouseHover />
+          <MouseUp />
+          <MouseWheel />
+          <Resize />
+          <TextAlign>MiddleCenter</TextAlign>
         </Element>
       </elementos>
     </Element>

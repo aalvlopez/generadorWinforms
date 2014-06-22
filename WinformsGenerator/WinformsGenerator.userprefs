@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator\Elements\Controls\ControlsWithItems\Items\Item.cs">
     <Files>
       <File FileName="WinformsGenerator\Elements\Controls\ControlsWithItems\Items\Item.cs" Line="31" Column="75" />
-      <File FileName="WinformsGenerator\Elements\Controls\ControlsWithItems\Items\ItemAnidado.cs" Line="21" Column="1" />
-      <File FileName="WinformsGenerator\Elements\Controls\ControlsWithItems\ControlItems.cs" Line="24" Column="1" />
-      <File FileName="WinformsGenerator\Elements\Element.cs" Line="412" Column="34" />
+      <File FileName="WinformsGenerator\Elements\Controls\ControlsWithItems\Items\ItemAnidado.cs" Line="1" Column="1" />
+      <File FileName="WinformsGenerator\Elements\Controls\ControlsWithItems\ControlItems.cs" Line="1" Column="1" />
+      <File FileName="WinformsGenerator\Elements\Element.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
