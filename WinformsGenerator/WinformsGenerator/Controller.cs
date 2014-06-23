@@ -104,7 +104,11 @@ namespace WinformsGenerator
 
 		//devuelve el panel de trabajo
 		public static System.Windows.Forms.Panel Draw(){
-			return (Panel) Controller.formulario.DrawElement();
+			try{
+				return (Panel) Controller.formulario.DrawElement();
+			}catch(NullReferenceException e){
+				throw new Exception("Error openning the Xml file.", e);
+			}
 		}
 
 		//redibuja el panel de trabajo

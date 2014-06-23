@@ -12,7 +12,7 @@
     <Height>100</Height>
   </Size>
   <Anchor>None</Anchor>
-  <BackColor>White</BackColor>
+  <BackColor>#A5E6F1</BackColor>
   <Click />
   <DoubleClick />
   <Enter />
@@ -32,17 +32,51 @@
   <MouseWheel />
   <Resize />
   <elementos>
-    <Element xsi:type="PictureBox">
+    <Element xsi:type="Button">
       <Dock>None</Dock>
-      <Name>PictureBox0</Name>
+      <Name>Button0</Name>
+      <Text>prueba</Text>
+      <Location>
+        <X>50</X>
+        <Y>20</Y>
+      </Location>
+      <Size>
+        <Width>75</Width>
+        <Height>23</Height>
+      </Size>
+      <Anchor>Top Bottom</Anchor>
+      <BackColor>White</BackColor>
+      <Click />
+      <DoubleClick />
+      <Enter />
+      <GotFocus />
+      <LostFocus />
+      <Leave />
+      <KeyDown />
+      <KeyPress />
+      <KeyUp />
+      <MouseClick />
+      <MouseDoubleClick />
+      <MouseDown />
+      <MouseEnter />
+      <MouseLeave />
+      <MouseHover />
+      <MouseUp />
+      <MouseWheel />
+      <Resize />
+      <TextAlign>MiddleCenter</TextAlign>
+    </Element>
+    <Element xsi:type="VBox">
+      <Dock>Fill</Dock>
+      <Name>VBox0</Name>
       <Text>prueba</Text>
       <Location>
         <X>0</X>
         <Y>0</Y>
       </Location>
       <Size>
-        <Width>100</Width>
-        <Height>50</Height>
+        <Width>200</Width>
+        <Height>100</Height>
       </Size>
       <Anchor>None</Anchor>
       <BackColor>White</BackColor>
@@ -64,7 +98,77 @@
       <MouseUp />
       <MouseWheel />
       <Resize />
-      <Image>/home/fito/x.png</Image>
+      <elementos />
+      <NumColumns>1</NumColumns>
+      <NumRows>0</NumRows>
+    </Element>
+    <Element xsi:type="Border">
+      <Dock>Fill</Dock>
+      <Name>Border0</Name>
+      <Text>prueba</Text>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <Width>200</Width>
+        <Height>100</Height>
+      </Size>
+      <Anchor>None</Anchor>
+      <BackColor>White</BackColor>
+      <Click />
+      <DoubleClick />
+      <Enter />
+      <GotFocus />
+      <LostFocus />
+      <Leave />
+      <KeyDown />
+      <KeyPress />
+      <KeyUp />
+      <MouseClick />
+      <MouseDoubleClick />
+      <MouseDown />
+      <MouseEnter />
+      <MouseLeave />
+      <MouseHover />
+      <MouseUp />
+      <MouseWheel />
+      <Resize />
+      <elementos />
+    </Element>
+    <Element xsi:type="TabControl">
+      <Dock>None</Dock>
+      <Name>TabControl0</Name>
+      <Text>prueba</Text>
+      <Location>
+        <X>50</X>
+        <Y>100</Y>
+      </Location>
+      <Size>
+        <Width>200</Width>
+        <Height>100</Height>
+      </Size>
+      <Anchor>None</Anchor>
+      <BackColor>White</BackColor>
+      <Click />
+      <DoubleClick />
+      <Enter />
+      <GotFocus />
+      <LostFocus />
+      <Leave />
+      <KeyDown />
+      <KeyPress />
+      <KeyUp />
+      <MouseClick />
+      <MouseDoubleClick />
+      <MouseDown />
+      <MouseEnter />
+      <MouseLeave />
+      <MouseHover />
+      <MouseUp />
+      <MouseWheel />
+      <Resize />
+      <elementos />
     </Element>
   </elementos>
 </Element>
