@@ -33,7 +33,7 @@
   <Resize />
   <elementos>
     <Element xsi:type="Button">
-      <Dock>None</Dock>
+      <Dock>Left</Dock>
       <Name>Button0</Name>
       <Text>prueba</Text>
       <Location>
@@ -44,7 +44,7 @@
         <Width>75</Width>
         <Height>23</Height>
       </Size>
-      <Anchor>Top Bottom</Anchor>
+      <Anchor>None</Anchor>
       <BackColor>White</BackColor>
       <Click />
       <DoubleClick />

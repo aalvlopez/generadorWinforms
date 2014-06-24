@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="GUI/MainWindow.cs">
     <Files>
       <File FileName="App.cs" Line="21" Column="4" />
-      <File FileName="GUI/MainWindow.cs" Line="58" Column="40" />
+      <File FileName="GUI/MainWindow.cs" Line="73" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
