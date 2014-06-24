@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F642FA78-B363-4C6A-B0A5-77F8E3B9CE0C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TestsWinformsGenerator</RootNamespace>
+    <AssemblyName>TestsWinformsGenerator</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Test.cs" />
+    <Compile Include="ControlsTests\ButtonTest.cs" />
+    <Compile Include="ControlsTests\CheckoxTest.cs" />
+    <Compile Include="ControlsTests\LabelTest.cs" />
+    <Compile Include="ControlsTests\SplitterTest.cs" />
+    <Compile Include="ControlsTests\TextBoxTest.cs" />
+    <Compile Include="ControlsTests\RadioButtonTest.cs" />
+    <Compile Include="ControlsTests\ProgressBarTest.cs" />
+    <Compile Include="ControlsTests\PictureoxTest.cs" />
+    <Compile Include="ControlsTests\MonthCalendarTest.cs" />
+    <Compile Include="ControlsTests\DateTimePickerTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\ComboBoxTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\DataGridViewTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\ListViewTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\MenuStripTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\StatusBarTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\ToolBarTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\TreeViewTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\ComboBoxItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\ToolBarItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\StatusBarItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\DataGridRowtest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\ListViewItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\MenuStripItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\TreeViewItemTest.cs" />
+    <Compile Include="ControlsTests\ControlsWithItemsTests\Items\ListViewSubItemTest.cs" />
+    <Compile Include="ContainersTests\BorderTest.cs" />
+    <Compile Include="ContainersTests\GridTest.cs" />
+    <Compile Include="ContainersTests\HboxTest.cs" />
+    <Compile Include="ContainersTests\VBoxTest.cs" />
+    <Compile Include="ContainersTests\TabControlTest.cs" />
+    <Compile Include="ContainersTests\TabPageTest.cs" />
+    <Compile Include="ContainersTests\GroupBoxTest.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\WinformsGenerator\WinformsGenerator.csproj">
+      <Project>{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}</Project>
+      <Name>WinformsGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ControlsTests\" />
+    <Folder Include="ControlsTests\ControlsWithItemsTests\" />
+    <Folder Include="ControlsTests\ControlsWithItemsTests\Items\" />
+    <Folder Include="ContainersTests\" />
+  </ItemGroup>
+</Project>

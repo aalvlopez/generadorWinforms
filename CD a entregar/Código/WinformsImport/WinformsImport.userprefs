@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsImport\Elements\Form.cs">
+    <Files>
+      <File FileName="WinformsImport\Elements\Controls\Button.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\CheckBox.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\Control.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\DateTimePicker.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\Label.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\MonthCalendar.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\PictureBox.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\ProgressBar.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\RadioButton.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\Splitter.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Controls\TextBox.cs" Line="1" Column="1" />
+      <File FileName="WinformsImport\Elements\Element.cs" Line="47" Column="35" />
+      <File FileName="WinformsImport\Controller.cs" Line="28" Column="2" />
+      <File FileName="WinformsImport\ImportWinform.cs" Line="14" Column="1" />
+      <File FileName="WinformsImport\Elements\Form.cs" Line="40" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

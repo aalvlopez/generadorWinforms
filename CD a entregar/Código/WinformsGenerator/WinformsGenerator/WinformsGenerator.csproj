@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AAE2A3E9-D3A8-49DD-95A2-A93B5E48F5A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinformsGenerator</RootNamespace>
+    <AssemblyName>WinformsGenerator</AssemblyName>
+    <ApplicationIcon>..\..\..\..\..\Downloads\Double-J-Design-Ravenna-3d-Window.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="GUI\MainWindow.cs" />
+    <Compile Include="GUI\Properties.cs" />
+    <Compile Include="GUI\WorkSpace.cs" />
+    <Compile Include="GUI\TreeViewComponents.cs">
+      <DeployService-Deploy>True</DeployService-Deploy>
+    </Compile>
+    <Compile Include="Elements\Element.cs" />
+    <Compile Include="Elements\Containers\VBox.cs" />
+    <Compile Include="Elements\Containers\HBox.cs" />
+    <Compile Include="Elements\Containers\Grid.cs" />
+    <Compile Include="Elements\Containers\Border.cs" />
+    <Compile Include="Elements\Containers\Container.cs" />
+    <Compile Include="Elements\Controls\Control.cs" />
+    <Compile Include="Elements\Controls\Button.cs" />
+    <Compile Include="Elements\Controls\Label.cs" />
+    <Compile Include="Elements\Controls\TextBox.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="Elements\Form.cs" />
+    <Compile Include="Elements\Controls\RadioButton.cs" />
+    <Compile Include="Elements\Controls\CheckBox.cs" />
+    <Compile Include="Elements\Containers\GroupBox.cs" />
+    <Compile Include="Elements\Controls\ProgressBar.cs" />
+    <Compile Include="Elements\Controls\DateTimePicker.cs" />
+    <Compile Include="Elements\Controls\MonthCalendar.cs" />
+    <Compile Include="Elements\Controls\Splitter.cs" />
+    <Compile Include="Elements\Controls\PictureBox.cs" />
+    <Compile Include="GUI\WindowMenuStrip.cs" />
+    <Compile Include="GUI\ElementContextMenu.cs" />
+    <Compile Include="GUI\ItemContextMenu.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ControlItems.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ComboBox.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\MenuStrip.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\Item.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ComboBoxItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\MenuStripItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ItemAnidado.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\TreeView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\TreeViewItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ToolBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ToolBarItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\StatusBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\StatusBarItem.cs" />
+    <Compile Include="Elements\Containers\TabControl.cs" />
+    <Compile Include="Elements\Containers\TabPage.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ListView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\DataGridRow.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\DataGridView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewSubItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\" />
+    <Folder Include="Elements\" />
+    <Folder Include="Elements\Containers\" />
+    <Folder Include="Elements\Controls\" />
+    <Folder Include="Elements\Controls\ControlsWithItems\" />
+    <Folder Include="img\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="img\add.png" />
+    <EmbeddedResource Include="img\copy.png" />
+    <EmbeddedResource Include="img\cut.png" />
+    <EmbeddedResource Include="img\delete.png" />
+    <EmbeddedResource Include="img\new.png" />
+    <EmbeddedResource Include="img\open.png" />
+    <EmbeddedResource Include="img\paste.png" />
+    <EmbeddedResource Include="img\play.png" />
+    <EmbeddedResource Include="img\save.png" />
+    <EmbeddedResource Include="img\saveAs.png" />
+    <EmbeddedResource Include="img\stop.png" />
+    <EmbeddedResource Include="img\Thumbs.db" />
+  </ItemGroup>
+</Project>

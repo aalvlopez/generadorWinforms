@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B1348F9-EBFA-4072-AB56-34BBB8919045}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>WinformsImport</RootNamespace>
+    <AssemblyName>WinformsImport</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Elements\Element.cs" />
+    <Compile Include="Elements\Form.cs" />
+    <Compile Include="Elements\Containers\Border.cs" />
+    <Compile Include="Elements\Containers\Container.cs" />
+    <Compile Include="Elements\Containers\Grid.cs" />
+    <Compile Include="Elements\Containers\HBox.cs" />
+    <Compile Include="Elements\Containers\VBox.cs" />
+    <Compile Include="Elements\Controls\Button.cs" />
+    <Compile Include="Elements\Controls\Control.cs" />
+    <Compile Include="Elements\Controls\Label.cs" />
+    <Compile Include="Elements\Controls\TextBox.cs" />
+    <Compile Include="Controller.cs" />
+    <Compile Include="ImportWinform.cs" />
+    <Compile Include="Elements\Containers\GroupBox.cs" />
+    <Compile Include="Elements\Containers\TabControl.cs" />
+    <Compile Include="Elements\Containers\TabPage.cs" />
+    <Compile Include="Elements\Controls\CheckBox.cs" />
+    <Compile Include="Elements\Controls\DateTimePicker.cs" />
+    <Compile Include="Elements\Controls\MonthCalendar.cs" />
+    <Compile Include="Elements\Controls\PictureBox.cs" />
+    <Compile Include="Elements\Controls\ProgressBar.cs" />
+    <Compile Include="Elements\Controls\RadioButton.cs" />
+    <Compile Include="Elements\Controls\Splitter.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ComboBox.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ControlItems.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\DataGridView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ListView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\MenuStrip.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\StatusBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\ToolBar.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\TreeView.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ComboBoxItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\DataGridRow.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\Item.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ItemAnidado.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ListViewSubItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\MenuStripItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\StatusBarItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\ToolBarItem.cs" />
+    <Compile Include="Elements\Controls\ControlsWithItems\Items\TreeViewItem.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Elements\" />
+  </ItemGroup>
+</Project>

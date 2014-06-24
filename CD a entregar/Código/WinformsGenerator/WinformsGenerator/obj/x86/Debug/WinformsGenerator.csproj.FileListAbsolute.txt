@@ -1,0 +1,10 @@
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\bin\Debug\WinformsGenerator.pdb
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Debug\WinformsGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Debug\WinformsGenerator.pdb
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\bin\Debug\WinformsGenerator.exe
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\bin\Debug\WinformsGenerator.pdb
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Debug\WinformsGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Debug\WinformsGenerator.exe
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Debug\WinformsGenerator.pdb
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\bin\Debug\WinformsGenerator.exe
+C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Debug\WinformsGenerator.exe
