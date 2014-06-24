@@ -9,6 +9,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>WinformsGenerator</RootNamespace>
     <AssemblyName>WinformsGenerator</AssemblyName>
+    <ApplicationIcon>..\..\..\..\..\Downloads\Double-J-Design-Ravenna-3d-Window.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -29,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -89,6 +92,7 @@
     <Folder Include="Elements\Containers\" />
     <Folder Include="Elements\Controls\" />
     <Folder Include="Elements\Controls\ControlsWithItems\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Drawing" />
@@ -101,5 +105,19 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="img\add.png" />
+    <EmbeddedResource Include="img\copy.png" />
+    <EmbeddedResource Include="img\cut.png" />
+    <EmbeddedResource Include="img\delete.png" />
+    <EmbeddedResource Include="img\new.png" />
+    <EmbeddedResource Include="img\open.png" />
+    <EmbeddedResource Include="img\paste.png" />
+    <EmbeddedResource Include="img\play.png" />
+    <EmbeddedResource Include="img\save.png" />
+    <EmbeddedResource Include="img\saveAs.png" />
+    <EmbeddedResource Include="img\stop.png" />
+    <EmbeddedResource Include="img\Thumbs.db" />
   </ItemGroup>
 </Project>

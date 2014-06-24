@@ -1,3 +1,6 @@
 C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\bin\Release\WinformsGenerator.exe
 C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Release\WinformsGenerator.csprojResolveAssemblyReference.cache
 C:\Users\Adolfo\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Release\WinformsGenerator.exe
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\bin\Release\WinformsGenerator.exe
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Release\WinformsGenerator.csprojResolveAssemblyReference.cache
+C:\Users\Fito\Documents\GitHub\generadorWinforms\WinformsGenerator\WinformsGenerator\obj\x86\Release\WinformsGenerator.exe

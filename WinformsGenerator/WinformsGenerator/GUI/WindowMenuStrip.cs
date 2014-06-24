@@ -10,6 +10,40 @@ namespace WinformsGenerator
 	{
 		public WindowMenuStrip ()
 		{
+			var newIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.new.png" ) );
+			var copyIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.copy.png" ) );
+			var cutIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.cut.png" ) );
+			var deleteIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.delete.png" ) );
+			var addIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.add.png" ) );
+			var openIcon = new Bitmap( System.Reflection.Assembly.
+					GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.open.png" ) );
+			var pasteIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.paste.png" ) );
+			var playIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.play.png" ) );
+			var saveIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.save.png" ) );
+			var saveAsIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.saveAs.png" ) );
+			var stopIcon = new Bitmap( System.Reflection.Assembly.
+				GetEntryAssembly().
+				GetManifestResourceStream( "WinformsGenerator.img.stop.png" ) );
+
 			String outPutDirectory = Path.GetDirectoryName (Assembly.GetExecutingAssembly ().CodeBase);
 			this.newForm = new ToolStripMenuItem ();
 			this.copy = new ToolStripMenuItem ();
@@ -47,16 +81,7 @@ namespace WinformsGenerator
 			this.newForm.Name = "newForm";
 			this.newForm.Size = new Size (128, 128);
 			this.newForm.ToolTipText="New Form";
-			var imgFile = Path.Combine (outPutDirectory, "img/new.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.newForm.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = "img\\new.png";
-				if (File.Exists (imgFile)) {
-					this.newForm.Image = Image.FromFile (imgFile);
-				}
-			}
-			Console.WriteLine(imgFile);
+			this.newForm.Image = newIcon;
 			this.newForm.Click+=delegate(object sender,EventArgs e) {
 				Controller.NewForm();
 				Controller.SetSaveFile(null);
@@ -69,16 +94,8 @@ namespace WinformsGenerator
 			this.open.Name = "open";
 			this.open.Size = new Size (128, 128);
 			this.open.ToolTipText="Open file";
-			
-            imgFile = Path.Combine(outPutDirectory, "img/open.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.open.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile ="img\\open.png";
-				if (File.Exists (imgFile)) {
-					this.open.Image = Image.FromFile (imgFile);
-				}
-			}
+			this.open.Image = openIcon;
+
 			this.open.Click+=delegate(object sender, EventArgs e) {
 				OpenFileDialog openD = new OpenFileDialog();
 				openD.Filter = "xml files (*.xml)|*.xml" ;
@@ -98,17 +115,9 @@ namespace WinformsGenerator
 			this.save.Name = "save";
 			this.save.Size = new Size (128, 128);
 			this.save.ToolTipText="Save";
-
-            imgFile = Path.Combine(outPutDirectory, "img/save.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.save.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile ="img\\save.png";
-				if (File.Exists (imgFile)) {
-					this.save.Image = Image.FromFile (imgFile);
-				}
-			}
+			this.save.Image = saveIcon;
 			this.save.Enabled=false;
+
 			this.save.Click+=delegate(object sender, EventArgs e) {
 				Controller.SaveAsFile();
 			};
@@ -119,16 +128,8 @@ namespace WinformsGenerator
 			this.saveAs.Name = "saveAs";
 			this.saveAs.Size = new Size (128, 128);
 			this.saveAs.ToolTipText="Save As";
+			this.saveAs.Image = saveAsIcon;
 
-            imgFile = Path.Combine(outPutDirectory, "img/saveAs.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.saveAs.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile ="img\\saveAs.png";
-				if (File.Exists (imgFile)) {
-					this.saveAs.Image = Image.FromFile (imgFile);
-				}
-			}
 			this.saveAs.Click+=delegate(object sender, EventArgs e) {
 				this.SaveAs();
 			};
@@ -139,16 +140,8 @@ namespace WinformsGenerator
 			this.copy.Name = "copy";
 			this.copy.Size = new Size (128, 128);
 			this.copy.ToolTipText="Copy";
+			this.copy.Image = copyIcon;
 
-            imgFile = Path.Combine(outPutDirectory, "img/copy.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.copy.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile ="img\\copy.png";
-				if (File.Exists (imgFile)) {
-					this.copy.Image = Image.FromFile (imgFile);
-				}
-			}
 			this.copy.Click+=delegate(object sender,EventArgs e){
 				Controller.CopyNode();
 			};
@@ -159,16 +152,8 @@ namespace WinformsGenerator
 			this.cut.Name = "cut";
 			this.cut.Size = new Size (128, 128);
 			this.cut.ToolTipText="Cut";
+			this.cut.Image = cutIcon;
 
-            imgFile = Path.Combine(outPutDirectory, "img/cut.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.cut.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile ="img\\cut.png";
-				if (File.Exists (imgFile)) {
-					this.cut.Image = Image.FromFile (imgFile);
-				}
-			}
 			this.cut.Click+=delegate(object sender, EventArgs e){
 				Controller.CopyNode();
 				Controller.RemoveNode();
@@ -180,17 +165,9 @@ namespace WinformsGenerator
 			this.paste.Name = "paste";
 			this.paste.Size = new Size (128, 128);
 			this.paste.ToolTipText="Paste";
-
-            imgFile = Path.Combine(outPutDirectory, "img/paste.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.paste.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = "img\\paste.png";
-				if (File.Exists (imgFile)) {
-					this.paste.Image = Image.FromFile (imgFile);
-				}
-			}
+			this.paste.Image = pasteIcon;
 			this.paste.Enabled=false;
+
 			this.paste.Click+=delegate(object sender, EventArgs e){
 				Controller.PasteNode();
 			};
@@ -201,16 +178,8 @@ namespace WinformsGenerator
 			this.delete.Name = "delete";
 			this.delete.Size = new Size (128, 128);
 			this.delete.ToolTipText="Delete";
+			this.delete.Image = deleteIcon;
 
-            imgFile = Path.Combine(outPutDirectory, "img/delete.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.delete.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = "img\\delete.png";
-				if (File.Exists (imgFile)) {
-					this.delete.Image = Image.FromFile (imgFile);
-				}
-			}
 			this.delete.Click+=delegate(object sender, EventArgs e) {
 				Controller.RemoveNode();
 			};
@@ -221,16 +190,8 @@ namespace WinformsGenerator
 			this.play.Name = "play";
 			this.play.Size = new Size (128, 128);
 			this.play.ToolTipText="Play";
+			this.play.Image = playIcon;
 
-            imgFile = Path.Combine(outPutDirectory, "img/play.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.play.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = "img\\play.png";
-				if (File.Exists (imgFile)) {
-					this.play.Image = Image.FromFile (imgFile);
-				}
-			}
 			this.play.Click+=delegate(object sender, EventArgs e) {
 				DialogResult result;
 				if(Controller.GetSaveFile()==null){
@@ -255,16 +216,8 @@ namespace WinformsGenerator
 			this.stop.Name = "stop";
 			this.stop.Size = new Size (128, 128);
 			this.stop.ToolTipText="Stop";
+			this.stop.Image = stopIcon;
 
-            imgFile = Path.Combine(outPutDirectory, "img/stop.png");
-			if (File.Exists (imgFile.TrimStart ("file:".ToCharArray ()))) {
-				this.stop.Image = Image.FromFile (imgFile.TrimStart ("file:".ToCharArray ()));
-			} else {
-				imgFile = "img\\stop.png";
-				if (File.Exists (imgFile)) {
-					this.stop.Image = Image.FromFile (imgFile);
-				}
-			}
 			this.stop.Enabled=false;
 			this.stop.Click+=delegate(object sender, EventArgs e) {
 				Controller.StopTest();
