@@ -313,7 +313,8 @@ namespace WinformsGenerator
 					}
 					break;
 				case "Name":
-					this.Name=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+					if(((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value!=null)
+						this.Name=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
 					break;
 				case "Size.Height":
 					int height;
@@ -349,7 +350,8 @@ namespace WinformsGenerator
 					}
 					break;
 				case "Text":
-					this.Text=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
+					if(((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value!=null)
+						this.Text=((System.Windows.Forms.DataGridView)sender).Rows[rowEdited].Cells[1].Value.ToString();
 					break;
 				default:
 					break;

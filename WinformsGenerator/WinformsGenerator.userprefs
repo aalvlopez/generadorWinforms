@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator\GUI\WindowMenuStrip.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WinformsGenerator\Elements\Element.cs">
     <Files>
       <File FileName="WinformsGenerator\GUI\WindowMenuStrip.cs" Line="22" Column="60" />
-      <File FileName="WinformsGenerator\App.cs" Line="20" Column="39" />
+      <File FileName="WinformsGenerator\App.cs" Line="1" Column="1" />
+      <File FileName="WinformsGenerator\Elements\Element.cs" Line="419" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
